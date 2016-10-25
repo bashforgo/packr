@@ -1,5 +1,9 @@
 /// <reference path="../typings/index.d.ts"/>
 
+import 'jquery';
+import 'semantic-ui-css/semantic.css';
+import 'semantic-ui-css/semantic.js';
+
 import 'core-js/client/shim';
 import 'zone.js/dist/zone';
 

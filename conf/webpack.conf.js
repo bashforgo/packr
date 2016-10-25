@@ -17,7 +17,7 @@ module.exports = {
 
     loaders: [
       {
-        test: /.json$/,
+        test: /\.json$/,
         loaders: [
           'json'
         ]
@@ -39,10 +39,14 @@ module.exports = {
         ]
       },
       {
-        test: /.html$/,
+        test: /\.html$/,
         loaders: [
           'html'
         ]
+      },
+      {
+        test: /\.(png|eot|woff2?|ttf|svg)$/i,
+        loader: 'url-loader'
       }
     ]
   },
@@ -51,6 +55,9 @@ module.exports = {
     new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: conf.path.src('index.html')
+    }),
+    new webpack.ProvidePlugin({
+      'jQuery': 'jquery'
     }),
     new webpack.ContextReplacementPlugin(
       /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,

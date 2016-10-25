@@ -10,7 +10,7 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /.json$/,
+        test: /\.json$/,
         loaders: [
           'json'
         ]
@@ -30,10 +30,14 @@ module.exports = {
         ]
       },
       {
-        test: /.html$/,
+        test: /\.html$/,
         loaders: [
           'html'
         ]
+      },
+      {
+        test: /\.(png|eot|woff2?|ttf|svg)$/i,
+        loader: 'url-loader'
       }
     ]
   },
@@ -49,6 +53,9 @@ module.exports = {
     ),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
+    }),
+    new webpack.ProvidePlugin({
+      'jQuery': 'jquery'
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase

@@ -3,6 +3,7 @@
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "moduleResolution": "node",
     "removeComments": false,
     "noImplicitAny": false
   },
