@@ -1,26 +1,19 @@
 const webpack = require('webpack');
 const conf = require('./gulp.conf');
 const path = require('path');
+const base = require('./webpack-test.conf');
+const mergeWith = require('lodash/mergeWith');
+const isArray = require('lodash/isArray');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
-module.exports = {
+module.exports = mergeWith({}, base, {
   module: {
-    preLoaders: [
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loader: 'tslint'
-      }
-    ],
-
     loaders: [
       {
-        test: /\.json$/,
-        loaders: [
-          'json'
-        ]
+        test: /\.(png|eot|woff2?|ttf|svg)$/i,
+        loader: 'url-loader'
       },
       {
         test: /\.(css|scss)$/,
@@ -30,23 +23,6 @@ module.exports = {
           'sass',
           'postcss'
         ]
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loaders: [
-          'ts'
-        ]
-      },
-      {
-        test: /\.html$/,
-        loaders: [
-          'html'
-        ]
-      },
-      {
-        test: /\.(png|eot|woff2?|ttf|svg)$/i,
-        loader: 'url-loader'
       }
     ]
   },
@@ -58,33 +34,16 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       'jQuery': 'jquery'
-    }),
-    new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      conf.paths.src
-    )
+    })
   ],
   postcss: () => [autoprefixer],
-  debug: true,
-  devtool: 'source-map',
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),
     filename: 'index.js'
   },
-  resolve: {
-    extensions: [
-      '',
-      '.webpack.js',
-      '.web.js',
-      '.js',
-      '.ts'
-    ]
-  },
-  entry: `./${conf.path.src('index')}`,
-  ts: {
-    configFileName: 'tsconfig.json'
-  },
-  tslint: {
-    configuration: require('../tslint.json')
+  entry: `./${conf.path.src('index')}`
+}, (objValue, srcValue) => {
+  if (isArray(objValue)) {
+    return objValue.concat(srcValue);
   }
-};
+});

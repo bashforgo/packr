@@ -1,87 +1,54 @@
 const webpack = require('webpack');
 const conf = require('./gulp.conf');
 const path = require('path');
+const base = require('./webpack.conf');
+const mergeWith = require('lodash/mergeWith');
+const isArray = require('lodash/isArray');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 
-module.exports = {
-  module: {
-    loaders: [
-      {
-        test: /\.json$/,
-        loaders: [
-          'json'
-        ]
-      },
-      {
-        test: /\.(css|scss)$/,
-        loaders: ExtractTextPlugin.extract({
-          fallbackLoader: 'style',
-          loader: 'css?minimize!sass!postcss'
-        })
-      },
-      {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loaders: [
-          'ts'
-        ]
-      },
-      {
-        test: /\.html$/,
-        loaders: [
-          'html'
-        ]
-      },
-      {
-        test: /\.(png|eot|woff2?|ttf|svg)$/i,
-        loader: 'url-loader'
-      }
-    ]
-  },
+module.exports = mergeWith({}, base, {
   plugins: [
-    new webpack.optimize.OccurrenceOrderPlugin(),
-    new webpack.NoErrorsPlugin(),
-    new HtmlWebpackPlugin({
-      template: conf.path.src('index.html')
-    }),
-    new webpack.ContextReplacementPlugin(
-      /angular(\\|\/)core(\\|\/)(esm(\\|\/)src|src)(\\|\/)linker/,
-      conf.paths.src
-    ),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"production"'
-    }),
-    new webpack.ProvidePlugin({
-      'jQuery': 'jquery'
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
     }),
     new ExtractTextPlugin('index-[contenthash].css'),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'})
+    new FaviconsWebpackPlugin({
+      logo: `./${conf.path.src('assets', 'favicon.png')}`,
+      prefix: 'icons/',
+      icons: {
+        android: true,
+        appleIcon: true,
+        appleStartup: false,
+        coast: false,
+        favicons: true,
+        firefox: false,
+        opengraph: true,
+        twitter: false,
+        yandex: false,
+        windows: false
+      }
+    })
   ],
-  postcss: () => [autoprefixer],
   output: {
     path: path.join(process.cwd(), conf.paths.dist),
     filename: '[name]-[hash].js'
-  },
-  resolve: {
-    extensions: [
-      '',
-      '.webpack.js',
-      '.web.js',
-      '.js',
-      '.ts'
-    ]
-  },
-  entry: `./${conf.path.src('index')}`,
-  ts: {
-    configFileName: 'tsconfig.json'
-  },
-  tslint: {
-    configuration: require('../tslint.json')
   }
-};
+}, (objValue, srcValue) => {
+  if (isArray(objValue)) {
+    return objValue.concat(srcValue);
+  }
+});
+
+module.exports.module.loaders.pop();
+module.exports.module.loaders.push({
+  test: /\.(css|scss)$/,
+  loaders: ExtractTextPlugin.extract({
+    fallbackLoader: 'style',
+    loader: 'css?minimize!sass!postcss'
+  })
+});

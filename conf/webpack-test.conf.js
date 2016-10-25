@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const conf = require('./gulp.conf');
+
 module.exports = {
   module: {
     preLoaders: [
@@ -12,7 +13,7 @@ module.exports = {
 
     loaders: [
       {
-        test: /.json$/,
+        test: /\.json$/,
         loaders: [
           'json'
         ]
@@ -25,7 +26,7 @@ module.exports = {
         ]
       },
       {
-        test: /.html$/,
+        test: /\.html$/,
         loaders: [
           'html'
         ]
