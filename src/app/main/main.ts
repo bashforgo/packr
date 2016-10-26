@@ -2,9 +2,9 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'pr-app',
-  template: require('./hello.html')
+  template: require('./main.html')
 })
-export class HelloComponent {
+export class MainComponent {
   public hello: string;
 
   constructor() {

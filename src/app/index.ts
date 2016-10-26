@@ -1,11 +1,12 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { NgSemanticModule } from 'ng-semantic';
 
-import {routing, RootComponent} from './routes';
+import { routing } from './root/routes';
 
-import {HelloComponent} from './hello';
+import { MainComponent } from './main/main';
+import { RootComponent } from './root/root';
 
 @NgModule({
   imports: [
@@ -15,8 +16,9 @@ import {HelloComponent} from './hello';
   ],
   declarations: [
     RootComponent,
-    HelloComponent
+    MainComponent
   ],
   bootstrap: [RootComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
