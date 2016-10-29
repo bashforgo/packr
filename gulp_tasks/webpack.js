@@ -2,20 +2,21 @@ const gulp = require('gulp');
 const gutil = require('gulp-util');
 
 const webpack = require('webpack');
-const webpackConf = require('../conf/webpack.conf');
-const webpackDistConf = require('../conf/webpack-dist.conf');
 const gulpConf = require('../conf/gulp.conf');
 const browsersync = require('browser-sync');
 
 gulp.task('webpack:dev', done => {
+  const webpackConf = require('../conf/webpack.conf');
   webpackWrapper(false, webpackConf, done);
 });
 
 gulp.task('webpack:watch', done => {
+  const webpackConf = require('../conf/webpack.conf');
   webpackWrapper(true, webpackConf, done);
 });
 
 gulp.task('webpack:dist', done => {
+  const webpackDistConf = require('../conf/webpack-dist.conf');
   process.env.NODE_ENV = 'production';
   webpackWrapper(false, webpackDistConf, done);
 });

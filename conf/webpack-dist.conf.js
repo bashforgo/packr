@@ -1,12 +1,26 @@
 const webpack = require('webpack');
-const conf = require('./gulp.conf');
 const path = require('path');
-const base = require('./webpack.conf');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 const mergeWith = require('lodash/mergeWith');
 const isArray = require('lodash/isArray');
 
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const conf = require('./gulp.conf');
+const base = require('./webpack.conf');
+
+base.module.loaders.pop();
+base.module.loaders.push({
+  test: /\.(css|scss)$/,
+  loaders: ExtractTextPlugin.extract({
+    fallbackLoader: 'style',
+    loader: 'css?minimize!sass!postcss'
+  })
+});
+
+base.plugins.pop();
+base.plugins.pop();
 
 module.exports = mergeWith({}, base, {
   plugins: [
@@ -16,7 +30,7 @@ module.exports = mergeWith({}, base, {
     new webpack.optimize.UglifyJsPlugin({
       compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
     }),
-    new ExtractTextPlugin('index-[contenthash].css'),
+    new ExtractTextPlugin('[name].[contenthash].css'),
     new FaviconsWebpackPlugin({
       logo: `./${conf.path.src('assets', 'favicon.png')}`,
       prefix: 'icons/',
@@ -32,23 +46,18 @@ module.exports = mergeWith({}, base, {
         yandex: false,
         windows: false
       }
+    }),
+    new CleanWebpackPlugin(conf.paths.dist, {
+      root: process.cwd(),
+      verbose: true
     })
   ],
   output: {
     path: path.join(process.cwd(), conf.paths.dist),
-    filename: '[name]-[hash].js'
+    sourceMapFilename: 'maps/[file].map'
   }
 }, (objValue, srcValue) => {
   if (isArray(objValue)) {
     return objValue.concat(srcValue);
   }
-});
-
-module.exports.module.loaders.pop();
-module.exports.module.loaders.push({
-  test: /\.(css|scss)$/,
-  loaders: ExtractTextPlugin.extract({
-    fallbackLoader: 'style',
-    loader: 'css?minimize!sass!postcss'
-  })
 });
