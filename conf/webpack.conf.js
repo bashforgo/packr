@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const mergeWith = require('lodash/mergeWith');
@@ -12,6 +11,8 @@ const includes = require('lodash/includes');
 const conf = require('./gulp.conf');
 const base = require('./webpack-test.conf');
 
+base.module.loaders[1].exclude = /spec\.ts$/;
+
 module.exports = mergeWith({}, base, {
   debug: true,
   module: {
@@ -21,7 +22,7 @@ module.exports = mergeWith({}, base, {
         loader: 'url-loader'
       },
       {
-        test: /\.s?css/,
+        test: /\.s?css$/,
         include: new RegExp(`${conf.paths.src}`),
         loaders: [
           `./${conf.path.conf('loaders', 'to-string-array')}`
@@ -51,7 +52,8 @@ module.exports = mergeWith({}, base, {
       template: conf.path.src('index.html')
     }),
     new webpack.ProvidePlugin({
-      'jQuery': 'jquery'
+      'jQuery': 'jquery',
+      '_': 'lodash'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
@@ -75,15 +77,11 @@ module.exports = mergeWith({}, base, {
         yandex: false,
         windows: false
       }
-    }),
-    new CleanWebpackPlugin(conf.paths.tmp, {
-      root: process.cwd(),
-      verbose: true,
     })
   ],
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),
-    filename: '[name].[chunkhash].js'
+    filename: '[name].js'
   },
   entry: {
     app: `./${conf.path.src('index')}`

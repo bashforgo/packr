@@ -3,7 +3,6 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const mergeWith = require('lodash/mergeWith');
 const isArray = require('lodash/isArray');
@@ -28,7 +27,8 @@ module.exports = mergeWith({}, base, {
         })
       },
       {
-        test: /\.scss/,
+        test: /\.s?css$/,
+        include: new RegExp(`${conf.paths.src}`),
         loaders: [
           'css?minimize',
           'postcss',
@@ -61,13 +61,10 @@ module.exports = mergeWith({}, base, {
         yandex: false,
         windows: false
       }
-    }),
-    new CleanWebpackPlugin(conf.paths.dist, {
-      root: process.cwd(),
-      verbose: true
     })
   ],
   output: {
+    filename: '[name].[chunkhash].js',
     path: path.join(process.cwd(), conf.paths.dist),
     sourceMapFilename: 'maps/[file].map'
   },

@@ -6,9 +6,4 @@ import {Component} from '@angular/core';
   styles
 })
 export class MainComponent {
-  public hello: string;
-
-  constructor() {
-    this.hello = 'Hello World!';
-  }
 }

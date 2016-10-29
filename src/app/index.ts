@@ -7,6 +7,7 @@ import { routing } from './root/routes';
 
 import { MainComponent } from './main/main';
 import { RootComponent } from './root/root';
+import { ToolbarComponent } from './toolbar/toolbar';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { RootComponent } from './root/root';
   ],
   declarations: [
     RootComponent,
-    MainComponent
+    MainComponent,
+    ToolbarComponent
   ],
   bootstrap: [RootComponent]
 })
