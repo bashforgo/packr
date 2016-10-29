@@ -2,7 +2,8 @@ import {Component} from '@angular/core';
 
 @Component({
   selector: 'pr-app',
-  template: require('./main.html')
+  template,
+  styles
 })
 export class MainComponent {
   public hello: string;

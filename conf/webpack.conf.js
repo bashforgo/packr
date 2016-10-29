@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const autoprefixer = require('autoprefixer');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
@@ -22,12 +21,24 @@ module.exports = mergeWith({}, base, {
         loader: 'url-loader'
       },
       {
+        test: /\.s?css/,
+        include: new RegExp(`${conf.paths.src}`),
+        loaders: [
+          `./${conf.path.conf('loaders', 'to-string-array')}`
+        ]
+      },
+      {
+        test: /\.(css|scss)$/,
+        include: /node_modules/,
+        loaders: [
+          'style'
+        ]
+      },
+      {
         test: /\.(css|scss)$/,
         loaders: [
-          'style',
           'css',
-          'sass',
-          'postcss'
+          'sass'
         ]
       }
     ]
@@ -70,7 +81,6 @@ module.exports = mergeWith({}, base, {
       verbose: true,
     })
   ],
-  postcss: () => [autoprefixer],
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),
     filename: '[name].[chunkhash].js'
@@ -82,6 +92,12 @@ module.exports = mergeWith({}, base, {
   if (isArray(objValue)) {
     return objValue.concat(srcValue);
   }
+});
+
+module.exports.module.loaders.unshift({
+  test: /\.ts/,
+  include: new RegExp(`${conf.path.src('app').replace(/(\/|\\)/, '(\/|\\\\)')}`),
+  loader: 'baggage?[file].html=template&[file].scss=styles',
 });
 
 function handler(percentage, msg) {
