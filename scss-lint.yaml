@@ -126,7 +126,7 @@ linters:
   QualifyingElement:
     enabled: true
     allow_element_with_attribute: false
-    allow_element_with_class: false
+    allow_element_with_class: true
     allow_element_with_id: false
 
   SelectorDepth:
@@ -136,7 +136,6 @@ linters:
   SelectorFormat:
     enabled: true
     convention: hyphenated_lowercase
-    class_convention: '^(?:u|is|has)\-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:\-[a-z][a-zA-Z0-9]*)?(?:\-\-[a-z][a-zA-Z0-9]*)?$'
 
   Shorthand:
     enabled: true

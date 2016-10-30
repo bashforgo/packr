@@ -7,3 +7,7 @@ body {
 .ui.menu.no-radius {
   border-radius: 0;
 }
+
+.ui.menu .item > i.icon.no-margin {
+  margin: 0;
+}
