@@ -14,26 +14,31 @@ base.module.loaders.pop();
 base.module.loaders.pop();
 
 base.plugins.pop();
-base.plugins.pop();
+
+const scssQuery = {
+  minimize: true,
+  autoprefixer: { add: true, browsers: ['> 1% in my stats'], stats: require('./stats') },
+  discardComments: {
+    removeAll: true
+  }
+};
+
+var scssLoader = {
+  loader: `css?${JSON.stringify(scssQuery)}!sass`
+};
 
 module.exports = mergeWith({}, base, {
   module: {
     loaders: [
       {
-        test: /\.(css|scss)$/,
+        test: /\.s?css$/,
         include: /node_modules/,
-        loaders: ExtractTextPlugin.extract({
-          loader: 'css?minimize!postcss'
-        })
+        loaders: ExtractTextPlugin.extract(scssLoader)
       },
       {
         test: /\.s?css$/,
         include: new RegExp(`${conf.paths.src}`),
-        loaders: [
-          'css?minimize',
-          'postcss',
-          'sass'
-        ]
+        loaders: [scssLoader]
       }
     ]
   },
@@ -43,6 +48,7 @@ module.exports = mergeWith({}, base, {
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: { unused: true, dead_code: true, warnings: false }, // eslint-disable-line camelcase
+      comments: false,
       sourceMap: true
     }),
     new ExtractTextPlugin('[name].[contenthash].css'),
@@ -68,7 +74,6 @@ module.exports = mergeWith({}, base, {
     path: path.join(process.cwd(), conf.paths.dist),
     sourceMapFilename: 'maps/[file].map'
   },
-  postcss: () => [autoprefixer]
 }, (objValue, srcValue) => {
   if (isArray(objValue)) {
     return objValue.concat(srcValue);

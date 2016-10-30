@@ -2,5 +2,8 @@ $light-grey: #d3d3d3;
 
 body {
   background-color: $light-grey;
-  transform: scale(1);
+}
+
+.ui.menu.no-radius {
+  border-radius: 0;
 }

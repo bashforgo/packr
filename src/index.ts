@@ -1,8 +1,15 @@
 /// <reference path="../typings/index.d.ts"/>
 
+import 'semantic-ui-css/components/reset.min.css';
+import 'semantic-ui-css/components/site.min.css';
+import 'semantic-ui-css/components/dimmer.min.css';
+import 'semantic-ui-css/components/loader.min.css';
+import 'semantic-ui-css/components/grid.min.css';
+import 'semantic-ui-css/components/menu.min.css';
+import 'semantic-ui-css/components/image.min.css';
 import 'jquery';
-import 'semantic-ui-css/semantic.css';
 import 'semantic-ui-css/semantic.js';
+// import 'semantic-ui-css/semantic.css';
 
 import 'core-js/client/shim';
 import 'zone.js/dist/zone';
