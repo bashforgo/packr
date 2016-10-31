@@ -23,16 +23,8 @@ function cleanDist() {
   return del([conf.paths.dist]);
 }
 
-function other() {
-  const fileFilter = filter(file => file.stat.isFile());
-
-  return gulp.src([
-    path.join(conf.paths.src, '/**/*'),
-    path.join(`!${conf.paths.src}`, '/**/*.{scss,ts,js,html}')
-  ], { base: conf.paths.src })
-
-    .pipe(fileFilter)
-    .pipe(gulp.dest(conf.paths.dist));
+function other(done) {
+  done();
 }
 
 var _commit;

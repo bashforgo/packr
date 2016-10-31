@@ -19,7 +19,7 @@ module.exports = mergeWith({}, base, {
     loaders: [
       {
         test: /\.(png|eot|woff2?|ttf|svg)$/i,
-        loader: 'url-loader'
+        loader: `url-loader?limit=${ 100 * 1024 }`
       },
       {
         test: /\.s?css$/,

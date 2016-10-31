@@ -17,7 +17,7 @@ gulp.task('serve', gulp.series('webpack:watch', 'watch', 'browsersync'));
 gulp.task('serve:dist', gulp.series('default', 'browsersync:dist'));
 gulp.task('default', gulp.series('clean', 'build'));
 gulp.task('watch', watch);
-gulp.task('deploy', gulp.series(gulp.parallel('default', 'last-message'), 'deploy:gh-pages', 'clean:tmp'));
+gulp.task('deploy', gulp.series('clean', gulp.parallel('webpack:deploy', 'last-message'), 'deploy:gh-pages', 'clean:tmp'));
 
 function reloadBrowserSync(cb) {
   browserSync.reload();

@@ -21,6 +21,12 @@ gulp.task('webpack:dist', done => {
   webpackWrapper(false, webpackDistConf, done);
 });
 
+gulp.task('webpack:deploy', done => {
+  const webpackDeployConf = require('../conf/webpack-deploy.conf');
+  process.env.NODE_ENV = 'production';
+  webpackWrapper(false, webpackDeployConf, done);
+});
+
 function webpackWrapper(watch, conf, done) {
   const webpackBundler = webpack(conf);
 
