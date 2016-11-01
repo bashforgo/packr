@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+  - '6'
+branches:
+  only:
+  - master
+install:
+  - npm install
+before_install:
+  - cd .travis
+  - openssl enc -aes-256-cbc -d -in deploy.enc -out deploy -k $encrypted_key
+  - chmod 600 deploy
+  - eval `ssh-agent -s`
+  - ssh-add deploy
+  - cd ..
+before_script:
+  - git remote set-url origin "git@github.com:SpeedoDevo/packr.git"
+  - git config --global user.email "support@travis-ci.org"
+  - git config --global user.name "Travis"
+script:
+  - npm run deploy
