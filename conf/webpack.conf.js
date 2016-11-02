@@ -7,6 +7,12 @@ const mergeWith = require('lodash/mergeWith');
 const isArray = require('lodash/isArray');
 const keys = require('lodash/keys');
 const includes = require('lodash/includes');
+const padStart = require('lodash/padStart');
+const map = require('lodash/map');
+const invokeMap = require('lodash/invokeMap');
+const compact = require('lodash/compact');
+const flow = require('lodash/flow');
+const head = require('lodash/head');
 
 const conf = require('./gulp.conf');
 const base = require('./webpack-test.conf');
@@ -99,22 +105,21 @@ module.exports.module.loaders.unshift({
 });
 
 function handler(percentage, msg) {
-  var details = Array.prototype.slice.call(arguments, 2);
-  if (percentage < 1) {
-    percentage = Math.floor(percentage * 100);
-    msg = percentage + "% " + msg;
-    if (percentage < 100) {
-      msg = " " + msg;
-    }
-    if (percentage < 10) {
-      msg = " " + msg;
-    }
-    details.forEach(function(detail) {
-      if (!detail) return;
-      msg += " " + detail
-    });
-  }
-  process.stderr.write(msg + '\n');
+  const details = Array.prototype.slice.call(arguments, 2);
+  const msgDetails = normalize(details);
+  const msgPercentage = padStart(Math.floor(percentage * 100), 3) + '%';
+
+  console.log([msgPercentage, msg, msgDetails].join(' '))
+}
+
+function normalize(details) {
+  return map(details.join('!!').split('!'), function(lines) {
+    return compact(invokeMap(lines.split(/[\/\\]/).slice(-2), flow(
+      String.prototype.split,
+      head,
+      (i) => includes(['index.js', 'loader.js'], i) ? null : i
+    ), '?')).join('/')
+  }).join('!').replace(/!!/g, ' ')
 }
 
 function isExternal(module) {
