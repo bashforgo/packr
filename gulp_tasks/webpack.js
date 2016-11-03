@@ -20,7 +20,6 @@ gulp.task('webpack:dist', done => {
 });
 
 gulp.task('webpack:deploy', done => {
-  const webpackDeployConf = require('../conf/webpack-deploy.conf');
   process.env.NODE_ENV = 'production';
   webpackWrapper(false, config('deploy'), done);
 });
