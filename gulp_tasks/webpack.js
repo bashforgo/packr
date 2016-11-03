@@ -4,27 +4,25 @@ const gutil = require('gulp-util');
 const webpack = require('webpack');
 const gulpConf = require('../conf/gulp.conf');
 const browsersync = require('browser-sync');
+const config = require('../conf/webpack-manager.conf');
 
 gulp.task('webpack:dev', done => {
-  const webpackConf = require('../conf/webpack.conf');
-  webpackWrapper(false, webpackConf, done);
+  webpackWrapper(false, config('dev'), done);
 });
 
 gulp.task('webpack:watch', done => {
-  const webpackConf = require('../conf/webpack.conf');
-  webpackWrapper(true, webpackConf, done);
+  webpackWrapper(true, config('dev'), done);
 });
 
 gulp.task('webpack:dist', done => {
-  const webpackDistConf = require('../conf/webpack-dist.conf');
   process.env.NODE_ENV = 'production';
-  webpackWrapper(false, webpackDistConf, done);
+  webpackWrapper(false, config('dist'), done);
 });
 
 gulp.task('webpack:deploy', done => {
   const webpackDeployConf = require('../conf/webpack-deploy.conf');
   process.env.NODE_ENV = 'production';
-  webpackWrapper(false, webpackDeployConf, done);
+  webpackWrapper(false, config('deploy'), done);
 });
 
 function webpackWrapper(watch, conf, done) {

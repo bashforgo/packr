@@ -58,7 +58,8 @@
     "typescript": "^2.0.2",
     "typings": "^1.0.4",
     "url-loader": "^0.5.7",
-    "webpack": "2.1.0-beta.20"
+    "webpack": "2.1.0-beta.20",
+    "webpack-manager": "^2.1.0"
   },
   "scripts": {
     "build": "gulp",
