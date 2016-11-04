@@ -224,35 +224,53 @@ const compact = require('lodash/compact');
 const flow = require('lodash/flow');
 const head = require('lodash/head');
 const indexOf = require('lodash/indexOf');
+const invoke = require('lodash/invoke');
+
+const colors = require('colors');
 
 function handler(percentage, msg) {
   const details = Array.prototype.slice.call(arguments, 2);
   const msgDetails = normalize(details);
   const msgPercentage = padStart(Math.floor(percentage * 100) + '', 3) + '%';
 
-  console.log([msgPercentage, msg, msgDetails].join(' '))
+  console.log(compact([msgPercentage.red, msg.magenta, msgDetails]).join(' - '))
 }
 
 function normalize(details) {
   'use strict';
+  const separator = ' | '.grey;
+  const slashes = /[\/\\]/;
 
-  return map(details.join('!!').split('!'), function(lines) {
-    let meaningfulPath = lines.split(/[\/\\]/);
-    if (includes(meaningfulPath, 'node_modules')) {
-      let nodeModule = meaningfulPath[indexOf(meaningfulPath, 'node_modules') + 1];
-      meaningfulPath = meaningfulPath.slice(-2);
-      if (meaningfulPath[0] !== nodeModule) {
-        meaningfulPath.unshift(nodeModule, '*');
+  if(!details.length) {
+    return null;
+  } else if (details.length === 3) {
+    let [modules, active, path] = details;
+
+    if (path) {
+      const loaderParts = path.split('!');
+
+      if (loaderParts.length) {
+        const [file, ...loaders] = loaderParts.reverse();
+
+        if (file) {
+          var fileOut = file.split(slashes).slice(-2).join('/'.grey);
+        }
+
+        if (loaders.length) {
+          var loaderOut = map(loaders, function(loader) {
+            const loaderParts = loader.split(slashes);
+            return loaderParts[indexOf(loaderParts, 'node_modules') + 1 || loaderParts.length - 1];
+          }).reverse().join('!'.grey)
+        }
+
+        var pathOut = compact([loaderOut, fileOut]).join('!'.red)
       }
-    } else {
-      meaningfulPath = meaningfulPath.slice(-2);
     }
-    return compact(invokeMap(meaningfulPath, flow(
-      String.prototype.split,
-      head,
-      (i) => includes(['index.js', 'loader.js'], i) ? null : i
-    ), '?')).join('/')
-  }).join('!').replace(/!!/g, ' ')
+
+    return compact([padStart(modules, 15).yellow, padStart(active, 10).cyan, pathOut]).join(separator);
+  } else {
+    return details.join(separator);
+  }
 }
 
 function isExternal(module) {
