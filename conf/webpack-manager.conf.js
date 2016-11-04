@@ -224,7 +224,7 @@ const compact = require('lodash/compact');
 const flow = require('lodash/flow');
 const head = require('lodash/head');
 const indexOf = require('lodash/indexOf');
-const invoke = require('lodash/invoke');
+const last = require('lodash/last');
 
 const colors = require('colors');
 
@@ -253,17 +253,26 @@ function normalize(details) {
         const [file, ...loaders] = loaderParts.reverse();
 
         if (file) {
-          var fileOut = file.split(slashes).slice(-2).join('/'.grey);
+          const fileParts = file.split(slashes).slice(-2);
+
+          if (includes(fileParts[1], 'index')) {
+            fileParts.pop();
+            fileParts [0] = fileParts[0].yellow
+          }
+
+          const nodeModule = findNodeModule(file);
+          if (nodeModule && fileParts[0].reset !== nodeModule) {
+            fileParts.unshift(nodeModule, '*'.grey)
+          }
+
+          var fileOut = fileParts.join('/'.grey);
         }
 
-        if (loaders.length) {
-          var loaderOut = map(loaders, function(loader) {
-            const loaderParts = loader.split(slashes);
-            return loaderParts[indexOf(loaderParts, 'node_modules') + 1 || loaderParts.length - 1];
-          }).reverse().join('!'.grey)
-        }
+        var loaderOut = map(loaders, function(loader) {
+          return findNodeModule(loader) || last(loader.split(slashes));
+        }).reverse().join('!'.grey);
 
-        var pathOut = compact([loaderOut, fileOut]).join('!'.red)
+        var pathOut = compact([loaderOut, fileOut]).join('!'.red);
       }
     }
 
@@ -271,6 +280,12 @@ function normalize(details) {
   } else {
     return details.join(separator);
   }
+}
+
+function findNodeModule(path) {
+  const pathParts = path.split(/[\/\\]/);
+  const moduleIndex = indexOf(pathParts, 'node_modules');
+  return moduleIndex >= 0 ? pathParts[moduleIndex + 1] : null;
 }
 
 function isExternal(module) {
