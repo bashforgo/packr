@@ -7,6 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const conf = require('./gulp.conf');
 
+const slashes = /[\/\\]/;
+
 module.exports = function(env) {
   const manager = new Manager();
 
@@ -24,8 +26,7 @@ module.exports = function(env) {
 
   const nodeModules = /node_modules/;
   const src = new RegExp(`${conf.paths.src}`);
-  const slashesR = /(\/|\\)/;
-  const slashes = '(\\/|\\\\)';
+  const slashesS = '[\\/\\\\]';
 
   if (devUp) {
     manager.entry({
@@ -34,7 +35,7 @@ module.exports = function(env) {
   }
 
   manager.debug(true);
-  manager.devtool('source-map');
+  manager.devtool(distUp ? 'hidden-source-map' : 'source-map');
 
   manager.module.preLoaders.add({
     test: ts,
@@ -47,7 +48,7 @@ module.exports = function(env) {
   if (devUp) {
     loaders.add([{
       test: ts,
-      include: new RegExp(`${conf.path.src('app').replace(slashesR, slashes)}`),
+      include: new RegExp(`${conf.path.src('app').replace(slashes, slashesS)}`),
       loader: 'baggage?[file].html=template&[file].scss=styles',
     }])
   }
@@ -69,7 +70,7 @@ module.exports = function(env) {
   if (devUp) {
     loaders.add([{
       test: /\.(png|eot|woff2?|ttf|svg)$/i,
-      loader: `url-loader?limit=${ 100 * 1024 }`
+      loader: `url-loader?limit=${ 100 * 1024 }&name=assets/[name].[hash:5].[ext]`
     }, {
       test: styles,
       include: src,
@@ -116,7 +117,7 @@ module.exports = function(env) {
 
   plugins.add([
     new webpack.ContextReplacementPlugin(
-      new RegExp(`angular${slashes}core${slashes}(esm${slashes}src|src)${slashes}linker`),
+      new RegExp(`angular${slashesS}core${slashesS}(esm${slashesS}src|src)${slashesS}linker`),
       conf.paths.src
     ),
     new webpack.DefinePlugin({
@@ -145,7 +146,7 @@ module.exports = function(env) {
       }),
       new FaviconsWebpackPlugin({
         logo: `./${conf.path.src('assets', 'favicon.png')}`,
-        prefix: 'icons/',
+        prefix: 'assets/icons/',
         icons: dist || deploy ? {
           android: true,
           appleIcon: true,
@@ -183,7 +184,7 @@ module.exports = function(env) {
         comments: false,
         sourceMap: true
       }),
-      new ExtractTextPlugin('[name].[contenthash].css')
+      new ExtractTextPlugin('css/[name].[contenthash].css')
     ])
   }
 
@@ -196,7 +197,7 @@ module.exports = function(env) {
 
   if (distUp) {
     manager.output({
-      filename: '[name].[chunkhash].js',
+      filename: 'js/[name].[chunkhash].js',
       path: path.join(process.cwd(), conf.paths.dist),
       sourceMapFilename: 'maps/[file].map'
     })
@@ -233,13 +234,12 @@ function handler(percentage, msg) {
   const msgDetails = normalize(details);
   const msgPercentage = padStart(Math.floor(percentage * 100) + '', 3) + '%';
 
-  console.log(compact([msgPercentage.red, msg.magenta, msgDetails]).join(' - '))
+  console.log(compact([msgPercentage.red, msg.magenta, msgDetails]).join(' - '.grey))
 }
 
 function normalize(details) {
   'use strict';
   const separator = ' | '.grey;
-  const slashes = /[\/\\]/;
 
   if(!details.length) {
     return null;

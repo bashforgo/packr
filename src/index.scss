@@ -4,10 +4,14 @@ body {
   background-color: $light-grey;
 }
 
-.ui.menu.no-radius {
-  border-radius: 0;
-}
+.ui {
+  &.menu {
+    &.no-radius {
+      border-radius: 0;
+    }
 
-.ui.menu .item > i.icon.no-margin {
-  margin: 0;
+    .item > i.icon.no-margin {
+      margin: 0;
+    }
+  }
 }
