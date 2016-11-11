@@ -19,7 +19,9 @@ module.exports = function(env) {
   const devUp = dev || dist || deploy;
   const distUp = dist || deploy;
 
+  const jsts = /\.[jt]s$/;
   const ts = /\.ts$/;
+  const specs = /\.spec\./;
   const json = /\.json$/;
   const html = /\.html$/;
   const styles = /\.s?css$/;
@@ -39,18 +41,23 @@ module.exports = function(env) {
 
   manager.module.preLoaders.add({
     test: ts,
-    exclude: nodeModules,
+    exclude: test ? nodeModules : specs,
     loader: 'tslint'
   });
 
   const loaders = manager.module.loaders;
 
   if (devUp) {
-    loaders.add([{
+    loaders.add({
       test: ts,
       include: new RegExp(`${conf.path.src('app').replace(slashes, slashesS)}`),
       loader: 'baggage?[file].html=template&[file].scss=styles',
-    }])
+    });
+    loaders.add({
+      test: jsts,
+      include: /semantic-ui-css|ng-semantic/,
+      loader: 'imports?jQuery=jquery'
+    })
   }
 
   loaders.add([{
@@ -60,7 +67,7 @@ module.exports = function(env) {
     ]
   }, {
     test: ts,
-    exclude: test ? nodeModules : /spec\.ts$/,
+    exclude: test ? nodeModules : specs,
     loaders: ['ts']
   }, {
     test: html,
@@ -134,7 +141,6 @@ module.exports = function(env) {
         template: conf.path.src('index.html')
       }),
       new webpack.ProvidePlugin({
-        'jQuery': 'jquery',
         '_': 'lodash'
       }),
       new webpack.optimize.CommonsChunkPlugin({
@@ -146,7 +152,7 @@ module.exports = function(env) {
       }),
       new FaviconsWebpackPlugin({
         logo: `./${conf.path.src('assets', 'favicon.png')}`,
-        prefix: 'assets/icons/',
+        prefix: 'assets/icons-[hash:5]/',
         icons: dist || deploy ? {
           android: true,
           appleIcon: true,
@@ -184,7 +190,7 @@ module.exports = function(env) {
         comments: false,
         sourceMap: true
       }),
-      new ExtractTextPlugin('css/[name].[contenthash].css')
+      new ExtractTextPlugin('css/[name].[contenthash:5].css')
     ])
   }
 
@@ -197,7 +203,7 @@ module.exports = function(env) {
 
   if (distUp) {
     manager.output({
-      filename: 'js/[name].[chunkhash].js',
+      filename: 'js/[name].[chunkhash:5].js',
       path: path.join(process.cwd(), conf.paths.dist),
       sourceMapFilename: 'maps/[file].map'
     })

@@ -9,7 +9,9 @@ import 'semantic-ui-css/components/grid.min.css';
 import 'semantic-ui-css/components/menu.min.css';
 import 'semantic-ui-css/components/image.min.css';
 import 'semantic-ui-css/components/icon.min.css';
-import 'jquery';
+import 'semantic-ui-css/components/input.min.css';
+import 'semantic-ui-css/components/label.min.css';
+import 'semantic-ui-css/components/checkbox.min.css';
 import 'semantic-ui-css/semantic.js';
 // import 'semantic-ui-css/semantic.css';
 

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "target": "es5",
     "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
@@ -8,10 +9,6 @@
     "noImplicitAny": false
   },
   "compileOnSave": false,
-  "filesGlob": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "!typings/**",
-    "!node_modules/**"
-  ]
+  "include": ["/src/**/*.ts"],
+  "exclude": ["*.spec.ts", "typings/**"]
 }

@@ -32,6 +32,8 @@
     "extract-text-webpack-plugin": "^2.0.0-beta.3",
     "favicons-webpack-plugin": "0.0.7",
     "file-loader": "^0.9.0",
+    "generator-fountain-angular2": "^1.0.0-rc1",
+    "generator-fountain-webapp": "^1.0.0-rc1",
     "git-last-commit": "github:speedodevo/git-last-commit",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-filter": "^4.0.0",
@@ -41,6 +43,7 @@
     "gulp-util": "^3.0.7",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.9.0",
+    "imports-loader": "^0.6.5",
     "jasmine": "^2.4.1",
     "json-loader": "^0.5.4",
     "karma": "^1.3.0",
@@ -60,7 +63,8 @@
     "typings": "^1.0.4",
     "url-loader": "^0.5.7",
     "webpack": "2.1.0-beta.20",
-    "webpack-manager": "^2.1.0"
+    "webpack-manager": "^2.1.0",
+    "yo": "^1.8.5"
   },
   "scripts": {
     "build": "gulp",
