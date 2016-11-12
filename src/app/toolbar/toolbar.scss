@@ -1,4 +1,12 @@
+@import '../mixins';
+
 .logo {
   height: 36px;
   width: 36px;
+}
+
+.no-margin {
+  @include increase-specificity(3) {
+    margin: 0;
+  }
 }

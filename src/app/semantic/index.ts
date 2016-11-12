@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { SemanticRadioGroupComponent } from './radio-group/semantic-radio-group';
 import { CommonModule } from '@angular/common';
+import { SemanticInputComponent } from './input/semantic-input';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   declarations: [
-    SemanticRadioGroupComponent
+    SemanticRadioGroupComponent,
+    SemanticInputComponent
   ],
   exports: [
-    SemanticRadioGroupComponent
+    SemanticRadioGroupComponent,
+    SemanticInputComponent
   ]
 })
 export class SemanticModule {

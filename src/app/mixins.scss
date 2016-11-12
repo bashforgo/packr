@@ -1,0 +1,17 @@
+@function repeat($string, $times) {
+  $result: '';
+
+  @for $i from 1 through $times {
+    $result: $result + $string;
+  }
+
+  @return $result;
+}
+
+@mixin increase-specificity($times) {
+  $cmp: &;
+
+  &#{if($times > 0, repeat($cmp, $times), null)} {
+    @content;
+  }
+}

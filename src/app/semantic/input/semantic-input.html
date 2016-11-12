@@ -1,0 +1,12 @@
+<div class="field" [ngClass]="{ error: (!control.valid && control.dirty) }">
+  <div class="ui input {{ innerClass }}"
+       [ngClass]="{'icon': icon, 'error': (!control.valid && control.dirty)}">
+    <label *ngIf="label" class="ui label">{{ label }}</label>
+    <input [type]="type" [ngModel]="value" (ngModelChange)="setValue($event)" (focus)="this.control.markAsTouched()"
+           (input)="this.control.markAsDirty()" placeholder="{{ placeholder }}">
+    <div class="ui pointing red basic label overlay" *ngIf="errorLabels && !control.valid">
+      <span *ngFor="let error of activeErrorLabels">{{ errorLabels[error] }}</span>
+    </div>
+    <i *ngIf="icon" class="{{ icon }} icon"></i>
+  </div>
+</div>

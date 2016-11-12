@@ -3,15 +3,11 @@
     &.no-radius {
       border-radius: 0;
     }
-
-    .item > i.icon.no-margin {
-      margin: 0;
-    }
   }
 
-  &.container {
-    &.spaced {
-      padding: 5em 0;
+  &.button {
+    &.uppercase {
+      text-transform: uppercase;
     }
   }
 }

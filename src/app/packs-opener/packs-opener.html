@@ -1,5 +1,7 @@
-<form novalidate [formGroup]="form">
-  <div class="ui form">
-    <pr-semantic-radio-group [options]="options" formControlName="type"></pr-semantic-radio-group>
-  </div>
+<form novalidate class="ui form stackable center aligned grid" (ngSubmit)="onOpen()" [formGroup]="form">
+  <pr-semantic-input class="six wide column" innerClass="left labeled" type="number" label="#" placeholder="Packs"
+                     [control]="form.controls.amount" [errorLabels]="errors"></pr-semantic-input>
+  <pr-semantic-radio-group class="six wide column radio-group" [options]="options"
+                           formControlName="type"></pr-semantic-radio-group>
+  <sm-button class="three wide column primary uppercase" [disabled]="!form.valid">open</sm-button>
 </form>

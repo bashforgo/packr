@@ -1,0 +1,7 @@
+@import '../mixins';
+
+.spaced.container {
+  @include increase-specificity(1) {
+    padding: 5em 0;
+  }
+}

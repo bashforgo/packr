@@ -1,4 +1,4 @@
-<div class="inline fields">
+<div class="inline fields flat">
   <div class="field" *ngFor="let option of options">
     <div class="ui radio checkbox" (click)="select(option.value)">
       <input checked="{{ selected === option.value ? 'checked' : null }}" type="radio" title="{{ option.label }}">

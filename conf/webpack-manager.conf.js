@@ -39,11 +39,13 @@ module.exports = function(env) {
   manager.debug(true);
   manager.devtool(distUp ? 'hidden-source-map' : 'source-map');
 
-  manager.module.preLoaders.add({
-    test: ts,
-    exclude: test ? nodeModules : specs,
-    loader: 'tslint'
-  });
+  if (distUp) {
+    manager.module.preLoaders.add({
+      test: ts,
+      exclude: test ? nodeModules : specs,
+      loader: 'tslint'
+    });
+  }
 
   const loaders = manager.module.loaders;
 
