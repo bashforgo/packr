@@ -9,6 +9,6 @@
     "noImplicitAny": false
   },
   "compileOnSave": false,
-  "include": ["/src/**/*.ts"],
+  "include": ["src/**/*.ts"],
   "exclude": ["*.spec.ts", "typings/**"]
 }

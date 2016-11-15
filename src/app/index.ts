@@ -10,8 +10,9 @@ import { RootComponent } from './root/root';
 import { ToolbarComponent } from './toolbar/toolbar';
 import { ContentComponent } from './content/content';
 import { PacksOpenerComponent } from './packs-opener/packs-opener';
-import { SemanticModule } from './semantic/index';
+import { SemanticModule } from './semantic';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PacksOpenerService } from './data/packs-opener.service';
 
 @NgModule({
   imports: [
@@ -29,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     PacksOpenerComponent
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF }
+    { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF },
+    PacksOpenerService
   ],
   bootstrap: [RootComponent]
 })
