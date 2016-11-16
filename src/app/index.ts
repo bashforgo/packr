@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
-
 import { NgSemanticModule } from 'ng-semantic';
-
 import { routing } from './root/routes';
 import { MainComponent } from './main/main';
 import { RootComponent } from './root/root';
@@ -12,8 +10,7 @@ import { ContentComponent } from './content/content';
 import { PacksOpenerComponent } from './packs-opener/packs-opener';
 import { SemanticModule } from './semantic';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PacksOpenerService } from './data/packs-opener.service';
-import { PacksGeneratorService } from './data/packs-generator.service';
+import { PacksOpenerService, PacksGeneratorService } from './data';
 
 @NgModule({
   imports: [

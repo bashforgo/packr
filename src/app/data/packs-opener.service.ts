@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { PackType } from './pack-types-enum';
+import { CardSet, CardSets } from './types';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface PacksOpeningEvent {
-  type : PackType;
+  type : CardSet;
   amount : number;
 }
 
 @Injectable()
 export class PacksOpenerService {
   static initial : PacksOpeningEvent = {
-    type: PackType.MSG,
+    type: CardSets.MSG,
     amount: 50
   };
 

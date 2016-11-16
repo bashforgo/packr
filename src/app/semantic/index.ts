@@ -20,3 +20,6 @@ import { FormsModule } from '@angular/forms';
 })
 export class SemanticModule {
 }
+
+export * from './input/semantic-input';
+export * from './radio-group/semantic-radio-group';
