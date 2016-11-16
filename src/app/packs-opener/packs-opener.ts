@@ -4,6 +4,7 @@ import { SemanticRadioGroupOption } from '../semantic/radio-group/semantic-radio
 import { SemanticInputErrorLabel } from '../semantic/input/semantic-input';
 import { PackType } from '../data/pack-types-enum';
 import { PacksOpenerService } from '../data/packs-opener.service';
+import { PacksGeneratorService } from '../data/packs-generator.service';
 
 @Component({
   selector: 'pr-packs-opener',
@@ -12,19 +13,16 @@ import { PacksOpenerService } from '../data/packs-opener.service';
 })
 export class PacksOpenerComponent {
   form : FormGroup;
-  types = PackType.values;
-  options : SemanticRadioGroupOption[] = _.map(this.types, (k, v) => ({ label: v, value: k }));
+  options : SemanticRadioGroupOption[] = _.map(PackType.values, (k, v) => ({ label: v, value: k }));
   errors : SemanticInputErrorLabel = {
     rangeError: 'Should be between 1 and 1000'
   };
 
-  constructor(
-    formBuilder : FormBuilder,
-    private openerService : PacksOpenerService
-  ) {
+  constructor(formBuilder : FormBuilder,
+              private openerService : PacksOpenerService) {
     this.form = formBuilder.group({
-      amount: [50, PacksOpenerComponent.between(0, 1000)],
-      type: this.types[PackType[0]]
+      amount: [PacksOpenerService.initial.amount, PacksOpenerComponent.between(0, 1000)],
+      type: PacksOpenerService.initial.type
     });
   }
 

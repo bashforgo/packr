@@ -3,9 +3,7 @@ export enum PackType {
 }
 
 export namespace PackType {
-  export const values = _.pickBy<_.Dictionary<number>, any>(PackType,
-    _.flow<string, string, string, number, boolean>
-    (_.toNumber, _.isFinite));
+  export const values : {} = _.pickBy(PackType, _.flow<(s : string) => boolean>(_.toNumber, _.isFinite));
 
   export function long(type : PackType) : string {
     switch (type) {

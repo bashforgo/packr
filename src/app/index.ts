@@ -13,6 +13,7 @@ import { PacksOpenerComponent } from './packs-opener/packs-opener';
 import { SemanticModule } from './semantic';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PacksOpenerService } from './data/packs-opener.service';
+import { PacksGeneratorService } from './data/packs-generator.service';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { PacksOpenerService } from './data/packs-opener.service';
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF },
-    PacksOpenerService
+    PacksOpenerService,
+    PacksGeneratorService
   ],
   bootstrap: [RootComponent]
 })
