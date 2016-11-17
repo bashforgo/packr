@@ -3,7 +3,6 @@
 .overlay {
   @include increase-specificity(1) {
     position: absolute;
-    top: calc(100% + 0.6em);
+    top: calc(-100% - 0.6em);
   }
 }
-

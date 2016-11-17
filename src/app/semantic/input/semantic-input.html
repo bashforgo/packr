@@ -4,7 +4,7 @@
     <label *ngIf="label" class="ui label">{{ label }}</label>
     <input [type]="type" [ngModel]="value" (ngModelChange)="setValue($event)" (focus)="this.control.markAsTouched()"
            (input)="this.control.markAsDirty()" placeholder="{{ placeholder }}">
-    <div class="ui pointing red basic label overlay" *ngIf="errorLabels && !control.valid">
+    <div class="ui pointing below red basic label overlay" *ngIf="errorLabels && !control.valid">
       <span *ngFor="let error of activeErrorLabels">{{ errorLabels[error] }}</span>
     </div>
     <i *ngIf="icon" class="{{ icon }} icon"></i>
