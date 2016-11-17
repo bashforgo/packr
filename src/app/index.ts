@@ -11,6 +11,7 @@ import { PacksOpenerComponent } from './packs-opener/packs-opener';
 import { SemanticModule } from './semantic';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PacksOpenerService, PacksGeneratorService } from './data';
+import { TabsComponent } from './tabs/tabs';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { PacksOpenerService, PacksGeneratorService } from './data';
   declarations: [
     RootComponent,
     MainComponent,
+    TabsComponent,
     ToolbarComponent,
     ContentComponent,
     PacksOpenerComponent
