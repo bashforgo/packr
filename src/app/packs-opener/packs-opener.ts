@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { SemanticRadioGroupOption, SemanticInputErrorLabel } from '../semantic';
-import { CardSet, CardSets } from '../data/types';
+import { CardSet } from '../data/types';
 import { PacksOpenerService } from '../data';
 
 @Component({
@@ -11,7 +11,7 @@ import { PacksOpenerService } from '../data';
 })
 export class PacksOpenerComponent {
   form : FormGroup;
-  options : SemanticRadioGroupOption[] = _.map(_.values<CardSet>(CardSets.list()), (k, v) => ({ label: k, value: k }));
+  options : SemanticRadioGroupOption[] = _.map(_.values<CardSet>(CardSet.list()), (k, v) => ({ label: CardSet.label(k), value: k }));
   errors : SemanticInputErrorLabel = {
     rangeError: 'Should be between 1 and 1000'
   };

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CardSet, CardSets } from './types';
+import { CardSet } from './types';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 export interface PacksOpeningEvent {
@@ -10,7 +10,7 @@ export interface PacksOpeningEvent {
 @Injectable()
 export class PacksOpenerService {
   static initial : PacksOpeningEvent = {
-    type: CardSets.MSG,
+    type: CardSet.MSG,
     amount: 50
   };
 

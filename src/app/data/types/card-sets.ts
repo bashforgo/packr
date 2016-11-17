@@ -1,24 +1,25 @@
-export type CardSet = 'MSG' | 'WOG' | 'TGT' | 'CLASSIC'
+export type CardSet = 'MSG' | 'OG' | 'TGT' | 'EXPERT1';
+export type CardSetLabel = 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
 
-class SetsFactory {
-  MSG : CardSet = 'MSG';
-  WOG : CardSet = 'WOG';
-  TGT : CardSet = 'TGT';
-  CLASSIC : CardSet = 'CLASSIC';
-  private _long = {
-    [this.MSG]: 'Mean Streets of Gadgetzan',
-    [this.WOG]: 'Whispers of the Old Gods',
-    [this.TGT]: 'The Grand Tournament',
-    [this.CLASSIC]: 'Classic'
+export namespace CardSet {
+  export const MSG : CardSet = 'MSG';
+  export const WOG : CardSet = 'OG';
+  export const TGT : CardSet = 'TGT';
+  export const CLASSIC : CardSet = 'EXPERT1';
+  const _long = {
+    [MSG]: 'Mean Streets of Gadgetzan',
+    [WOG]: 'Whispers of the Old Gods',
+    [TGT]: 'The Grand Tournament',
+    [CLASSIC]: 'Classic'
+  };
+  const _labels = {
+    [MSG]: <CardSetLabel>'MSG',
+    [WOG]: <CardSetLabel>'WOG',
+    [TGT]: <CardSetLabel>'TGT',
+    [CLASSIC]: <CardSetLabel>'CLASSIC'
   };
 
-  long(s : CardSet) {
-    return this._long[s];
-  }
-
-  list() {
-    return _.keys(this._long);
-  }
+  export const long = (s : CardSet) => _long[s];
+  export const list = () => _.keys(_long);
+  export const label = (s : CardSet) : CardSetLabel => _labels[s];
 }
-
-export const CardSets = new SetsFactory();

@@ -18,25 +18,19 @@ class HeapNode {
 class WeightedHeap {
   heap : Array<HeapNode|null>;
 
-  constructor(items : HeapValue[], weighter : HeapValueWeighter, private _generator : () => number = Math.random) {
+  constructor(items : HeapValue[], private weighter : HeapValueWeighter, private _generator : () => number = Math.random) {
     this.heap = [null];
 
     // Put everything on the heap
-    items.forEach(i => this.push(new HeapNode(i, weighter)));
+    items.forEach(i => this._push(new HeapNode(i, weighter)));
   }
 
   gen(n : number, andRemove : boolean = false) {
     return Array(n).fill(0).map(() => this[andRemove ? 'pop' : 'peek']());
   }
 
-  push(item : HeapNode) {
-    const i = this.heap.push(item) - 1;
-
-    let parentI = i >> 1;
-    while (parentI > 0) {
-      this.heap[parentI].total += this.heap[i].total;
-      parentI >>= 1;
-    }
+  push(i : HeapValue) {
+    this._push(new HeapNode(i, this.weighter));
   }
 
   pop() {
@@ -57,6 +51,16 @@ class WeightedHeap {
 
   peek() {
     return this.heap[this._peek()].o;
+  }
+
+  private _push(item : HeapNode) {
+    const i = this.heap.push(item) - 1;
+
+    let parentI = i >> 1;
+    while (parentI > 0) {
+      this.heap[parentI].total += this.heap[i].total;
+      parentI >>= 1;
+    }
   }
 
   private _peek() {
@@ -81,17 +85,17 @@ class WeightedHeap {
   }
 }
 
-type RandomListItem = any;
-interface RandomListItemWeighter {
+// type RandomListItem = any;
+interface RandomListItemWeighter<RandomListItem> {
   (v : RandomListItem) : number;
 }
 
-export default class BiasedRandomList {
+export default class BiasedRandomList<RandomListItem> {
   private _items : RandomListItem[] = [];
   private _heap : WeightedHeap;
 
   constructor(weightedObjects : RandomListItem[] = [],
-              public weighter : RandomListItemWeighter = (o => typeof o.weight === 'undefined' ? 1 : o.weight)) {
+              public weighter : RandomListItemWeighter<any> = (o => typeof o.weight === 'undefined' ? 1 : o.weight)) {
     weightedObjects.forEach(obj => this.push(obj));
     this._heap = this._createHeap();
   }
@@ -120,7 +124,7 @@ export default class BiasedRandomList {
   peek(n : number = 1, andRemove : any = false) {
     andRemove = !!andRemove;
 
-    if (this.length - n < 0) {
+    if (andRemove && this.length - n < 0) {
       throw new Error(
         `Stack underflow! Tried to retrieve ${n} element${n === 1 ? '' : 's'} from a list of ${this.length}`
       );
