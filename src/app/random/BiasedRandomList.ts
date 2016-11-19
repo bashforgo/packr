@@ -90,12 +90,13 @@ interface RandomListItemWeighter<RandomListItem> {
   (v : RandomListItem) : number;
 }
 
-export default class BiasedRandomList<RandomListItem> {
+export class BiasedRandomList<RandomListItem> {
   private _items : RandomListItem[] = [];
   private _heap : WeightedHeap;
 
   constructor(weightedObjects : RandomListItem[] = [],
-              public weighter : RandomListItemWeighter<any> = (o => typeof o.weight === 'undefined' ? 1 : o.weight)) {
+              private weighter : RandomListItemWeighter<any> = (o => typeof o.weight === 'undefined' ? 1 : o.weight),
+              private generator : () => number = Math.random) {
     weightedObjects.forEach(obj => this.push(obj));
     this._heap = this._createHeap();
   }
@@ -124,7 +125,7 @@ export default class BiasedRandomList<RandomListItem> {
   peek(n : number = 1, andRemove : any = false) {
     andRemove = !!andRemove;
 
-    if (andRemove && this.length - n < 0) {
+    if ((andRemove || !this.length) && this.length - n < 0) {
       throw new Error(
         `Stack underflow! Tried to retrieve ${n} element${n === 1 ? '' : 's'} from a list of ${this.length}`
       );
@@ -151,6 +152,6 @@ export default class BiasedRandomList<RandomListItem> {
   }
 
   private _createHeap() {
-    return new WeightedHeap(this._items, this.weighter);
+    return new WeightedHeap(this._items, this.weighter, this.generator);
   }
 }
