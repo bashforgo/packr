@@ -1,18 +1,18 @@
 import { Injectable } from '@angular/core';
-import { CardSet, Card, Rarity } from './types';
+import { CardSet, JSONCard, Rarity } from './types';
 import { PacksOpenerService } from './packs-opener.service';
-import MemoizedFunction = _.MemoizedFunction;
-import BiasedRandomList from '../helper/BiasedRandomList';
+import { RandomList } from '../random';
 
+type Card = JSONCard;
 export type CardsAccessor = {
   all: Card[];
   filtered: _.Dictionary<Card[]>;
-  rand: _.Dictionary<BiasedRandomList<Card>>;
+  rand: _.Dictionary<RandomList<Card>>;
 }
 
 @Injectable()
 export class CardsService {
-  filterType : ((type : CardSet) => CardsAccessor) & MemoizedFunction;
+  filterType : ((type : CardSet) => CardsAccessor) & _.MemoizedFunction;
   currentSet = this.pos.events
     .map(poe => this.filterType(poe.type));
   private _cards = _.filter(require('./cards.json'), (c : Card) => _.includes(CardSet.list(), c.set));
@@ -31,11 +31,7 @@ export class CardsService {
       },
       {}
     );
-    const rand = _.mapValues<Card[], BiasedRandomList<Card>>(filtered, f => new BiasedRandomList(f, _.constant(1)));
-    return {
-      all,
-      filtered,
-      rand
-    };
+    const rand = _.mapValues<Card[], RandomList<Card>>(filtered, f => new RandomList(f));
+    return { all, filtered, rand };
   }
 }

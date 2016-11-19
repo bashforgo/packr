@@ -10,8 +10,8 @@ export interface PacksOpeningEvent {
 @Injectable()
 export class PacksOpenerService {
   static initial : PacksOpeningEvent = {
-    type: CardSet.MSG,
-    amount: 50
+    type: CardSet.WOG,
+    amount: 1
   };
 
   public events : Observable<PacksOpeningEvent>;
@@ -27,5 +27,9 @@ export class PacksOpenerService {
 
   current() {
     return this._events.getValue();
+  }
+
+  debug() {
+    this.events.subscribe(d => console.log('poe', d));
   }
 }
