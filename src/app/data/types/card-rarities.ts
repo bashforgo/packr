@@ -1,5 +1,11 @@
 export type Rarity = 'COMMON' | 'RARE' | 'EPIC' | 'LEGENDARY';
 export type ShortRarity = 'comn' | 'rare' | 'epic' | 'lgnd';
+export type ShortRarityDictionary<T> = {
+  comn : T;
+  rare : T;
+  epic : T;
+  lgnd : T
+}
 
 export namespace Rarity {
   export const COMMON : Rarity = 'COMMON';
@@ -14,10 +20,10 @@ export namespace Rarity {
     [LEGENDARY]: <ShortRarity>'lgnd'
   };
   const _shortBack = {
-    'comn': COMMON,
-    'rare': RARE,
-    'epic': EPIC,
-    'lgnd': LEGENDARY
+    comn: COMMON,
+    rare: RARE,
+    epic: EPIC,
+    lgnd: LEGENDARY
   };
 
   export const short = (r : Rarity) => _short[r];
@@ -25,3 +31,5 @@ export namespace Rarity {
   export const list = () => _.keys(_short);
   export const shortList = () => _.keys(_shortBack);
 }
+
+export type Cost = 'gold' | 'norm';

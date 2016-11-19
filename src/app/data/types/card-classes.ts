@@ -40,4 +40,4 @@ export namespace PlayerMultiClass {
   export const classesBack = (c : PlayerClass)  => _classesBack[c];
 }
 
-export type CardClass = PlayerClass | PlayerMultiClass;
+export type CardClass = PlayerClass | PlayerMultiClass | 'NEUTRAL';
