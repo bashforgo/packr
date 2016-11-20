@@ -12,5 +12,6 @@ export interface DisplayCard {
   rarity: ShortRarity;
   cost: Cost;
   cardClass: CardClass;
+  extra?: boolean;
   detail?: JSONCard;
 }

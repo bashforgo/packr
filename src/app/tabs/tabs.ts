@@ -9,6 +9,7 @@ export class TabsComponent {
   private events;
   constructor(public pgs : PacksGeneratorService, cs: CollectionService) {
     // this.events = pgs.events.map(ps => _.map(ps, p => _.map<any, any>(p, c => _.omit(c, 'detail'))));
-    this.events = cs.events;
+    this.events = cs.packs.map(ps => _.map(ps, p => _.map<any, any>(p, c => _.omit(c, 'detail'))));
+    // this.events = cs.events;
   }
 }

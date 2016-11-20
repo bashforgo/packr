@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
 import { PacksOpenerService } from './packs-opener.service';
-import { ShortRarityDictionary, Cost, ShortRarity, DisplayCard } from './types';
+import { ShortRarityDictionary, Cost, ShortRarity, DisplayCard, Packs, Pack } from './types';
 import { PacksOpeningEvent, CardsService, CardsAccessor } from './';
 import { Observable, ReplaySubject } from 'rxjs';
 import { MersenneRandomList, Generator } from '../random';
 
 type Card = DisplayCard;
-type Pack = [Card, Card, Card, Card, Card];
-type Packs = Pack[];
 type CountByRarity = ShortRarityDictionary<number>;
 type CountByCost = { norm : CountByRarity, gold : CountByRarity };
 type GeneratorState = {

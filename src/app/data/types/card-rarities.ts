@@ -25,11 +25,22 @@ export namespace Rarity {
     epic: EPIC,
     lgnd: LEGENDARY
   };
+  const _maxAmount = {
+    comn: 2,
+    rare: 2,
+    epic: 2,
+    lgnd: 1
+  };
 
   export const short = (r : Rarity) => _short[r];
   export const shortBack = (r : ShortRarity) => _shortBack[r];
   export const list = () => _.keys(_short);
   export const shortList = () => _.keys(_shortBack);
+  export const max = (r : ShortRarity) => _maxAmount[r];
 }
 
 export type Cost = 'gold' | 'norm';
+export type CostDictionary<T> = {
+  gold? : T,
+  norm? : T
+}

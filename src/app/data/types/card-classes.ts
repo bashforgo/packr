@@ -36,8 +36,23 @@ export namespace PlayerMultiClass {
     [PlayerClass.SHAMAN]: LOTUS
   };
 
-  export const classes = (c : PlayerMultiClass)  => _classes[c];
-  export const classesBack = (c : PlayerClass)  => _classesBack[c];
+  export const classes = (c : PlayerMultiClass) => _classes[c];
+  export const classesBack = (c : PlayerClass) => _classesBack[c];
 }
 
 export type CardClass = PlayerClass | PlayerMultiClass | 'NEUTRAL';
+export type CardClassDictionary<T> = {
+  HUNTER? : T,
+  PALADIN? : T,
+  WARRIOR? : T,
+  MAGE? : T,
+  PRIEST? : T,
+  WARLOCK? : T,
+  DRUID? : T,
+  ROGUE? : T,
+  SHAMAN? : T,
+  GOONS? : T,
+  KABAL? : T,
+  LOTUS? : T,
+  NEUTRAL? : T,
+}
