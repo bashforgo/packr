@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { CardSet, JSONCard, Rarity } from './types';
 import { PacksOpenerService } from './packs-opener.service';
 import { RandomList } from '../random';
+import Dictionary = _.Dictionary;
 
 type Card = JSONCard;
 export type CardsAccessor = {
-  all: Card[];
-  filtered: _.Dictionary<Card[]>;
-  rand: _.Dictionary<RandomList<Card>>;
+  all : Dictionary<Card>;
+  filtered : Dictionary<Card[]>;
+  rand : Dictionary<RandomList<Card>>;
 }
 
 @Injectable()
@@ -21,9 +22,12 @@ export class CardsService {
     this.filterType = _.memoize(this._filterType);
   }
 
-  private _filterType(type : CardSet) {
-    const all = _.filter<any, Card>(this._cards, { set: type });
-    const filtered = _.reduce<string, _.Dictionary<Card[]>>(
+  private _filterType(type : CardSet) : CardsAccessor {
+    const all = _(this._cards)
+      .filter({ set: type })
+      .transform((res, card) => res[card.name] = card, {})
+      .value() as Dictionary<Card>;
+    const filtered = _.reduce<string, Dictionary<Card[]>>(
       Rarity.list(),
       (res : {}, r : Rarity) => {
         res[Rarity.short(r)] = _.filter(all, { rarity: r });

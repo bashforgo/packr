@@ -10,16 +10,16 @@ import { ContentComponent } from './content/content';
 import { PacksOpenerComponent } from './packs-opener/packs-opener';
 import { SemanticModule } from './semantic';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PacksOpenerService, PacksGeneratorService, CardsService, CollectionService } from './data';
+import { PacksOpenerService, PacksGeneratorService, CardsService, CollectionService, StatsService } from './data';
 import { TabsComponent } from './tabs/tabs';
 import { OneMoreComponent } from './one-more/one-more';
 
 @NgModule({
   imports: [
-    BrowserModule,
     routing,
-    NgSemanticModule,
+    BrowserModule,
     SemanticModule,
+    NgSemanticModule,
     ReactiveFormsModule
   ],
   declarations: [
@@ -33,10 +33,11 @@ import { OneMoreComponent } from './one-more/one-more';
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF },
-    PacksOpenerService,
-    PacksGeneratorService,
     CardsService,
-    CollectionService
+    StatsService,
+    CollectionService,
+    PacksOpenerService,
+    PacksGeneratorService
   ],
   bootstrap: [RootComponent]
 })

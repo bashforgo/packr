@@ -29,8 +29,7 @@ export class PacksOpenerService {
         this._currentAdder = new BehaviorSubject(0);
 
         return this._currentAdder
-          .scan((prev, curr) => prev + curr, 0)
-          .do(n => console.log('adder', n));
+          .scan((prev, curr) => prev + curr, 0);
       });
 
     this.addEvents = this._addEvents.share();

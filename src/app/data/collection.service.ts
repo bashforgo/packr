@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PacksGeneratorService } from './';
 import { DisplayCard, Packs, CardClassDictionary, CostDictionary, Rarity } from './types';
-import { Observable } from 'rxjs';
 import Dictionary = _.Dictionary;
 
 type Card = DisplayCard;
@@ -27,7 +26,7 @@ export class CollectionService {
                 _.set(collection, path, count + 1);
 
                 return {
-                  extra: Rarity.max(rarity) <= count,
+                  extra: Rarity.isExtra(rarity, count + 1),
                   cardClass, cost, detail, name, rarity
                 };
               }).value()
