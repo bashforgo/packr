@@ -12,6 +12,7 @@ import { SemanticModule } from './semantic';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PacksOpenerService, PacksGeneratorService, CardsService } from './data';
 import { TabsComponent } from './tabs/tabs';
+import { OneMoreComponent } from './one-more/one-more';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { TabsComponent } from './tabs/tabs';
     TabsComponent,
     ToolbarComponent,
     ContentComponent,
+    OneMoreComponent,
     PacksOpenerComponent
   ],
   providers: [
