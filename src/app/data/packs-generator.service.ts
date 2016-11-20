@@ -2,15 +2,16 @@ import { Injectable } from '@angular/core';
 import { PacksOpenerService } from './packs-opener.service';
 import { ShortRarityDictionary, Cost, ShortRarity, DisplayCard } from './types';
 import { PacksOpeningEvent, CardsService, CardsAccessor } from './';
-import { Observable, BehaviorSubject, ReplaySubject } from 'rxjs';
+import { Observable, ReplaySubject } from 'rxjs';
 import { MersenneRandomList, Generator } from '../random';
 
 type Card = DisplayCard;
 type Pack = [Card, Card, Card, Card, Card];
+type Packs = Pack[];
 type CountByRarity = ShortRarityDictionary<number>;
 type CountByCost = { norm : CountByRarity, gold : CountByRarity };
 type GeneratorState = {
-  packs : Pack[],
+  packs : Packs,
   cards : CardsAccessor,
   amount : number,
   counts : CountByCost
@@ -20,37 +21,26 @@ const goldDrops = <CountByRarity>{ comn: 2.0637, rare: 5.5395, epic: 4.5173, lgn
 
 @Injectable()
 export class PacksGeneratorService {
-  public events : Observable<Pack[]>;
-  private _resetEvent : Observable<GeneratorState>;
-  private _addEvent : Observable<{ amount : number }>;
-  private _events : Observable<GeneratorState>;
+  public events : Observable<Packs>;
 
   constructor(private cs : CardsService,
               private pos : PacksOpenerService) {
-    this._resetEvent = Observable
-      .zip(pos.events, cs.currentSet)
-      .map(PacksGeneratorService.reset)
-      .multicast(() => new ReplaySubject<GeneratorState>(1))
+    this.events = pos.addEvents
+      .withLatestFrom(Observable
+        .zip(pos.events, cs.currentSet)
+        .map(PacksGeneratorService.reset)
+      )
+      .map(([added, state] : [number, GeneratorState]) => {
+        const {amount, cards, counts, packs} = state;
+        return state.packs = [...state.packs, ...PacksGeneratorService.packGen({
+          amount: amount + added, cards, counts, packs
+        })];
+      })
+      .multicast(() => new ReplaySubject<Packs>(1))
       .refCount();
-
-    this._addEvent = this._resetEvent
-      .switchMap(() => new BehaviorSubject({ amount: 0 }));
-
-    this._events = Observable
-      .combineLatest(this._resetEvent, this._addEvent)
-      .map(([s, a] : [GeneratorState, any]) => {
-        s.amount += a.amount;
-        s.packs = [...s.packs, ...PacksGeneratorService.packGen(s)];
-        return s;
-      });
-
-    this.events = this._events
-      .map((s : GeneratorState) => s.packs);
   }
 
   debug() {
-    this._resetEvent.subscribe(d => console.log('reset', d));
-    this._events.subscribe(d => console.log('_evs', d));
     this.events.subscribe(d => console.log('evs', d));
   }
 
@@ -66,7 +56,7 @@ export class PacksGeneratorService {
     };
   }
 
-  private static packGen(state : GeneratorState) : Pack[] {
+  private static packGen(state : GeneratorState) : Packs {
     const { cardGen, rarityGen } = PacksGeneratorService;
 
     return _.map(Array(state.amount - state.packs.length).fill(0), () => {
@@ -91,6 +81,7 @@ export class PacksGeneratorService {
       name: detail.name,
       rarity,
       cost,
+      cardClass: detail.playerClass || 'NEUTRAL',
       detail
     };
   }
