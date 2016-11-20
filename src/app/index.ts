@@ -10,7 +10,7 @@ import { ContentComponent } from './content/content';
 import { PacksOpenerComponent } from './packs-opener/packs-opener';
 import { SemanticModule } from './semantic';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PacksOpenerService, PacksGeneratorService, CardsService } from './data';
+import { PacksOpenerService, PacksGeneratorService, CardsService, CollectionService } from './data';
 import { TabsComponent } from './tabs/tabs';
 import { OneMoreComponent } from './one-more/one-more';
 
@@ -35,7 +35,8 @@ import { OneMoreComponent } from './one-more/one-more';
     { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF },
     PacksOpenerService,
     PacksGeneratorService,
-    CardsService
+    CardsService,
+    CollectionService
   ],
   bootstrap: [RootComponent]
 })

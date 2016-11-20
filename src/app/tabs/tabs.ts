@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PacksGeneratorService } from '../data';
+import { PacksGeneratorService, CollectionService } from '../data';
 
 @Component({
   selector: 'pr-tabs',
@@ -7,7 +7,8 @@ import { PacksGeneratorService } from '../data';
 })
 export class TabsComponent {
   private events;
-  constructor(public pgs : PacksGeneratorService) {
-    this.events = pgs.events.map(ps => _.map(ps, p => _.map<any, any>(p, c => _.omit(c, 'detail'))));
+  constructor(public pgs : PacksGeneratorService, cs: CollectionService) {
+    // this.events = pgs.events.map(ps => _.map(ps, p => _.map<any, any>(p, c => _.omit(c, 'detail'))));
+    this.events = cs.events;
   }
 }
