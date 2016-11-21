@@ -3,7 +3,7 @@ import { PacksOpenerService } from './packs-opener.service';
 import { ShortRarityDictionary, Cost, ShortRarity, DisplayCard, Packs, Pack } from './types';
 import { PacksOpeningEvent, CardsService, CardsAccessor } from './';
 import { Observable, ReplaySubject } from 'rxjs';
-import { MersenneRandomList, Generator } from '../random';
+import { MersenneRandomList, Generator } from '../util/random';
 
 type Card = DisplayCard;
 type CountByRarity = ShortRarityDictionary<number>;

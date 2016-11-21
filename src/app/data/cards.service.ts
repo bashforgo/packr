@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
-import { CardSet, JSONCard, Rarity } from './types';
+import { CardSet, JSONCard, Rarity, CostDictionary, ShortRarity } from './types';
 import { PacksOpenerService } from './packs-opener.service';
-import { RandomList } from '../random';
+import { RandomList } from '../util/random';
 import Dictionary = _.Dictionary;
 
 type Card = JSONCard;
 export type CardsAccessor = {
   all : Dictionary<Card>;
-  filtered : Dictionary<Card[]>;
-  rand : Dictionary<RandomList<Card>>;
+  filtered : CostDictionary<Card[]>;
+  rand : CostDictionary<RandomList<Card>>;
+  target : CostDictionary<number>;
 }
 
 @Injectable()
@@ -27,6 +28,7 @@ export class CardsService {
       .filter({ set: type })
       .transform((res, card) => res[card.name] = card, {})
       .value() as Dictionary<Card>;
+
     const filtered = _.reduce<string, Dictionary<Card[]>>(
       Rarity.list(),
       (res : {}, r : Rarity) => {
@@ -35,7 +37,13 @@ export class CardsService {
       },
       {}
     );
+
     const rand = _.mapValues<Card[], RandomList<Card>>(filtered, f => new RandomList(f));
-    return { all, filtered, rand };
+
+    const target = _(filtered)
+      .mapValues((cs : Card[], r : ShortRarity) => cs.length * Rarity.max(r))
+      .value();
+
+    return { all, filtered, rand, target };
   }
 }
