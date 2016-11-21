@@ -41,6 +41,11 @@ export namespace Rarity {
 }
 
 export type Cost = 'gold' | 'norm';
+
+export namespace Cost {
+  export const other = (c : Cost) => c === 'gold' ? 'norm' : 'gold';
+}
+
 export type CostDictionary<T> = {
   gold? : T,
   norm? : T
