@@ -1,15 +1,15 @@
 export type Comparison = -1 | 0 | 1;
 export type Comparator<T> = (a : T, b : T) => Comparison;
 
-const defaultComparator = ((a, b) => { return _.clamp(a - b, -1, 1); }) as Comparator<any>;
-
 export class KHeap<T> {
+  public static defaultComparator = ((a, b) => _.clamp(a - b, -1, 1)) as Comparator<any>;
+
   private heap = [];
   private _sorted = [];
   private changed = false;
 
   //k sized heap built from arr that uses comparator to compare items
-  constructor(private k : number, arr : T[] = null, private comparator : Comparator<T> = defaultComparator) {
+  constructor(private k : number, arr : T[] = null, private comparator : Comparator<T> = KHeap.defaultComparator) {
     if (arr) {
       _.each(arr, el => this.push(el));
     }
@@ -25,12 +25,12 @@ export class KHeap<T> {
 
   push(item : T) : T | null {
     //puts the item on the heap
-    let size = this.heap.push(item);
+    const size = this.heap.push(item);
     let current = size - 1;
 
     //retain heap property
     while (current > 0) {
-      let parent = Math.floor((current - 1) / 2);
+      const parent = Math.floor((current - 1) / 2);
 
       if (this.compare(current, parent) <= 0) { break; }
 
@@ -39,16 +39,16 @@ export class KHeap<T> {
     }
 
     //pop one if too big
-    let popped = size > this.k ? this.pop() : null;
-    this.changed = popped !== item;
+    const popped = size > this.k ? this.pop() : null;
+    this.changed = this.changed || popped !== item;
     return popped;
   }
 
   pop() : T {
     //removes the top of the heap
-    let first = this.peek();
-    let last = this.heap.pop();
-    let size = this.length;
+    const first = this.peek();
+    const last = this.heap.pop();
+    const size = this.length;
 
     if (size === 0) { return first; }
 
@@ -58,8 +58,8 @@ export class KHeap<T> {
     //retain heap property
     while (current < size) {
       let largest = current;
-      let left = (2 * current) + 1;
-      let right = (2 * current) + 2;
+      const left = (2 * current) + 1;
+      const right = (2 * current) + 2;
 
       if (left < size && this.compare(left, largest) >= 0) {
         largest = left;
@@ -102,7 +102,7 @@ export class KHeap<T> {
   }
 
   swap(i : number, j : number) {
-    let temp = this.heap[i];
+    const temp = this.heap[i];
     this.heap[i] = this.heap[j];
     this.heap[j] = temp;
   }
