@@ -1,0 +1,15 @@
+@import '../mixins';
+$black: #000;
+
+.item {
+  outline: none;
+
+  @include increase-specificity(3) {
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparentize($black, 0.92);
+    }
+  };
+}

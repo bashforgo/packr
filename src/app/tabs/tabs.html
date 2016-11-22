@@ -1,2 +1,6 @@
-<pr-one-more></pr-one-more>
-<pre>{{ events | async | json }}</pre>
+<div class="ui secondary pointing menu">
+  <button type="button" class="item" *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
+    {{ tab.tabTitle }}
+  </button>
+</div>
+<ng-content></ng-content>

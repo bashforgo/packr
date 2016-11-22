@@ -16,6 +16,7 @@ import {
 } from './data';
 import { TabsComponent } from './tabs/tabs';
 import { OneMoreComponent } from './one-more/one-more';
+import { TabComponent } from './tabs/tab';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { OneMoreComponent } from './one-more/one-more';
     ReactiveFormsModule
   ],
   declarations: [
+    TabComponent,
     RootComponent,
     MainComponent,
     TabsComponent,
