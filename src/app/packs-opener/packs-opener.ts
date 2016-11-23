@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { SemanticRadioGroupOption, SemanticInputErrorLabel } from '../semantic';
 import { CardSet } from '../data/types';
@@ -6,6 +6,7 @@ import { PacksOpenerService } from '../data';
 
 @Component({
   selector: 'pr-packs-opener',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template,
   styles
 })

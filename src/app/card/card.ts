@@ -1,8 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ShortRarity, Cost, ShortRarityDictionary } from '../data/types';
 
 @Component({
   selector: 'pr-card',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template,
   styles
 })

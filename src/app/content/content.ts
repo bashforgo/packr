@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'pr-content',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template,
   styles
 })
