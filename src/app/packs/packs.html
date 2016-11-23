@@ -1,5 +1,25 @@
+<h2 class="ui header">
+  <i class="sort numeric descending icon"></i>
+  <span class="content">
+    Best packs
+    <span class="sub header">Sorted by disenchant value</span>
+  </span>
+</h2>
 <div class="ui padded collapsed grid">
-  <div class="ui collapsed row" *ngFor="let pack of cs.packs | async; let $index = index">
+  <div class="six column doubling collapsed row" *ngFor="let pack of bps.events | async">
+    <pr-card class="column" [name]="card.name" [rarity]="card.rarity" [cost]="card.cost"
+             *ngFor="let card of pack.pack"></pr-card>
+    <div><div class="ui basic centered mini segment">Disenchant value: {{ pack.dust }}</div></div>
+  </div>
+</div>
+<h2 class="ui header">
+  <i class="bars icon"></i>
+  <span class="content">
+    Full list
+  </span>
+</h2>
+<div class="ui padded collapsed grid">
+  <div class="ui twice collapsed row" *ngFor="let pack of cs.packs | async; let $index = index">
     <div class="one wide centered column"><div class="ui mini basic centered segment">{{ $index + 1 }}</div></div>
     <div class="ui fifteen wide column">
       <div class="ui collapsed grid">
@@ -9,5 +29,44 @@
         </div>
       </div>
     </div>
+  </div>
+</div>
+<div class="ui grid">
+  <div class="four column row">
+    <div class="right floated column">
+      <pr-one-more class="one-more"></pr-one-more>
+    </div>
+  </div>
+</div>
+<h3 class="ui header">
+  <i class="question icon"></i>
+  <span class="content">
+    Legend
+  </span>
+</h3>
+<div class="ui padded collapsed grid">
+  <div class="four column doubling collapsed row">
+    <pr-card class="column" [name]="'Regular Common'" [rarity]="'comn'" [cost]="'norm'"></pr-card>
+    <pr-card class="column" [name]="'Regular Rare'" [rarity]="'rare'" [cost]="'norm'"></pr-card>
+    <pr-card class="column" [name]="'Regular Epic'" [rarity]="'epic'" [cost]="'norm'"></pr-card>
+    <pr-card class="column" [name]="'Regular Legendary'" [rarity]="'lgnd'" [cost]="'norm'"></pr-card>
+  </div>
+  <div class="four column doubling collapsed row">
+    <pr-card class="column" [name]="'Golden Common'" [rarity]="'comn'" [cost]="'gold'"></pr-card>
+    <pr-card class="column" [name]="'Golden Rare'" [rarity]="'rare'" [cost]="'gold'"></pr-card>
+    <pr-card class="column" [name]="'Golden Epic'" [rarity]="'epic'" [cost]="'gold'"></pr-card>
+    <pr-card class="column" [name]="'Golden Legendary'" [rarity]="'lgnd'" [cost]="'gold'"></pr-card>
+  </div>
+  <div class="four column doubling collapsed row">
+    <pr-card class="column" [name]="'Extra Regular Common'" [rarity]="'comn'" [cost]="'norm'" [extra]="true"></pr-card>
+    <pr-card class="column" [name]="'Extra Regular Rare'" [rarity]="'rare'" [cost]="'norm'" [extra]="true"></pr-card>
+    <pr-card class="column" [name]="'Extra Regular Epic'" [rarity]="'epic'" [cost]="'norm'" [extra]="true"></pr-card>
+    <pr-card class="column" [name]="'Extra Regular Legendary'" [rarity]="'lgnd'" [cost]="'norm'" [extra]="true"></pr-card>
+  </div>
+  <div class="four column doubling collapsed row">
+    <pr-card class="column" [name]="'Extra Golden Common'" [rarity]="'comn'" [cost]="'gold'" [extra]="true"></pr-card>
+    <pr-card class="column" [name]="'Extra Golden Rare'" [rarity]="'rare'" [cost]="'gold'" [extra]="true"></pr-card>
+    <pr-card class="column" [name]="'Extra Golden Epic'" [rarity]="'epic'" [cost]="'gold'" [extra]="true"></pr-card>
+    <pr-card class="column" [name]="'Extra Golden Legendary'" [rarity]="'lgnd'" [cost]="'gold'" [extra]="true"></pr-card>
   </div>
 </div>

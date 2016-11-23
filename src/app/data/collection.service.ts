@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { PacksGeneratorService, PacksOpenerService } from './';
 import { DisplayCard, Packs, CardClassDictionary, CostDictionary, Rarity, Cost, Pack } from './types';
 import Dictionary = _.Dictionary;
+import { ReplaySubject } from 'rxjs';
 
 type Card = DisplayCard;
 type Collection = CardClassDictionary<CostDictionary<Dictionary<number>>>;
@@ -20,7 +21,6 @@ export class CollectionService {
     this._events = pgs.events
       .withLatestFrom(
         pos.events
-          .do(e => console.log(e))
           .map(() => {
             const collection = {};
             const rarityBreakdown = {};
@@ -52,10 +52,10 @@ export class CollectionService {
 
             return [collection, rarityBreakdown, packsProcessor];
           })
-          .share()
       )
       .map(([pks, [, , pksProc]] : [Packs, CollectionResetSignature]) => pksProc(pks))
-      .share();
+      .multicast(() => new ReplaySubject<CollectionIOSignature>(1))
+      .refCount();
 
     this.events = this._events
       .map(([coll, ]) => coll);

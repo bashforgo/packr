@@ -11,7 +11,6 @@ export class TabsComponent implements AfterContentInit {
   private activeTab : TabComponent;
 
   ngAfterContentInit() : void {
-    console.log(this.tabs);
     this.tabs.forEach(t => t.active = false);
 
     this.tabs.first.active = true;

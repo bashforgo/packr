@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { CollectionService, PacksGeneratorService } from '../data';
+import { CollectionService, BestPacksService } from '../data';
 
 @Component({
   selector: 'pr-packs',
@@ -7,6 +7,6 @@ import { CollectionService, PacksGeneratorService } from '../data';
   template
 })
 export class PacksComponent {
-  constructor(private cs : CollectionService, private pgs : PacksGeneratorService) {
+  constructor(private cs : CollectionService, private bps : BestPacksService) {
   }
 }
