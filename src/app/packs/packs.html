@@ -1,0 +1,13 @@
+<div class="ui padded collapsed grid">
+  <div class="ui collapsed row" *ngFor="let pack of cs.packs | async; let $index = index">
+    <div class="one wide centered column"><div class="ui mini basic centered segment">{{ $index + 1 }}</div></div>
+    <div class="ui fifteen wide column">
+      <div class="ui collapsed grid">
+        <div class="five column doubling row">
+          <pr-card class="column" [name]="card.name" [rarity]="card.rarity" [extra]="card.extra"
+                   [cost]="card.cost" *ngFor="let card of pack"></pr-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

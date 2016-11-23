@@ -5,23 +5,3 @@
     padding: 5em 0;
   }
 }
-
-.collapsed.grid {
-  @include increase-specificity(2) {
-    .column:not(.row) {
-      padding: 0.3em !important;
-    }
-
-    .row {
-      padding: 0.3em 0 !important;
-
-      &.collapsed {
-        margin: -0.6em 0;
-      }
-    }
-  }
-
-  &:not(.padded) {
-    margin: -0.3em;
-  }
-}

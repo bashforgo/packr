@@ -18,6 +18,7 @@ import { TabsComponent } from './tabs/tabs';
 import { OneMoreComponent } from './one-more/one-more';
 import { TabComponent } from './tabs/tab';
 import { CardComponent } from './card/card';
+import { PacksComponent } from './packs/packs';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { CardComponent } from './card/card';
     MainComponent,
     RootComponent,
     TabsComponent,
+    PacksComponent,
     ToolbarComponent,
     ContentComponent,
     OneMoreComponent,
