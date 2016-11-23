@@ -17,6 +17,7 @@ import {
 import { TabsComponent } from './tabs/tabs';
 import { OneMoreComponent } from './one-more/one-more';
 import { TabComponent } from './tabs/tab';
+import { CardComponent } from './card/card';
 
 @NgModule({
   imports: [
@@ -28,8 +29,9 @@ import { TabComponent } from './tabs/tab';
   ],
   declarations: [
     TabComponent,
-    RootComponent,
+    CardComponent,
     MainComponent,
+    RootComponent,
     TabsComponent,
     ToolbarComponent,
     ContentComponent,

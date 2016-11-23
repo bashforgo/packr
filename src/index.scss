@@ -10,4 +10,14 @@
       text-transform: uppercase;
     }
   }
+
+  &.segment {
+    &.mini {
+      padding: 0.3em 0.7em;
+
+      &.centered {
+        padding: 0.6em 0.7em;
+      }
+    }
+  }
 }
