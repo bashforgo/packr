@@ -3,5 +3,10 @@
 .spaced.container {
   @include increase-specificity(1) {
     padding: 5em 0;
+
+    &.bottom {
+      padding-top: 0;
+      padding-bottom: 15em;
+    }
   }
 }

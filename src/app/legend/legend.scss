@@ -1,0 +1,7 @@
+:host {
+  cursor: help;
+
+  &.open {
+    cursor: pointer;
+  }
+}

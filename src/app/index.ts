@@ -20,6 +20,7 @@ import { TabComponent } from './tabs/tab';
 import { CardComponent } from './card/card';
 import { PacksComponent } from './packs/packs';
 import { ClassBreakdownComponent } from './class-breakdown/class-breakdown';
+import { LegendComponent } from './legend/legend';
 
 @NgModule({
   imports: [
@@ -36,6 +37,7 @@ import { ClassBreakdownComponent } from './class-breakdown/class-breakdown';
     RootComponent,
     TabsComponent,
     PacksComponent,
+    LegendComponent,
     ToolbarComponent,
     ContentComponent,
     OneMoreComponent,
