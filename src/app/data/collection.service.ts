@@ -5,7 +5,7 @@ import Dictionary = _.Dictionary;
 import { ReplaySubject } from 'rxjs';
 
 type Card = DisplayCard;
-type Collection = CardClassDictionary<CostDictionary<Dictionary<number>>>;
+export type Collection = CardClassDictionary<CostDictionary<Dictionary<number>>>;
 type CollectionIOSignature = [Collection, {}, Packs];
 type CollectionResetSignature =
   [Collection, {}, ((pks : Packs) => CollectionIOSignature)];
@@ -14,7 +14,7 @@ type CollectionResetSignature =
 export class CollectionService {
   public events;
   public packs;
-  public rarityBreakdown;
+  public rarity;
   private _events;
 
   constructor(pgs : PacksGeneratorService, pos : PacksOpenerService) {
@@ -29,11 +29,11 @@ export class CollectionService {
                 pack,
                 (card : Card) => {
                   const { cardClass, cost, detail, name, rarity } = card;
-                  const path = [cardClass, cost, name];
+                  let path = [cardClass, name, cost];
                   const count = (_.get<number>(collection, path) || 0) + 1;
                   _.set(collection, path, count);
 
-                  path[0] = rarity;
+                  path = [rarity, cost, name];
                   _.set(rarityBreakdown, path, count);
                   path[1] = Cost.other(cost);
                   const otherCount = _.get<number>(rarityBreakdown, path) || 0;
@@ -60,7 +60,7 @@ export class CollectionService {
     this.events = this._events
       .map(([coll, ]) => coll);
 
-    this.rarityBreakdown = this._events
+    this.rarity = this._events
       .map(([, rbd]) => rbd);
 
     this.packs = this._events

@@ -1,5 +1,9 @@
 @import '../mixins';
 
+:host.legend .count {
+  display: none;
+}
+
 .gold {
   font-weight: bold;
 }

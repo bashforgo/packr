@@ -1,5 +1,7 @@
-<div class="ui {{ emphasis() }} {{ colors[rarity] }} mini segment"
-     [class.extra]="extra">
+<div class="ui mini segment"
+     [ngClass]="[emphasis(), colors[rarity] || '', extra ? 'extra' : '']">
   <i class="inverted {{ icon() }} icon" *ngIf="icon()"></i>
   <span [class.gold]="cost === 'gold'">{{ name }}</span>
+  <span *ngIf="count !== null" class="count"> x{{count}}</span>
+  <span *ngIf="goldCount !== null" class="gold count"> x{{goldCount}}</span>
 </div>

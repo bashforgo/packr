@@ -4,6 +4,7 @@ export interface JSONCard {
   name : string;
   rarity : Rarity;
   set : CardSet;
+  cost : number;
   playerClass? : CardClass;
 }
 

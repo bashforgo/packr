@@ -1,5 +1,5 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
-import { ShortRarity, Cost, ShortRarityDictionary } from '../data/types';
+import { ShortRarity, Cost, ShortRarityDictionary, Rarity } from '../data/types';
 
 @Component({
   selector: 'pr-card',
@@ -10,9 +10,9 @@ import { ShortRarity, Cost, ShortRarityDictionary } from '../data/types';
 export class CardComponent {
   @Input() cost : Cost;
   @Input() name : string;
-  @Input() count : number;
+  @Input() count : number = null;
   @Input() extra : boolean;
-  @Input() goldCount : number;
+  @Input() goldCount : number = null;
   @Input() rarity : ShortRarity;
 
   colors : ShortRarityDictionary<string> = {
@@ -23,15 +23,21 @@ export class CardComponent {
   };
 
   emphasis() : string {
-    if (_.isUndefined(this.count) && _.isUndefined(this.goldCount)) {
+    if (this.isPackMode()) {
       return `${this.isGold() ? '' : 'tertiary '}inverted`;
     } else {
-      return '';
+      const total = this.count + this.goldCount;
+      const max = Rarity.max(this.rarity);
+      if (total > 0) {
+        return `${ total >= max ? '' : 'tertiary '}inverted`;
+      } else {
+        return '';
+      }
     }
   }
 
   icon() : string | null {
-    if (_.isUndefined(this.count) && _.isUndefined(this.goldCount)) {
+    if (this.isPackMode()) {
       return this.isGold() ? 'star' : null;
     } else {
       return null;
@@ -42,7 +48,7 @@ export class CardComponent {
     return this.cost === 'gold';
   }
 
-  isLgnd() : boolean {
-    return this.rarity === 'lgnd';
+  isPackMode() {
+    return _.isNull(this.count) && _.isNull(this.goldCount);
   }
 }

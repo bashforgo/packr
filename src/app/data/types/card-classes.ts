@@ -15,25 +15,27 @@ export namespace PlayerClass {
 export type PlayerMultiClass = 'GOONS' | 'KABAL' | 'LOTUS';
 
 export namespace PlayerMultiClass {
+  const { DRUID, HUNTER, MAGE, PALADIN, PRIEST, ROGUE, SHAMAN, WARLOCK, WARRIOR } = PlayerClass;
+
   export const GOONS : PlayerMultiClass = 'GOONS';
   export const KABAL : PlayerMultiClass = 'KABAL';
   export const LOTUS : PlayerMultiClass = 'LOTUS';
 
   const _classes = {
-    [GOONS]: [PlayerClass.HUNTER, PlayerClass.PALADIN, PlayerClass.WARRIOR],
-    [KABAL]: [PlayerClass.MAGE, PlayerClass.PRIEST, PlayerClass.WARLOCK],
-    [LOTUS]: [PlayerClass.DRUID, PlayerClass.ROGUE, PlayerClass.SHAMAN]
+    [GOONS]: [HUNTER, PALADIN, WARRIOR],
+    [KABAL]: [MAGE, PRIEST, WARLOCK],
+    [LOTUS]: [DRUID, ROGUE, SHAMAN]
   };
   const _classesBack = {
-    [PlayerClass.HUNTER]: GOONS,
-    [PlayerClass.PALADIN]: GOONS,
-    [PlayerClass.WARRIOR]: GOONS,
-    [PlayerClass.MAGE]: KABAL,
-    [PlayerClass.PRIEST]: KABAL,
-    [PlayerClass.WARLOCK]: KABAL,
-    [PlayerClass.DRUID]: LOTUS,
-    [PlayerClass.ROGUE]: LOTUS,
-    [PlayerClass.SHAMAN]: LOTUS
+    [HUNTER]: GOONS,
+    [PALADIN]: GOONS,
+    [WARRIOR]: GOONS,
+    [MAGE]: KABAL,
+    [PRIEST]: KABAL,
+    [WARLOCK]: KABAL,
+    [DRUID]: LOTUS,
+    [ROGUE]: LOTUS,
+    [SHAMAN]: LOTUS
   };
 
   export const classes = (c : PlayerMultiClass) => _classes[c];
@@ -41,6 +43,16 @@ export namespace PlayerMultiClass {
 }
 
 export type CardClass = PlayerClass | PlayerMultiClass | 'NEUTRAL';
+
+export namespace CardClass {
+  const { DRUID, HUNTER, MAGE, PALADIN, PRIEST, ROGUE, SHAMAN, WARLOCK, WARRIOR } = PlayerClass;
+  const { GOONS, KABAL, LOTUS } = PlayerMultiClass;
+
+  export const classList = (forMSG : boolean) : CardClass[] => forMSG
+    ? [HUNTER, PALADIN, WARRIOR, GOONS, MAGE, PRIEST, WARLOCK, KABAL, DRUID, ROGUE, SHAMAN, LOTUS, 'NEUTRAL']
+    : [HUNTER, PALADIN, WARRIOR, MAGE, PRIEST, WARLOCK, DRUID, ROGUE, SHAMAN, 'NEUTRAL'];
+}
+
 export type CardClassDictionary<T> = {
   HUNTER? : T,
   PALADIN? : T,
@@ -54,5 +66,5 @@ export type CardClassDictionary<T> = {
   GOONS? : T,
   KABAL? : T,
   LOTUS? : T,
-  NEUTRAL? : T,
+  NEUTRAL? : T
 }

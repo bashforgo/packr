@@ -19,6 +19,7 @@ import { OneMoreComponent } from './one-more/one-more';
 import { TabComponent } from './tabs/tab';
 import { CardComponent } from './card/card';
 import { PacksComponent } from './packs/packs';
+import { ClassBreakdownComponent } from './class-breakdown/class-breakdown';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { PacksComponent } from './packs/packs';
     ToolbarComponent,
     ContentComponent,
     OneMoreComponent,
-    PacksOpenerComponent
+    PacksOpenerComponent,
+    ClassBreakdownComponent
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF },

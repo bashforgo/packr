@@ -1,0 +1,48 @@
+<div *ngFor="let cardClass of classes | async">
+  <span></span>
+  <h2 class="ui header">
+    {{ cardClass }}
+  </h2>
+  <div class="ui padded collapsed grid">
+    <div class="five column doubling collapsed row">
+      <pr-card class="column" [name]="card.name" [rarity]="getRarity(card.rarity)"
+               [count]="getCount(collection | async, cardClass, card.name, 'norm')"
+               [goldCount]="getCount(collection | async, cardClass, card.name, 'gold')"
+               *ngFor="let card of (cards | async)[cardClass]"></pr-card>
+    </div>
+  </div>
+</div>
+<h3 class="ui header">
+  <i class="question icon"></i>
+  <span class="content">
+    Legend
+  </span>
+</h3>
+<div class="ui padded collapsed grid">
+  <div class="four column doubling collapsed row">
+    <pr-card class="column" [name]="'Card'" [count]="'(Regular Count)'" [goldCount]="'(Golden Count)'"></pr-card>
+  </div>
+</div>
+<div class="ui padded collapsed grid">
+  <div class="four column doubling collapsed row">
+    <pr-card class="column legend" [name]="'Zero Commons'" [count]="0" [rarity]="'comn'" [cost]="'norm'"></pr-card>
+    <pr-card class="column legend" [name]="'Zero Rares'" [count]="0" [rarity]="'rare'" [cost]="'norm'"></pr-card>
+    <pr-card class="column legend" [name]="'Zero Epics'" [count]="0" [rarity]="'epic'" [cost]="'norm'"></pr-card>
+    <pr-card class="column legend" [name]="'Zero Legendaries'" [count]="0" [rarity]="'lgnd'" [cost]="'norm'"></pr-card>
+  </div>
+</div>
+<div class="ui padded collapsed grid">
+  <div class="four column doubling collapsed row">
+    <pr-card class="column legend" [name]="'One Common'" [count]="1" [rarity]="'comn'" [cost]="'norm'"></pr-card>
+    <pr-card class="column legend" [name]="'One Rare'" [count]="1" [rarity]="'rare'" [cost]="'norm'"></pr-card>
+    <pr-card class="column legend" [name]="'One Epic'" [count]="1" [rarity]="'epic'" [cost]="'norm'"></pr-card>
+    <pr-card class="column legend" [name]="'At Least One Legendary'" [count]="1" [rarity]="'lgnd'" [cost]="'norm'"></pr-card>
+  </div>
+</div>
+<div class="ui padded collapsed grid">
+  <div class="four column doubling collapsed row">
+    <pr-card class="column legend" [name]="'At Least Two Commons'" [count]="2" [rarity]="'comn'" [cost]="'norm'"></pr-card>
+    <pr-card class="column legend" [name]="'At Least Two Rares'" [count]="2" [rarity]="'rare'" [cost]="'norm'"></pr-card>
+    <pr-card class="column legend" [name]="'At Least Two Epics'" [count]="2" [rarity]="'epic'" [cost]="'norm'"></pr-card>
+  </div>
+</div>
