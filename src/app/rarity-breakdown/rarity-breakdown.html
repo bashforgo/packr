@@ -1,14 +1,14 @@
-<div *ngFor="let cardClass of classes | async">
+<div *ngFor="let rarity of rarities">
   <span></span>
   <h2 class="ui header">
-    {{ cardClass | prTitleCase }}
+    {{ getName(rarity) | prTitleCase }}
   </h2>
   <div class="ui padded collapsed grid">
     <div class="five column doubling collapsed row">
-      <pr-card class="column" [name]="card.name" [rarity]="getRarity(card.rarity)"
-               [count]="getCount(collection | async, cardClass, card.name, 'norm')"
-               [goldCount]="getCount(collection | async, cardClass, card.name, 'gold')"
-               *ngFor="let card of (cards | async)[cardClass]"></pr-card>
+      <pr-card class="column" [name]="card.name" [rarity]="rarity"
+               [count]="getCount(collection | async, rarity, card.name, 'norm')"
+               [goldCount]="getCount(collection | async, rarity, card.name, 'gold')"
+               *ngFor="let card of (cards | async)[rarity]"></pr-card>
     </div>
   </div>
 </div>

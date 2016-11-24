@@ -21,6 +21,8 @@ import { CardComponent } from './card/card';
 import { PacksComponent } from './packs/packs';
 import { ClassBreakdownComponent } from './class-breakdown/class-breakdown';
 import { LegendComponent } from './legend/legend';
+import { RarityBreakdownComponent } from './rarity-breakdown/rarity-breakdown';
+import { TitleCasePipe } from './util/title-case.pipe';
 
 @NgModule({
   imports: [
@@ -36,13 +38,15 @@ import { LegendComponent } from './legend/legend';
     MainComponent,
     RootComponent,
     TabsComponent,
+    TitleCasePipe,
     PacksComponent,
     LegendComponent,
     ToolbarComponent,
     ContentComponent,
     OneMoreComponent,
     PacksOpenerComponent,
-    ClassBreakdownComponent
+    ClassBreakdownComponent,
+    RarityBreakdownComponent
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF },

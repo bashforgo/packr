@@ -29,16 +29,12 @@ export class CollectionService {
                 pack,
                 (card : Card) => {
                   const { cardClass, cost, detail, name, rarity } = card;
-                  let path = [cardClass, name, cost];
+                  const path = [cardClass, name, cost];
                   const count = (_.get<number>(collection, path) || 0) + 1;
                   _.set(collection, path, count);
 
-                  path = [rarity, cost, name];
+                  path[0] = rarity;
                   _.set(rarityBreakdown, path, count);
-                  path[1] = Cost.other(cost);
-                  const otherCount = _.get<number>(rarityBreakdown, path) || 0;
-                  path[1] = 'total';
-                  _.set(rarityBreakdown, path, count + otherCount);
 
                   return {
                     extra: Rarity.isExtra(rarity, count),

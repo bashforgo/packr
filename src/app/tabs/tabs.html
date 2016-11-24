@@ -1,4 +1,4 @@
-<div class="ui secondary pointing menu">
+<div class="ui secondary pointing stackable menu">
   <button type="button" class="item" *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">
     {{ tab.tabTitle }}
   </button>
