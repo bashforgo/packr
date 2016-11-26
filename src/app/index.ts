@@ -23,6 +23,7 @@ import { ClassBreakdownComponent } from './class-breakdown/class-breakdown';
 import { LegendComponent } from './legend/legend';
 import { RarityBreakdownComponent } from './rarity-breakdown/rarity-breakdown';
 import { TitleCasePipe } from './util/title-case.pipe';
+import { StatsComponent } from './stats/stats';
 
 @NgModule({
   imports: [
@@ -40,6 +41,7 @@ import { TitleCasePipe } from './util/title-case.pipe';
     TabsComponent,
     TitleCasePipe,
     PacksComponent,
+    StatsComponent,
     LegendComponent,
     ToolbarComponent,
     ContentComponent,

@@ -50,9 +50,25 @@ export class CardsService {
 
     const rand = _.mapValues<Card[], RandomList<Card>>(filtered, f => new RandomList(f));
 
-    const target = _(filtered)
-      .mapValues((cs : Card[], r : ShortRarity) => cs.length * Rarity.max(r))
-      .value();
+    const target = _([...Rarity.shortList(), ...CardClass.classList(CardSet.isMSG(type))])
+      .reduce(
+        (res : {}, rarityOrClass : ShortRarity | CardClass) => {
+          if (Rarity.max(rarityOrClass as ShortRarity)) {
+            const rarity = rarityOrClass as ShortRarity;
+
+            res[rarity] = filtered[rarity].length * Rarity.max(rarity);
+          } else {
+            const klass = rarityOrClass as CardClass;
+
+            res[klass] = _.reduce(
+              filtered[klass],
+              (res : number, { rarity }) => res + Rarity.max(Rarity.short(rarity)),
+              0);
+          }
+          return res;
+        },
+        {}
+      );
 
     return { all, filtered, rand, target, type };
   }
