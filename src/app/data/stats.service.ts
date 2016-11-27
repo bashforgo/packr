@@ -1,56 +1,69 @@
 import { Injectable } from '@angular/core';
 import { CardsService, CollectionService } from './';
-import { Rarity, DisplayCard } from './types';
-
-type Card = DisplayCard;
+import { Rarity, ShortRarity, CostDictionary, CardClass } from './types';
+import { ReplaySubject } from 'rxjs';
+import Dictionary = _.Dictionary;
+import any = jasmine.any;
 
 @Injectable()
 export class StatsService {
   public events;
+  private completion;
 
-  constructor(cs : CardsService, cls : CollectionService) {
-    this.events = cls.events
-      .withLatestFrom(cs.currentSet)
+  constructor(cards : CardsService, cs : CollectionService) {
+    this.completion = {};
+
+    this.completion.byRarity = cs.rarity
+      .withLatestFrom(cards.currentSet)
       .map(([collection, cards]) => {
-        const result = { target: cards.target };
+        return _.mapValues(collection, (countsByName, rarity : ShortRarity) => {
+          const target = cards.target.byRarity[rarity];
 
-        _(collection)
-          .map(costDict => {
-            const { gold, norm } = costDict;
-            const any = _.assignWith({}, gold, norm, (a : number, b : number) => (a || 0) + (b || 0));
+          const [norm, gold, any] = _.reduce(
+            countsByName as Dictionary<CostDictionary<number>>,
+            ([norm, gold, any], counts) => {
+              const [nNorm, nGold, nAny] = _.map(
+                [(counts.norm || 0), (counts.gold || 0), (counts.norm || 0) + (counts.gold || 0)],
+                v => _.clamp(v, 0, Rarity.max(rarity))
+              );
+              return [norm + nNorm, gold + nGold, any + nAny];
+            },
+            [0, 0, 0]
+          );
 
-            return _({ gold, norm, any })
-              .map((countByName, cost) => _(countByName)
-                .map((count, name) => {
-                  const rarity = Rarity.short(cards.all[name].rarity);
-                  const max = Rarity.max(rarity);
+          return { target, norm, gold, any };
+        });
+      })
+      .do((rarities) => rarities.total = _.reduce(
+        rarities,
+        (res, obj) => _.assignWith(res, obj, (a : number, b : number) => (a || 0) + (b || 0)),
+        {}
+      ))
+      .multicast(() => new ReplaySubject<any>(1))
+      .refCount();
 
-                  addToResult(['total', cost, rarity], count);
-                  addToResult(['uniq', cost, rarity], _.clamp(count, 0, max));
+    this.completion.byClass = cs.events
+      .withLatestFrom(cards.currentSet)
+      .map(([collection, cards]) => {
+        return _.mapValues(collection, (countsByName, klass : CardClass) => {
+          const target = cards.target.byClass[klass];
 
-                  if (Rarity.isExtra(rarity, count)) {
-                    const extraCount = count - max;
+          const [norm, gold, any] = _.reduce(
+            countsByName as Dictionary<CostDictionary<number>>,
+            ([norm, gold, any], counts, name) => {
+              const [nNorm, nGold, nAny] = _.map(
+                [(counts.norm || 0), (counts.gold || 0), (counts.norm || 0) + (counts.gold || 0)],
+                v => _.clamp(v, 0, Rarity.max(Rarity.short(cards.all[name].rarity)))
+              );
+              return [norm + nNorm, gold + nGold, any + nAny];
+            },
+            [0, 0, 0]
+          );
 
-                    addToResult(['extra', cost, rarity], extraCount);
-                  }
-                })
-                .value())
-              .value();
-          })
-          .value();
-
-        return result;
-
-        function addToResult(path : string[], amount : number) {
-          const [field, cost, rarity] = path;
-          if (cost === 'any' && field !== 'uniq') { return null; }
-          const count = _.get<number>(result, path) || 0;
-          _.set(result, path, count + amount);
-
-          if (cost !== 'total' && cost !== 'any') {
-            addToResult([field, 'total', rarity], amount);
-          }
-        }
-      });
+          return { target, norm, gold, any };
+        });
+      })
+      .multicast(() => new ReplaySubject<any>(1))
+      .refCount();
   }
 }

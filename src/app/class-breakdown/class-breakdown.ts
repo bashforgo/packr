@@ -25,7 +25,7 @@ export class ClassBreakdownComponent {
       .map(({ collection }) => collection);
 
     this.cards = this._events
-      .map(({ filtered }) => filtered);
+      .map(({ filtered }) => filtered.byClass);
 
     this.classes = this._events
       .map(({ classes }) => classes);

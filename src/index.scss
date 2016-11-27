@@ -44,4 +44,24 @@
       margin: -0.3em;
     }
   }
+
+  &.table {
+    &.stack-with-columns {
+      @media only screen and (min-width: 768px) {
+        .inline-heading {
+          display: none;
+        }
+      }
+
+      @media only screen and (max-width: 767px) {
+        thead {
+          display: none;
+        }
+
+        .inline-heading {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }

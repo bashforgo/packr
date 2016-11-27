@@ -1,8 +1,18 @@
 import { Injectable } from '@angular/core';
 import { PacksGeneratorService, PacksOpenerService } from './';
-import { DisplayCard, Packs, CardClassDictionary, CostDictionary, Rarity, Cost, Pack } from './types';
-import Dictionary = _.Dictionary;
+import {
+  DisplayCard,
+  Packs,
+  CardClassDictionary,
+  CostDictionary,
+  Rarity,
+  Pack,
+  CardClass,
+  CardSet,
+  ShortRarityDictionary
+} from './types';
 import { ReplaySubject } from 'rxjs';
+import Dictionary = _.Dictionary;
 
 type Card = DisplayCard;
 export type Collection = CardClassDictionary<CostDictionary<Dictionary<number>>>;
@@ -21,9 +31,17 @@ export class CollectionService {
     this._events = pgs.events
       .withLatestFrom(
         pos.events
-          .map(() => {
-            const collection = {};
-            const rarityBreakdown = {};
+          .map(({ type }) => {
+            const collection = _.transform(
+              CardClass.classList(CardSet.isMSG(type)),
+              (res, name) => res[name] = {},
+              {}
+            ) as CardClassDictionary<Dictionary<CostDictionary<number>>>;
+            const rarityBreakdown = _.transform(
+              Rarity.shortList(),
+              (res, name) => res[name] = {},
+              {}
+            ) as ShortRarityDictionary<Dictionary<CostDictionary<number>>>;
             const _packsProcessor = _.memoize((pack : Pack) => {
               return _.map(
                 pack,

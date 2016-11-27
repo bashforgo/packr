@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CollectionService, CardsService, Collection } from '../data';
-import { CardClass, CardSet, Rarity, Cost } from '../data/types';
+import { Rarity, Cost } from '../data/types';
 
 @Component({
   selector: 'pr-rarity-breakdown',
@@ -23,7 +23,7 @@ export class RarityBreakdownComponent {
       .map(({ collection }) => collection);
 
     this.cards = this._events
-      .map(({ filtered }) => filtered);
+      .map(({ filtered }) => filtered.byRarity);
 
     this.getRarity = Rarity.short;
     this.getName = Rarity.shortBack;
