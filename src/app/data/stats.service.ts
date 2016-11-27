@@ -3,7 +3,6 @@ import { CardsService, CollectionService } from './';
 import { Rarity, ShortRarity, CostDictionary, CardClass, Dust } from './types';
 import { ReplaySubject } from 'rxjs';
 import Dictionary = _.Dictionary;
-import any = jasmine.any;
 
 @Injectable()
 export class StatsService {

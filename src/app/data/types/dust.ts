@@ -14,20 +14,6 @@ export namespace Dust {
       lgnd: 1600,
     }
   };
-  const _craft = {
-    norm: {
-      comn: 40,
-      rare: 100,
-      epic: 400,
-      lgnd: 1600,
-    },
-    gold: {
-      comn: 400,
-      rare: 800,
-      epic: 1600,
-      lgnd: 3200,
-    }
-  };
 
   export const value = (packOrCard : Pack | { cost: Cost, rarity: ShortRarity }) : number => {
     if ((<Pack>packOrCard).length === 5) {

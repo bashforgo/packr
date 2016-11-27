@@ -7,11 +7,11 @@ import { Rarity, Cost } from '../data/types';
   template
 })
 export class RarityBreakdownComponent {
+  public rarities = Rarity.shortList();
   private _events;
   private collection;
   private getRarity;
   private cards;
-  private rarities = Rarity.shortList();
   private getName;
 
   constructor(cs : CollectionService, private ss : StatsService, cards : CardsService) {

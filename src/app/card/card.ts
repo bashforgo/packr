@@ -49,6 +49,6 @@ export class CardComponent {
   }
 
   isPackMode() {
-    return _.isNull(this.count) && _.isNull(this.goldCount);
+    return this.count === null && this.goldCount === null;
   }
 }
