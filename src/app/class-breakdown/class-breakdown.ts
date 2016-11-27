@@ -34,7 +34,7 @@ export class ClassBreakdownComponent {
   }
 
   getCount(collection : Collection, cardClass : CardClass, name : string, cost : Cost) {
-    return _.get(collection, [cardClass, name, cost]) || 0;
+    return _.get(collection, [cardClass, name, cost], 0);
   }
 
   getPercent(field : { target : number }, prop : string) {

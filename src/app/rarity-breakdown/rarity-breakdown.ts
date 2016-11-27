@@ -30,7 +30,7 @@ export class RarityBreakdownComponent {
   }
 
   getCount(collection : Collection, rarity : Rarity, name : string, cost : Cost) {
-    return _.get(collection, [rarity, name, cost]) || 0;
+    return _.get(collection, [rarity, name, cost], 0);
   }
 
   getPercent(field : { target : number }, prop : string) {

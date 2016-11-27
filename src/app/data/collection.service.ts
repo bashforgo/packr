@@ -48,7 +48,7 @@ export class CollectionService {
                 (card : Card) => {
                   const { cardClass, cost, detail, name, rarity } = card;
                   const path = [cardClass, name, cost];
-                  const count = (_.get<number>(collection, path) || 0) + 1;
+                  const count = _.get(collection, path, 0) + 1;
                   _.set(collection, path, count);
 
                   path[0] = rarity;
