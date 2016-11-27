@@ -5,6 +5,7 @@ import {
 import { PacksOpenerService } from './packs-opener.service';
 import { RandomList } from '../util/random';
 import Dictionary = _.Dictionary;
+import { ReplaySubject } from 'rxjs';
 
 type Card = JSONCard;
 export type CardsAccessor = {
@@ -25,7 +26,9 @@ export type CardsAccessor = {
 export class CardsService {
   filterType : ((type : CardSet) => CardsAccessor) & _.MemoizedFunction;
   currentSet = this.pos.events
-    .map(poe => this.filterType(poe.type));
+    .map(poe => this.filterType(poe.type))
+    .multicast(() => new ReplaySubject<CardsAccessor>(1))
+    .refCount();
   private _cards = _.filter(require('./cards.json'), (c : Card) => _.includes(CardSet.list(), c.set));
 
   constructor(private pos : PacksOpenerService) {

@@ -9,16 +9,16 @@
   <thead>
   <tr>
     <th></th>
-    <th *ngFor="let field of fields">{{ field.name | prTitleCase }}</th>
+    <th *ngFor="let field of completionFields">{{ field.name | prTitleCase }}</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let rarity of rarities">
     <td>{{ (long(rarity) || rarity) | prTitleCase }}</td>
-    <td *ngFor="let field of fields">
+    <td *ngFor="let field of completionFields">
       <strong class="inline-heading">{{ field.name | prTitleCase }}: </strong>
       {{ (ss.completion.byRarity | async)[rarity][field.prop] }}
-      <span class="percentage">{{ getPercent((ss.completion.byRarity | async)[rarity], field.prop) }}</span>
+      <span class="percentage">{{ getCompletionPercentage((ss.completion.byRarity | async)[rarity], field.prop) }}</span>
     </td>
   </tr>
   </tbody>
@@ -30,16 +30,37 @@
   <thead>
   <tr>
     <th></th>
-    <th *ngFor="let field of fields">{{ field.name | prTitleCase }}</th>
+    <th *ngFor="let field of completionFields">{{ field.name | prTitleCase }}</th>
   </tr>
   </thead>
   <tbody>
   <tr *ngFor="let klass of classes | async">
     <td>{{ klass | prTitleCase }}</td>
-    <td *ngFor="let field of fields">
+    <td *ngFor="let field of completionFields">
       <strong class="inline-heading">{{ field.name | prTitleCase }}: </strong>
       {{ (ss.completion.byClass | async)[klass][field.prop] }}
-      <span class="percentage">{{ getPercent((ss.completion.byClass | async)[klass], field.prop) }}</span>
+      <span class="percentage">{{ getCompletionPercentage((ss.completion.byClass | async)[klass], field.prop) }}</span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<h2 class="ui header">
+  Card opening stats
+</h2>
+<table class="ui definition stack-with-columns table">
+  <thead>
+  <tr>
+    <th></th>
+    <th *ngFor="let field of cardFields">{{ field.name | prTitleCase }}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let rarity of rarities">
+    <td>{{ (long(rarity) || rarity) | prTitleCase }}</td>
+    <td *ngFor="let field of cardFields">
+      <strong class="inline-heading">{{ field.name | prTitleCase }}: </strong>
+      {{ (ss.card | async)[rarity][field.prop] }}
+      <span class="percentage">{{ getCardPercentage(ss.card | async, rarity, field.prop) }}</span>
     </td>
   </tr>
   </tbody>

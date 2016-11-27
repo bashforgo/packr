@@ -9,6 +9,7 @@ import any = jasmine.any;
 export class StatsService {
   public events;
   private completion;
+  private card;
 
   constructor(cards : CardsService, cs : CollectionService) {
     this.completion = {};
@@ -63,6 +64,36 @@ export class StatsService {
           return { target, norm, gold, any };
         });
       })
+      .multicast(() => new ReplaySubject<any>(1))
+      .refCount();
+
+    this.card = cs.rarity
+      .map(rarities => {
+        return _.mapValues(rarities, (countsByName, rarity : ShortRarity) => {
+          const [total, norm, normExtra, gold, goldExtra] = _.reduce(
+            countsByName as Dictionary<CostDictionary<number>>,
+            ([total, tNorm, normExtra, tGold, goldExtra], counts) => {
+              const norm = counts.norm || 0;
+              const gold = counts.gold || 0;
+              return [
+                total + norm + gold,
+                tNorm + norm,
+                normExtra + _.clamp(norm - Rarity.max(rarity), 0, Infinity),
+                tGold + gold,
+                goldExtra + _.clamp(gold - Rarity.max(rarity), 0, Infinity)
+              ];
+            },
+            [0, 0, 0, 0, 0]
+          );
+
+          return {total, norm, normExtra, gold, goldExtra};
+        });
+      })
+      .do((rarities) => rarities.total = _.reduce(
+        rarities,
+        (res, obj) => _.assignWith(res, obj, (a : number, b : number) => (a || 0) + (b || 0)),
+        {}
+      ))
       .multicast(() => new ReplaySubject<any>(1))
       .refCount();
   }
