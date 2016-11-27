@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CollectionService, CardsService, Collection } from '../data';
+import { CollectionService, CardsService, Collection, StatsService } from '../data';
 import { CardClass, CardSet, Rarity, Cost } from '../data/types';
 
 @Component({
@@ -13,7 +13,7 @@ export class ClassBreakdownComponent {
   private cards;
   private getRarity;
 
-  constructor(private cs : CollectionService, cards : CardsService) {
+  constructor(private cs : CollectionService, private ss : StatsService, cards : CardsService) {
     this._events = cs.events
       .zip(cards.currentSet)
       .map(([collection, { filtered, type }]) => ({
@@ -35,5 +35,13 @@ export class ClassBreakdownComponent {
 
   getCount(collection : Collection, cardClass : CardClass, name : string, cost : Cost) {
     return _.get(collection, [cardClass, name, cost]) || 0;
+  }
+
+  getPercent(field : { target : number }, prop : string) {
+    if (field[prop] === 0) {
+      return '';
+    } else {
+      return `(${_.round(field[prop] / field.target * 100, 1)}%)`;
+    }
   }
 }

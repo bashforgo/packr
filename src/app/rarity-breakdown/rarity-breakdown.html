@@ -2,6 +2,11 @@
   <span></span>
   <h2 class="ui header">
     {{ getName(rarity) | prTitleCase }}
+    <span class="sub header">
+      Completion:
+      {{ (ss.completion.byRarity | async)[rarity].any }}/{{ (ss.completion.byRarity | async)[rarity].target }}
+      <span class="percentage">{{ getPercent((ss.completion.byRarity | async)[rarity], 'any') }}</span>
+    </span>
   </h2>
   <div class="ui padded collapsed grid">
     <div class="five column doubling collapsed row">

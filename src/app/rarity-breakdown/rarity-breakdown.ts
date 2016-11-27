@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CollectionService, CardsService, Collection } from '../data';
+import { CollectionService, CardsService, Collection, StatsService } from '../data';
 import { Rarity, Cost } from '../data/types';
 
 @Component({
@@ -14,7 +14,7 @@ export class RarityBreakdownComponent {
   private rarities = Rarity.shortList();
   private getName;
 
-  constructor(cs : CollectionService, cards : CardsService) {
+  constructor(cs : CollectionService, private ss : StatsService, cards : CardsService) {
     this._events = cs.rarity
       .zip(cards.currentSet)
       .map(([collection, { filtered }]) => ({ collection, filtered }));
@@ -31,5 +31,13 @@ export class RarityBreakdownComponent {
 
   getCount(collection : Collection, rarity : Rarity, name : string, cost : Cost) {
     return _.get(collection, [rarity, name, cost]) || 0;
+  }
+
+  getPercent(field : { target : number }, prop : string) {
+    if (field[prop] === 0) {
+      return '';
+    } else {
+      return `(${_.round(field[prop] / field.target * 100, 1)}%)`;
+    }
   }
 }

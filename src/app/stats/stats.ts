@@ -9,8 +9,7 @@ type Field = {
 
 @Component({
   selector: 'pr-stats',
-  template,
-  styles
+  template
 })
 export class StatsComponent {
   public fields = [{

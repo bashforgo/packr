@@ -2,10 +2,13 @@
 <h2 class="ui header">
   Set completion
 </h2>
+<h3 class="ui header">
+  By rarity
+</h3>
 <table class="ui definition stack-with-columns table">
   <thead>
   <tr>
-    <th>By rarity</th>
+    <th></th>
     <th *ngFor="let field of fields">{{ field.name | prTitleCase }}</th>
   </tr>
   </thead>
@@ -20,10 +23,13 @@
   </tr>
   </tbody>
 </table>
+<h3 class="ui header">
+  By class
+</h3>
 <table class="ui definition stack-with-columns table">
   <thead>
   <tr>
-    <th>By class</th>
+    <th></th>
     <th *ngFor="let field of fields">{{ field.name | prTitleCase }}</th>
   </tr>
   </thead>
