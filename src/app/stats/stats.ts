@@ -25,7 +25,7 @@ export class StatsComponent {
     name: 'target',
     prop: 'target'
   }] as Field[];
-  public cardFields = [{
+  public dustFields = [{
     name: 'total',
     prop: 'total'
   }, {
@@ -40,7 +40,11 @@ export class StatsComponent {
   }, {
     name: 'golden extra',
     prop: 'goldExtra'
+  }, {
+    name: 'extras',
+    prop: 'totalExtra'
   }] as Field[];
+  public cardFields = this.dustFields.slice(0, -1) as Field[];
   public rarities = [...Rarity.shortList(), 'total'];
   public classes;
   private long;

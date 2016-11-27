@@ -65,3 +65,23 @@
   </tr>
   </tbody>
 </table>
+<h2 class="ui header">
+  Dust stats
+</h2>
+<table class="ui definition stack-with-columns table">
+  <thead>
+  <tr>
+    <th></th>
+    <th *ngFor="let field of dustFields">{{ field.name | prTitleCase }}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let rarity of rarities">
+    <td>{{ (long(rarity) || rarity) | prTitleCase }}</td>
+    <td *ngFor="let field of dustFields">
+      <strong class="inline-heading">{{ field.name | prTitleCase }}: </strong>
+      {{ (ss.dust | async)[rarity][field.prop] }}
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,4 +1,4 @@
-import { Pack, DisplayCard } from './';
+import { Pack, ShortRarity, Cost } from './';
 export namespace Dust {
   const _disenchant = {
     norm: {
@@ -29,14 +29,14 @@ export namespace Dust {
     }
   };
 
-  export const value = (packOrCard : Pack | DisplayCard) : number => {
+  export const value = (packOrCard : Pack | { cost: Cost, rarity: ShortRarity }) : number => {
     if ((<Pack>packOrCard).length === 5) {
       const pack = packOrCard as Pack;
 
       return _(pack)
         .reduce((acc, card) => acc + value(card), 0);
     } else {
-      const card = packOrCard as DisplayCard;
+      const card = packOrCard as { cost: Cost, rarity: ShortRarity };
       return _disenchant[card.cost][card.rarity];
     }
   };

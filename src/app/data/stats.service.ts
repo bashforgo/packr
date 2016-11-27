@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CardsService, CollectionService } from './';
-import { Rarity, ShortRarity, CostDictionary, CardClass } from './types';
+import { Rarity, ShortRarity, CostDictionary, CardClass, Dust } from './types';
 import { ReplaySubject } from 'rxjs';
 import Dictionary = _.Dictionary;
 import any = jasmine.any;
@@ -10,6 +10,8 @@ export class StatsService {
   public events;
   private completion;
   private card;
+  private dust;
+  private _card;
 
   constructor(cards : CardsService, cs : CollectionService) {
     this.completion = {};
@@ -67,7 +69,7 @@ export class StatsService {
       .multicast(() => new ReplaySubject<any>(1))
       .refCount();
 
-    this.card = cs.rarity
+    this._card = cs.rarity
       .map(rarities => {
         return _.mapValues(rarities, (countsByName, rarity : ShortRarity) => {
           const [total, norm, normExtra, gold, goldExtra] = _.reduce(
@@ -86,14 +88,45 @@ export class StatsService {
             [0, 0, 0, 0, 0]
           );
 
-          return {total, norm, normExtra, gold, goldExtra};
+          return { total, norm, normExtra, gold, goldExtra };
         });
       })
-      .do((rarities) => rarities.total = _.reduce(
-        rarities,
-        (res, obj) => _.assignWith(res, obj, (a : number, b : number) => (a || 0) + (b || 0)),
-        {}
-      ))
+      .multicast(() => new ReplaySubject<any>(1))
+      .refCount();
+
+    this.card = this._card
+      .map((rarities) => _.assign({
+        total: _.reduce(
+          rarities,
+          (res, obj) => _.assignWith(res, obj, (a : number, b : number) => (a || 0) + (b || 0)),
+          {}
+        )
+      }, rarities))
+      .multicast(() => new ReplaySubject<any>(1))
+      .refCount();
+
+    this.dust = this._card
+      .map(rarities => _.mapValues(rarities, ({ norm, normExtra, gold, goldExtra }, rarity : ShortRarity) => {
+        const dNorm = norm * Dust.value({ cost: 'norm', rarity });
+        const dGold = gold * Dust.value({ cost: 'gold', rarity });
+        const dNormExtra = normExtra * Dust.value({ cost: 'norm', rarity });
+        const dGoldExtra = goldExtra * Dust.value({ cost: 'gold', rarity });
+        return {
+          norm: dNorm,
+          normExtra: dNormExtra,
+          gold: dGold,
+          goldExtra: dGoldExtra,
+          total: dNorm + dGold,
+          totalExtra: dNormExtra + dGoldExtra
+        };
+      }))
+      .map((rarities) => _.assign({
+        total: _.reduce(
+          rarities,
+          (res, obj) => _.assignWith(res, obj, (a : number, b : number) => (a || 0) + (b || 0)),
+          {}
+        )
+      }, rarities))
       .multicast(() => new ReplaySubject<any>(1))
       .refCount();
   }
