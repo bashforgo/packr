@@ -1,9 +1,15 @@
 @import '../mixins';
 
 :host {
+  position: relative;
+
   &.legend .count {
     display: none;
   }
+}
+
+.clickable {
+  cursor: pointer;
 }
 
 .gold {
@@ -12,4 +18,19 @@
 
 .extra {
   opacity: 0.5;
+}
+
+.overlay {
+  @include increase-specificity(2) {
+    bottom: calc(100% - 0.4em);
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+}
+
+.image {
+  height: auto;
+  transform: scale(1.2);
+  width: 100%;
 }

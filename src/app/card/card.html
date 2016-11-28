@@ -1,5 +1,11 @@
 <div class="ui mini segment"
-     [ngClass]="[emphasis(), colors[rarity] || '', extra ? 'extra' : '', cost === 'gold' ? 'gold' : '']">
+     (click)="openImage($event)" (mouseleave)="closeImage()"
+     [ngClass]="[
+       emphasis(), colors[rarity] || '', extra ? 'extra' : '', cost === 'gold' ? 'gold' : '', cardId ? 'clickable' : ''
+     ]">
+  <div class="ui pointing below basic label overlay" *ngIf="cardId && imageOpen" (click)="closeImage($event)">
+    <span><img [src]="getImage()" class="image"/></span>
+  </div>
   <i class="inverted {{ icon() }} icon" *ngIf="icon()"></i>
   <span>{{ name }}</span>
   <span *ngIf="count !== null" class="count"> x{{count}}</span>

@@ -10,7 +10,7 @@
   </h2>
   <div class="ui padded collapsed grid">
     <div class="five column doubling collapsed row">
-      <pr-card class="column" [name]="card.name" [rarity]="rarity"
+      <pr-card class="column" [name]="card.name" [rarity]="rarity" [cardId]="card.id"
                [count]="getCount(collection | async, rarity, card.name, 'norm')"
                [goldCount]="getCount(collection | async, rarity, card.name, 'gold')"
                *ngFor="let card of (cards | async)[rarity]"></pr-card>

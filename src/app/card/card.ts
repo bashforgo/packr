@@ -1,6 +1,9 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ShortRarity, Cost, ShortRarityDictionary, Rarity } from '../data/types';
 
+const BASE_URL = 'http://media.services.zam.com/v1/media/byName/hs/cards/enus/pal/';
+const EXT = '.png';
+
 @Component({
   selector: 'pr-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -12,8 +15,12 @@ export class CardComponent {
   @Input() name : string;
   @Input() count : number = null;
   @Input() extra : boolean;
-  @Input() goldCount : number = null;
+  @Input() cardId : string;
   @Input() rarity : ShortRarity;
+  @Input() goldCount : number = null;
+  imageOpen = false;
+
+  static activeCard : CardComponent = null;
 
   colors : ShortRarityDictionary<string> = {
     comn: 'grey',
@@ -50,5 +57,30 @@ export class CardComponent {
 
   isPackMode() {
     return this.count === null && this.goldCount === null;
+  }
+
+  getImage() {
+    return `${BASE_URL}${this.cardId}${EXT}`;
+  }
+
+  openImage(event? : MouseEvent) {
+    if ((event && event.defaultPrevented) || !this.cardId) {
+      return null;
+    }
+    if (CardComponent.activeCard) {
+      CardComponent.activeCard.closeImage();
+    }
+    if (this.cardId) {
+      this.imageOpen = true;
+      CardComponent.activeCard = this;
+    }
+  }
+
+  closeImage(event? : MouseEvent) {
+    this.imageOpen = false;
+
+    if (event) {
+      event.preventDefault();
+    }
   }
 }

@@ -12,7 +12,7 @@ export interface PacksOpeningEvent {
 export class PacksOpenerService {
   static initial : PacksOpeningEvent = {
     type: CardSet.WOG,
-    amount: 100
+    amount: 50
   };
 
   public events : Observable<PacksOpeningEvent>;

@@ -7,7 +7,7 @@
 </h2>
 <div class="ui padded collapsed grid">
   <div class="six column doubling collapsed row" *ngFor="let pack of bps.events | async">
-    <pr-card class="column" [name]="card.name" [rarity]="card.rarity" [cost]="card.cost"
+    <pr-card class="column" [name]="card.name" [rarity]="card.rarity" [cost]="card.cost" [cardId]="card.detail.id"
              *ngFor="let card of pack.pack"></pr-card>
     <div><div class="ui basic centered mini segment">Disenchant value: {{ pack.dust }}</div></div>
   </div>
@@ -27,7 +27,7 @@
       <div class="ui collapsed grid">
         <div class="five column doubling row">
           <pr-card class="column" [name]="card.name" [rarity]="card.rarity" [extra]="card.extra"
-                   [cost]="card.cost" *ngFor="let card of pack"></pr-card>
+                   [cardId]="card.detail.id" [cost]="card.cost" *ngFor="let card of pack"></pr-card>
         </div>
       </div>
     </div>
