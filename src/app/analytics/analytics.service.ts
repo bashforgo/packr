@@ -19,6 +19,7 @@ export class AnalyticsService {
     this.analytics.event(
       'packs', this.initial ? 'initial' : 'open', { eventValue: amount, eventLabel: CardSet.label(type) }
     );
+    this.initial = false;
   }
 
   add(type : CardSet) {
