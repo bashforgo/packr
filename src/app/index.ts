@@ -22,8 +22,9 @@ import { PacksComponent } from './packs/packs';
 import { ClassBreakdownComponent } from './class-breakdown/class-breakdown';
 import { LegendComponent } from './legend/legend';
 import { RarityBreakdownComponent } from './rarity-breakdown/rarity-breakdown';
-import { TitleCasePipe } from './util/title-case.pipe';
+import { TitleCasePipe } from './util';
 import { StatsComponent } from './stats/stats';
+import { AnalyticsService } from './analytics/analytics.service';
 
 @NgModule({
   imports: [
@@ -54,6 +55,7 @@ import { StatsComponent } from './stats/stats';
     { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF },
     CardsService,
     StatsService,
+    AnalyticsService,
     BestPacksService,
     CollectionService,
     PacksOpenerService,

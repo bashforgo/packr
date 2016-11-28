@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CardSet } from './types';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { AnalyticsService } from '../analytics/analytics.service';
 
 export interface PacksOpeningEvent {
   type : CardSet;
@@ -20,9 +21,10 @@ export class PacksOpenerService {
   private _addEvents : Observable<number>;
   private _currentAdder : Subject<number>;
 
-  constructor() {
+  constructor(private analytics : AnalyticsService) {
     this.events = this._events
-      .asObservable();
+      .asObservable()
+      .do(({ type, amount }) => analytics.open(amount, type));
 
     this._addEvents = this._events
       .switchMap<number>(() => {
@@ -49,5 +51,6 @@ export class PacksOpenerService {
 
   oneMore() {
     this._currentAdder.next(1);
+    this.analytics.add(this.current().type);
   }
 }
