@@ -1,5 +1,1061 @@
 [
   {
+    "name": "Stolen Goods",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "WARRIOR",
+    "id": "avatars/307/78/636141174065517618"
+  },
+  {
+    "name": "Blowgill Sniper",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/237/636142811696845744"
+  },
+  {
+    "name": "Dirty Rat",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/264/636143043314098114"
+  },
+  {
+    "name": "Friendly Bartender",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/906/636139647855624982"
+  },
+  {
+    "name": "Gadgetzan Ferryman",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "ROGUE",
+    "id": "avatars/308/544/636156289553393287"
+  },
+  {
+    "name": "Gadgetzan Socialite",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/841/636159352739142356"
+  },
+  {
+    "name": "Grimestreet Informant",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "GOONS",
+    "id": "avatars/306/903/636139645064803036"
+  },
+  {
+    "name": "Grimestreet Outfitter",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "PALADIN",
+    "id": "avatars/307/80/636141175653418702"
+  },
+  {
+    "name": "Hobart Grapplehammer",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "WARRIOR",
+    "id": "avatars/308/828/636159321503043871"
+  },
+  {
+    "name": "Jade Swarmer",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "ROGUE",
+    "id": "avatars/308/333/636154122572797394"
+  },
+  {
+    "name": "Mana Geode",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "PRIEST",
+    "id": "avatars/308/162/636152630319132329"
+  },
+  {
+    "name": "Public Defender",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "WARRIOR",
+    "id": "avatars/308/829/636159324085035107"
+  },
+  {
+    "name": "Trogg Beastrager",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "HUNTER",
+    "id": "avatars/307/77/636141172706606736"
+  },
+  {
+    "name": "Finders Keepers",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/847/636159372809325567"
+  },
+  {
+    "name": "Getaway Kodo",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "PALADIN",
+    "id": "avatars/306/907/636139650921764458"
+  },
+  {
+    "name": "I Know A Guy",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "WARRIOR",
+    "id": "avatars/306/765/636138663181099847"
+  },
+  {
+    "name": "Jade Idol",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "DRUID",
+    "id": "avatars/308/441/636155116105585869"
+  },
+  {
+    "name": "Mark of the Lotus",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "DRUID",
+    "id": "avatars/306/792/636138707358341231"
+  },
+  {
+    "name": "Pint-Size Potion",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "PRIEST",
+    "id": "avatars/306/908/636139653192475270"
+  },
+  {
+    "name": "Potion of Madness",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "PRIEST",
+    "id": "avatars/306/774/636138691680861952"
+  },
+  {
+    "name": "Smuggler's Crate",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "HUNTER",
+    "id": "avatars/308/832/636159328458297179"
+  },
+  {
+    "name": "Smuggler's Run",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "PALADIN",
+    "id": "avatars/307/327/636143754728389497"
+  },
+  {
+    "name": "Alleycat",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "HUNTER",
+    "id": "avatars/308/843/636159367848581841"
+  },
+  {
+    "name": "Grimscale Chum",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "PALADIN",
+    "id": "avatars/307/632/636146760820494534"
+  },
+  {
+    "name": "Kabal Lackey",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "MAGE",
+    "id": "avatars/307/733/636147968092116280"
+  },
+  {
+    "name": "Meanstreet Marshal",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "PALADIN",
+    "id": "avatars/306/791/636138705499950567"
+  },
+  {
+    "name": "Mistress of Mixtures",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/942/636139826200310524"
+  },
+  {
+    "name": "Patches the Pirate",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/913/636139668188132985"
+  },
+  {
+    "name": "Small-Time Buccaneer",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/858/636159377107668362"
+  },
+  {
+    "name": "Weasel Tunneler",
+    "cost": 1,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/867/636159399206306553"
+  },
+  {
+    "name": "Counterfeit Coin",
+    "cost": 0,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "ROGUE",
+    "id": "avatars/306/793/636138708924823537"
+  },
+  {
+    "name": "Freezing Potion",
+    "cost": 0,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "MAGE",
+    "id": "avatars/308/831/636159327051361190"
+  },
+  {
+    "name": "Kun the Forgotten King",
+    "cost": 10,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "DRUID",
+    "id": "avatars/306/771/636138686891938703"
+  },
+  {
+    "name": "Krul the Unshackled",
+    "cost": 9,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "WARLOCK",
+    "id": "avatars/308/864/636159397556377978"
+  },
+  {
+    "name": "Mayor Noggenfogger",
+    "cost": 9,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/855/636159375929212346"
+  },
+  {
+    "name": "Greater Arcane Missiles",
+    "cost": 7,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "MAGE",
+    "id": "avatars/308/838/636159337539959388"
+  },
+  {
+    "name": "Abyssal Enforcer",
+    "cost": 7,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "WARLOCK",
+    "id": "avatars/307/678/636147289422248841"
+  },
+  {
+    "name": "Don Han'Cho",
+    "cost": 7,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "GOONS",
+    "id": "avatars/307/494/636145489837852171"
+  },
+  {
+    "name": "Grimestreet Protector",
+    "cost": 7,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "PALADIN",
+    "id": "avatars/307/350/636143982585906774"
+  },
+  {
+    "name": "Inkmaster Solia",
+    "cost": 7,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "MAGE",
+    "id": "avatars/307/737/636148046091986277"
+  },
+  {
+    "name": "Jade Chieftain",
+    "cost": 7,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/515/636155925786677354"
+  },
+  {
+    "name": "Dragonfire Potion",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "PRIEST",
+    "id": "avatars/306/904/636139647376399411"
+  },
+  {
+    "name": "Felfire Potion",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "WARLOCK",
+    "id": "avatars/307/916/636149796627424380"
+  },
+  {
+    "name": "Ancient of Blossoms",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/830/636159325764386061"
+  },
+  {
+    "name": "Aya Blackpaw",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "LOTUS",
+    "id": "avatars/308/215/636153270621654886"
+  },
+  {
+    "name": "Big-Time Racketeer",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/936/636139823223309830"
+  },
+  {
+    "name": "Defias Cleaner",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/836/636159334387333226"
+  },
+  {
+    "name": "Fight Promoter",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/225/636153305547231916"
+  },
+  {
+    "name": "Jade Behemoth",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "DRUID",
+    "id": "avatars/308/439/636155099783636630"
+  },
+  {
+    "name": "Kabal Crystal Runner",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "MAGE",
+    "id": "avatars/307/930/636149883169005501"
+  },
+  {
+    "name": "Kabal Trafficker",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "WARLOCK",
+    "id": "avatars/308/840/636159350941739839"
+  },
+  {
+    "name": "Leatherclad Hogleader",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/662/636147180012260825"
+  },
+  {
+    "name": "Luckydo Buccaneer",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "ROGUE",
+    "id": "avatars/308/866/636159398716857218"
+  },
+  {
+    "name": "Madam Goya",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/585/636146462768270779"
+  },
+  {
+    "name": "Wind-up Burglebot",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/911/636139656657512490"
+  },
+  {
+    "name": "Wrathion",
+    "cost": 6,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/827/636159319296455457"
+  },
+  {
+    "name": "Piranha launcher",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "HUNTER",
+    "id": "avatars/306/941/636139826062340622"
+  },
+  {
+    "name": "Lunar Visions",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "DRUID",
+    "id": "avatars/306/783/636138697421866116"
+  },
+  {
+    "name": "Alley Armorsmith",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "WARRIOR",
+    "id": "avatars/307/87/636141225359709272"
+  },
+  {
+    "name": "Bomb Squad",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/823/636148985124196204"
+  },
+  {
+    "name": "Burgly Bully",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/136/636152413354582993"
+  },
+  {
+    "name": "Cryomancer",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "MAGE",
+    "id": "avatars/308/837/636159335828872727"
+  },
+  {
+    "name": "Dopplegangster",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/335/636143833843015810"
+  },
+  {
+    "name": "Drakonid Operative",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "PRIEST",
+    "id": "avatars/306/788/636138699524748477"
+  },
+  {
+    "name": "Finja, the Flying Star",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/938/636139825619988661"
+  },
+  {
+    "name": "Grimestreet Enforcer",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "PALADIN",
+    "id": "avatars/307/110/636141457340819929"
+  },
+  {
+    "name": "Grook Fu Master",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/9/636140540426114681"
+  },
+  {
+    "name": "Kabal Songstealer",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "PRIEST",
+    "id": "avatars/308/851/636159374526868188"
+  },
+  {
+    "name": "Knuckles",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "HUNTER",
+    "id": "avatars/307/446/636145012461207953"
+  },
+  {
+    "name": "Lotus Agents",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "LOTUS",
+    "id": "avatars/306/900/636139643435406914"
+  },
+  {
+    "name": "Lotus Assassin",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "ROGUE",
+    "id": "avatars/306/909/636139654093741001"
+  },
+  {
+    "name": "Raza the Chained",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "PRIEST",
+    "id": "avatars/307/998/636150568405817274"
+  },
+  {
+    "name": "Red Mana Wyrm",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/861/636159378480856389"
+  },
+  {
+    "name": "Second-Rate Bruiser",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/905/636139647527025335"
+  },
+  {
+    "name": "Spiked Hogrider",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/663/636147181072113126"
+  },
+  {
+    "name": "Streetwise Investigator",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/856/636159375999254259"
+  },
+  {
+    "name": "Virmen Sensei",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "DRUID",
+    "id": "avatars/308/527/636155980090603359"
+  },
+  {
+    "name": "White Eyes",
+    "cost": 5,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/652/636157714690718418"
+  },
+  {
+    "name": "Brass Knuckles",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "WARRIOR",
+    "id": "avatars/307/412/636144662262184799"
+  },
+  {
+    "name": "Blastcrystal Potion",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "WARLOCK",
+    "id": "avatars/308/839/636159343474647843"
+  },
+  {
+    "name": "Call in the Finishers",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/429/636155044939265089"
+  },
+  {
+    "name": "Greater Healing Potion",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "PRIEST",
+    "id": "avatars/308/854/636159375052514706"
+  },
+  {
+    "name": "Jade Lightning",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/216/636153271354355413"
+  },
+  {
+    "name": "Backroom Bouncer",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/285/636143262122086592"
+  },
+  {
+    "name": "Crystalweaver",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "WARLOCK",
+    "id": "avatars/308/848/636159373092148021"
+  },
+  {
+    "name": "Daring Reporter",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/578/636156693637852600"
+  },
+  {
+    "name": "Dispatch Kodo",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "HUNTER",
+    "id": "avatars/307/284/636143260426102628"
+  },
+  {
+    "name": "Genzo, the Shark",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/835/636159332265110742"
+  },
+  {
+    "name": "Grimy Gadgeteer",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "WARRIOR",
+    "id": "avatars/307/354/636143988461272475"
+  },
+  {
+    "name": "Hozen Healer",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/223/636153302120786754"
+  },
+  {
+    "name": "Jade Spirit",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "LOTUS",
+    "id": "avatars/308/217/636153272202099733"
+  },
+  {
+    "name": "Jinyu Waterspeaker",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/500/636155822578062836"
+  },
+  {
+    "name": "Kabal Chemist",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "KABAL",
+    "id": "avatars/307/668/636147218739198931"
+  },
+  {
+    "name": "Kazakus",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "KABAL",
+    "id": "avatars/306/894/636139637521384139"
+  },
+  {
+    "name": "Kooky Chemist",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/781/636138696112019593"
+  },
+  {
+    "name": "Lotus Illusionist",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/849/636159373159428062"
+  },
+  {
+    "name": "Naga Corsair",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/826/636159317571419857"
+  },
+  {
+    "name": "Seadevil Stinger",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "WARLOCK",
+    "id": "avatars/307/807/636148871732992562"
+  },
+  {
+    "name": "Shadow Sensei",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "ROGUE",
+    "id": "avatars/308/612/636157206849729158"
+  },
+  {
+    "name": "Tanaris Hogchopper",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/664/636147181833686424"
+  },
+  {
+    "name": "Worgen Greaser",
+    "cost": 4,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/188/636142290548869579"
+  },
+  {
+    "name": "Bloodfury Potion",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "WARLOCK",
+    "id": "avatars/307/925/636149837518247451"
+  },
+  {
+    "name": "Jade Blossom",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "DRUID",
+    "id": "avatars/308/69/636151547226135541"
+  },
+  {
+    "name": "Pilfered Power",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "DRUID",
+    "id": "avatars/306/784/636138697475545389"
+  },
+  {
+    "name": "Potion of Polymorph",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "MAGE",
+    "id": "avatars/307/769/636148304827289151"
+  },
+  {
+    "name": "Small-Time Recruits",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "PALADIN",
+    "id": "avatars/306/777/636138693393798929"
+  },
+  {
+    "name": "Volcanic Potion",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "MAGE",
+    "id": "avatars/307/667/636147217830923423"
+  },
+  {
+    "name": "Auctionmaster Beardo",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/5/636140489431473507"
+  },
+  {
+    "name": "Backstreet Leper",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/847/636149153574550403"
+  },
+  {
+    "name": "Blubber Baron",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/859/636159377315229217"
+  },
+  {
+    "name": "Celestial Dreamer",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "DRUID",
+    "id": "avatars/308/846/636159371073601191"
+  },
+  {
+    "name": "Fel Orc Soulfiend",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/306/789/636138701282237716"
+  },
+  {
+    "name": "Grimestreet Pawnbroker",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "WARRIOR",
+    "id": "avatars/307/146/636141992799286583"
+  },
+  {
+    "name": "Grimestreet Smuggler",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "GOONS",
+    "id": "avatars/307/92/636141241829943653"
+  },
+  {
+    "name": "Hired Gun",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/192/636142295117160102"
+  },
+  {
+    "name": "Kabal Courier",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "KABAL",
+    "id": "avatars/306/897/636139641501483583"
+  },
+  {
+    "name": "Kabal Talonpriest",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "PRIEST",
+    "id": "avatars/306/939/636139825787337104"
+  },
+  {
+    "name": "Manic Soulcaster",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "MAGE",
+    "id": "avatars/306/940/636139825921242340"
+  },
+  {
+    "name": "Rat Pack",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "HUNTER",
+    "id": "avatars/307/421/636144697571964647"
+  },
+  {
+    "name": "Sergeant Sally",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/750/636158636521448989"
+  },
+  {
+    "name": "Shadow Rager",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "ROGUE",
+    "id": "avatars/308/850/636159373643576064"
+  },
+  {
+    "name": "Shaku, the Collector",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "ROGUE",
+    "id": "avatars/307/10/636140540557081344"
+  },
+  {
+    "name": "Shaky Zipgunner",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "HUNTER",
+    "id": "avatars/307/150/636142006936065510"
+  },
+  {
+    "name": "Street Trickster",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/308/869/636159399629350044"
+  },
+  {
+    "name": "Toxic Sewer Ooze",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "NEUTRAL",
+    "id": "avatars/307/983/636150458954432001"
+  },
+  {
+    "name": "Unlicensed Apothecary",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "WARLOCK",
+    "id": "avatars/308/865/636159398394368291"
+  },
+  {
+    "name": "Wickerflame Burnbristle",
+    "cost": 3,
+    "set": "MSG",
+    "rarity": "LEGENDARY",
+    "playerClass": "PALADIN",
+    "id": "avatars/306/780/636138695266774800"
+  },
+  {
+    "name": "Jade Claws",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/605/636157081844087745"
+  },
+  {
+    "name": "Devolve",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "SHAMAN",
+    "id": "avatars/308/341/636154136137325129"
+  },
+  {
+    "name": "Hidden Cache",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "RARE",
+    "playerClass": "HUNTER",
+    "id": "avatars/308/834/636159330636003287"
+  },
+  {
+    "name": "Jade Shuriken",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "COMMON",
+    "playerClass": "ROGUE",
+    "id": "avatars/308/222/636153301854748988"
+  },
+  {
+    "name": "Sleep with the Fishes",
+    "cost": 2,
+    "set": "MSG",
+    "rarity": "EPIC",
+    "playerClass": "WARRIOR",
+    "id": "avatars/308/844/636159369534794027"
+  },
+  {
     "health": 4,
     "text": "<b>Battlecry:</b> If you're holding a Dragon, gain +1/+1. ",
     "mechanics": [

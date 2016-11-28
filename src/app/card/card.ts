@@ -1,7 +1,9 @@
 import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ShortRarity, Cost, ShortRarityDictionary, Rarity } from '../data/types';
+import { AnalyticsService } from '../analytics/analytics.service';
 
-const BASE_URL = 'http://media.services.zam.com/v1/media/byName/hs/cards/enus/pal/';
+const BASE_URL = 'https://wow.zamimg.com/images/hearthstone/cards/enus/medium/';
+const BASE_CURSE_URL = 'https://media-hearth.cursecdn.com/';
 const EXT = '.png';
 
 @Component({
@@ -28,6 +30,8 @@ export class CardComponent {
     epic: 'purple',
     lgnd: 'orange'
   };
+
+  constructor(private analytics : AnalyticsService) {}
 
   emphasis() : string {
     if (this.isPackMode()) {
@@ -60,7 +64,7 @@ export class CardComponent {
   }
 
   getImage() {
-    return `${BASE_URL}${this.cardId}${EXT}`;
+    return `${_.includes(this.cardId, 'avatar') ? BASE_CURSE_URL : BASE_URL}${this.cardId}${EXT}`;
   }
 
   openImage(event? : MouseEvent) {
@@ -73,6 +77,7 @@ export class CardComponent {
     if (this.cardId) {
       this.imageOpen = true;
       CardComponent.activeCard = this;
+      this.analytics.card(this.name);
     }
   }
 

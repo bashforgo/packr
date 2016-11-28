@@ -23,7 +23,10 @@ export class AnalyticsService {
 
   add(type : CardSet) {
     this.analytics.event('packs', 'add', { eventValue: 1, eventLabel: CardSet.label(type) });
-    console.log(1, CardSet.label(type));
+  }
+
+  card(name : string) {
+    this.analytics.event('card', 'click', { eventLabel: name });
   }
 
   social(type : string, label : string = null) {
