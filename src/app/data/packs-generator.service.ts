@@ -99,10 +99,6 @@ export class PacksGeneratorService {
       rarity = ['epic', 'gold'];
     } else if (state.counts.gold.lgnd >= 310) {
       rarity = ['lgnd', 'gold'];
-    } else if (state.counts.norm.epic >= 10) {
-      rarity = ['epic', 'norm'];
-    } else if (state.counts.norm.lgnd >= 40) {
-      rarity = ['lgnd', 'norm'];
     } else {
       const list = new MersenneRandomList(
         _.map(
