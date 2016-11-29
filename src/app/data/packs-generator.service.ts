@@ -58,6 +58,9 @@ export class PacksGeneratorService {
     const { cardGen, rarityGen } = PacksGeneratorService;
 
     return _.map(Array(state.amount - state.packs.length).fill(0), () => {
+      state.counts.norm = _.mapValues<CountByRarity>(state.counts.norm, c => ++c);
+      state.counts.gold = _.mapValues<CountByRarity>(state.counts.gold, c => ++c);
+
       const lgnd = () => 1 / (40 - state.counts.norm.lgnd);
       const epic = () => 1 / (10 - state.counts.norm.epic);
       const rare = () => lgnd() + epic() > 1.3 ? 0 : 1.3 - (lgnd() + epic());
@@ -69,9 +72,6 @@ export class PacksGeneratorService {
         cardGen(rarityGen({ comn: 11.5, rare: 1, epic: epic(), lgnd: lgnd() }, state)),
         cardGen(rarityGen({ comn: 0, rare: rare(), epic: epic(), lgnd: lgnd() }, state)),
       ] as Pack;
-
-      state.counts.norm = _.mapValues<CountByRarity>(state.counts.norm, c => ++c);
-      state.counts.gold = _.mapValues<CountByRarity>(state.counts.gold, c => ++c);
 
       return pack;
     });
