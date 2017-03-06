@@ -1,21 +1,21 @@
 {
   "dependencies": {
-    "@angular/common": "^2.1.2",
-    "@angular/compiler": "^2.1.2",
-    "@angular/core": "^2.1.2",
-    "@angular/forms": "^2.1.2",
-    "@angular/http": "^2.1.2",
-    "@angular/platform-browser": "^2.1.2",
-    "@angular/platform-browser-dynamic": "^2.1.2",
-    "@angular/router": "^3.0.0",
+    "@angular/common": "^2.4.9",
+    "@angular/compiler": "^2.4.9",
+    "@angular/core": "^2.4.9",
+    "@angular/forms": "^2.4.9",
+    "@angular/http": "^2.4.9",
+    "@angular/platform-browser": "^2.4.9",
+    "@angular/platform-browser-dynamic": "^2.4.9",
+    "@angular/router": "^3.4.9",
     "core-js": "^2.4.1",
     "jquery": "^3.1.1",
     "lodash": "4.14.0",
     "ng-semantic": "^1.1.11",
-    "rxjs": "5.0.0-beta.12",
+    "rxjs": "^5.0.1",
     "semantic-ui-css": "^2.2.4",
     "universal-ga": "^1.0.1",
-    "zone.js": "^0.6.23"
+    "zone.js": "^0.7.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.2.2",

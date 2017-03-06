@@ -107,7 +107,7 @@ export class PacksGeneratorService {
         ),
         (i) => i.weight
       );
-      const chosen = list.peek().rarity;
+      const chosen = list.peek().rarity as ShortRarity;
       const isGolden : Cost = Generator.random() * 130 < goldDrops[chosen] ? 'gold' : 'norm';
       rarity = [chosen, isGolden];
     }

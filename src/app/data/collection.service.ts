@@ -29,7 +29,7 @@ export class CollectionService {
 
   constructor(pgs : PacksGeneratorService, pos : PacksOpenerService) {
     this._events = pgs.events
-      .withLatestFrom(
+      .withLatestFrom<Packs, CollectionResetSignature>(
         pos.events
           .map(({ type }) => {
             const collection = _.transform(

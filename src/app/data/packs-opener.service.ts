@@ -27,7 +27,7 @@ export class PacksOpenerService {
       .do(({ type, amount }) => analytics.open(amount, type));
 
     this._addEvents = this._events
-      .switchMap<number>(() => {
+      .switchMap(() => {
         this._currentAdder = new BehaviorSubject(0);
 
         return this._currentAdder

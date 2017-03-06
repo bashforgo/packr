@@ -1,35 +1,34 @@
 // tslint:disable no-bitwise
-interface HeapValue {}
-interface HeapValueWeighter {
-  (v : HeapValue) : number;
+interface HeapValueWeighter<T> {
+  (v : T) : number;
 }
 
-class HeapNode {
-  o : HeapValue;
+class HeapNode<Value> {
+  o : Value;
   weight : number;
   total : number;
 
-  constructor(obj : HeapValue, weighter : HeapValueWeighter) {
+  constructor(obj : Value, weighter : HeapValueWeighter<Value>) {
     this.o = obj;
     this.weight = this.total = weighter(obj);
   }
 }
 
-class WeightedHeap {
-  heap : Array<HeapNode|null>;
+class WeightedHeap<Value> {
+  heap : Array<HeapNode<Value>>;
 
-  constructor(items : HeapValue[], private weighter : HeapValueWeighter, private _generator : () => number = Math.random) {
+  constructor(items : Value[], private weighter : HeapValueWeighter<Value>, private _generator : () => number = Math.random) {
     this.heap = [null];
 
     // Put everything on the heap
-    items.forEach(i => this._push(new HeapNode(i, weighter)));
+    items.forEach(i => this._push(new HeapNode<Value>(i, weighter)));
   }
 
   gen(n : number, andRemove : boolean = false) {
     return Array(n).fill(0).map(() => this[andRemove ? 'pop' : 'peek']());
   }
 
-  push(i : HeapValue) {
+  push(i : Value) {
     this._push(new HeapNode(i, this.weighter));
   }
 
@@ -53,7 +52,7 @@ class WeightedHeap {
     return this.heap[this._peek()].o;
   }
 
-  private _push(item : HeapNode) {
+  private _push(item : HeapNode<Value>) {
     const i = this.heap.push(item) - 1;
 
     let parentI = i >> 1;
@@ -90,9 +89,11 @@ interface RandomListItemWeighter<RandomListItem> {
   (v : RandomListItem) : number;
 }
 
+type One = 1;
+
 export class BiasedRandomList<RandomListItem> {
   private _items : RandomListItem[] = [];
-  private _heap : WeightedHeap;
+  private _heap : WeightedHeap<RandomListItem>;
 
   constructor(weightedObjects : RandomListItem[] = [],
               private weighter : RandomListItemWeighter<any> = (o => typeof o.weight === 'undefined' ? 1 : o.weight),
@@ -122,6 +123,9 @@ export class BiasedRandomList<RandomListItem> {
     return this._items.length;
   }
 
+  peek() : RandomListItem;
+  peek(n : One, andRemove) : RandomListItem;
+  peek(n : number, andRemove) : RandomListItem[];
   peek(n : number = 1, andRemove : any = false) {
     andRemove = !!andRemove;
 

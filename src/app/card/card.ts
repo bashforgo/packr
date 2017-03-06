@@ -2,8 +2,7 @@ import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
 import { ShortRarity, Cost, ShortRarityDictionary, Rarity } from '../data/types';
 import { AnalyticsService } from '../analytics/analytics.service';
 
-const BASE_URL = 'https://wow.zamimg.com/images/hearthstone/cards/enus/medium/';
-const BASE_CURSE_URL = 'https://media-hearth.cursecdn.com/';
+const BASE_URL = 'https://images.weserv.nl/?trim=1&url=media.services.zam.com/v1/media/byName/hs/cards/enus/';
 const EXT = '.png';
 
 @Component({
@@ -64,7 +63,7 @@ export class CardComponent {
   }
 
   getImage() {
-    return `${_.includes(this.cardId, 'avatar') ? BASE_CURSE_URL : BASE_URL}${this.cardId}${EXT}`;
+    return `${BASE_URL}${this.cardId}${EXT}`;
   }
 
   openImage(event? : MouseEvent) {

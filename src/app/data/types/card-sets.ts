@@ -1,8 +1,8 @@
-export type CardSet = 'MSG' | 'OG' | 'TGT' | 'EXPERT1';
+export type CardSet = 'GANGS' | 'OG' | 'TGT' | 'EXPERT1';
 export type CardSetLabel = 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
 
 export namespace CardSet {
-  export const MSG : CardSet = 'MSG';
+  export const MSG : CardSet = 'GANGS';
   export const WOG : CardSet = 'OG';
   export const TGT : CardSet = 'TGT';
   export const CLASSIC : CardSet = 'EXPERT1';
