@@ -12,14 +12,14 @@ export namespace PlayerClass {
   export const WARRIOR : PlayerClass = 'WARRIOR';
 }
 
-export type PlayerMultiClass = 'GOONS' | 'KABAL' | 'LOTUS';
+export type PlayerMultiClass = 'GRIMY_GOONS' | 'KABAL' | 'JADE_LOTUS';
 
 export namespace PlayerMultiClass {
   const { DRUID, HUNTER, MAGE, PALADIN, PRIEST, ROGUE, SHAMAN, WARLOCK, WARRIOR } = PlayerClass;
 
-  export const GOONS : PlayerMultiClass = 'GOONS';
+  export const GOONS : PlayerMultiClass = 'GRIMY_GOONS';
   export const KABAL : PlayerMultiClass = 'KABAL';
-  export const LOTUS : PlayerMultiClass = 'LOTUS';
+  export const LOTUS : PlayerMultiClass = 'JADE_LOTUS';
 
   const _classes = {
     [GOONS]: [HUNTER, PALADIN, WARRIOR],

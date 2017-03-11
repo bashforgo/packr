@@ -53,7 +53,10 @@ export class CardsService {
       )),
       byClass: sortByManaThenName(_.transform(
         CardClass.classList(CardSet.isMSG(type)),
-        (res : {}, c : CardClass) => res[c] = _.filter(all, { playerClass: c }),
+        (res : {}, c : CardClass) => res[c] = _.filter(all, _.overSome([
+          _.matches({ playerClass: c }),
+          _.matches({ multiClassGroup: c })
+        ])),
         {}
       ))
     };

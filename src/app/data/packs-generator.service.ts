@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { PacksOpenerService } from './packs-opener.service';
-import { ShortRarityDictionary, Cost, ShortRarity, DisplayCard, Packs, Pack } from './types';
+import { ShortRarityDictionary, Cost, ShortRarity, DisplayCard, Packs, Pack, JSONCard } from './types';
 import { PacksOpeningEvent, CardsService, CardsAccessor } from './';
 import { Observable, ReplaySubject } from 'rxjs';
 import { MersenneRandomList, Generator } from '../util/random';
@@ -78,14 +78,14 @@ export class PacksGeneratorService {
   }
 
   private static cardGen([rarity, cost, state] : [ShortRarity, Cost, GeneratorState]) : Card {
-    const detail = state.cards.rand[rarity].peek();
-    return <Card>{
+    const detail = state.cards.rand[rarity].peek() as JSONCard;
+    return {
       name: detail.name,
       rarity,
       cost,
-      cardClass: detail.playerClass || 'NEUTRAL',
+      cardClass: detail.multiClassGroup || detail.playerClass,
       detail
-    };
+    } as Card;
   }
 
   private static rarityGen(chances : CountByRarity, state : GeneratorState) : [ShortRarity, Cost, GeneratorState] {
