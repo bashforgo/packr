@@ -16,7 +16,7 @@ export class RarityBreakdownComponent {
 
   constructor(cs : CollectionService, private ss : StatsService, cards : CardsService) {
     this._events = cs.rarity
-      .zip(cards.currentSet)
+      .withLatestFrom(cards.currentSet)
       .map(([collection, { filtered }]) => ({ collection, filtered }));
 
     this.collection = this._events

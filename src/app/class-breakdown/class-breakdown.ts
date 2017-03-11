@@ -15,7 +15,7 @@ export class ClassBreakdownComponent {
 
   constructor(private cs : CollectionService, private ss : StatsService, cards : CardsService) {
     this._events = cs.events
-      .zip(cards.currentSet)
+      .withLatestFrom(cards.currentSet)
       .map(([collection, { filtered, type }]) => ({
           collection, filtered, classes: CardClass.classList(CardSet.isMSG(type))
         })

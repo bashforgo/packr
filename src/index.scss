@@ -18,6 +18,11 @@
       &.centered {
         padding: 0.6em 0.7em;
       }
+
+      &:not(.inverted) {
+        //unpad borders
+        padding: (0.3em - (2/11)) (0.7em - (1/11)) (0.3em - (1/11));
+      }
     }
   }
 
