@@ -40,6 +40,12 @@ export namespace Rarity {
   export const isExtra = (r : ShortRarity, count : number) => Rarity.max(r) < count;
 }
 
+export namespace ShortRarity {
+  export const isA = function (s : string) : s is ShortRarity {
+    return _.includes(Rarity.shortList(), s)
+  }
+}
+
 export type Cost = 'gold' | 'norm';
 
 export namespace Cost {
