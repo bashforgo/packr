@@ -4,7 +4,8 @@ import { CollectionService, BestPacksService } from '../data';
 @Component({
   selector: 'pr-packs',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  template
+  template,
+  styles
 })
 export class PacksComponent {
   constructor(private cs : CollectionService, private bps : BestPacksService) {
