@@ -29,6 +29,9 @@ import { TitleCasePipe } from './util';
 import { StatsComponent } from './stats/stats';
 import { AnalyticsService } from './analytics/analytics.service';
 import { DisplaySettingsComponent } from './display-settings/display-settings';
+import { CardFilterComponent } from './display-settings/card-filter/card-filter';
+import { CardSwitchComponent } from './display-settings/card-switch/card-switch';
+import { CardFilterService } from './display-settings/card-filter/card-filter.service';
 import { SearchParserService } from './search';
 import { CollectionComponent } from './collection/collection';
 import { SearchBarComponent } from './search/bar/search-bar';
@@ -55,6 +58,8 @@ import { CollectionFilterPipe } from './filter/collection-filter.pipe';
     ContentComponent,
     OneMoreComponent,
     SearchBarComponent,
+    CardFilterComponent,
+    CardSwitchComponent,
     CollectionComponent,
     CollectionFilterPipe,
     PacksOpenerComponent,
@@ -68,6 +73,7 @@ import { CollectionFilterPipe } from './filter/collection-filter.pipe';
     StatsService,
     AnalyticsService,
     BestPacksService,
+    CardFilterService,
     CollectionService,
     PacksOpenerService,
     SearchParserService,
