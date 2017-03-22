@@ -1,0 +1,15 @@
+<div class="container">
+  <button class="ui huge black circular icon button" *ngIf="!open" (click)="toggle()">
+    <i class="icon settings"></i>
+  </button>
+  <div class="ui raised segments" *ngIf="open">
+    <div class="ui inverted red right aligned clickable segment" (click)="toggle()">
+      <i class="large icon close"></i>
+    </div>
+    <div class="ui segment">
+      <i class="icon filter"></i>
+      <span>Filters</span>
+    </div>
+  </div>
+</div>
+

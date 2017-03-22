@@ -1,0 +1,13 @@
+:host {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  top: 0;
+}
+
+.container {
+  margin-right: 1em;
+  position: sticky;
+  top: 1em;
+  z-index: 9999;
+}

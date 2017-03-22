@@ -25,6 +25,7 @@ import { RarityBreakdownComponent } from './rarity-breakdown/rarity-breakdown';
 import { TitleCasePipe } from './util';
 import { StatsComponent } from './stats/stats';
 import { AnalyticsService } from './analytics/analytics.service';
+import { DisplaySettingsComponent } from './display-settings/display-settings';
 
 @NgModule({
   imports: [
@@ -49,6 +50,7 @@ import { AnalyticsService } from './analytics/analytics.service';
     OneMoreComponent,
     PacksOpenerComponent,
     ClassBreakdownComponent,
+    DisplaySettingsComponent,
     RarityBreakdownComponent
   ],
   providers: [
