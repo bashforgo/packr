@@ -30,6 +30,10 @@ module.exports = function(env) {
   const src = new RegExp(`${conf.paths.src}`);
   const slashesS = '[\\/\\\\]';
 
+  if (dev) {
+    manager.cache(true);
+  }
+
   if (devUp) {
     manager.entry({
       app: `./${conf.path.src('index')}`
@@ -253,12 +257,14 @@ function normalize(details) {
     return null;
   } else if (details.length === 3) {
     let [modules, active, path] = details;
+    let pathOut;
 
     if (path) {
       const loaderParts = path.split('!');
 
       if (loaderParts.length) {
         const [file, ...loaders] = loaderParts.reverse();
+        let fileOut;
 
         if (file) {
           const fileParts = file.split(slashes).slice(-2);
@@ -273,14 +279,14 @@ function normalize(details) {
             fileParts.unshift(nodeModule, '*'.grey)
           }
 
-          var fileOut = fileParts.join('/'.grey);
+          fileOut = fileParts.join('/'.grey);
         }
 
-        var loaderOut = map(loaders, function(loader) {
+        const loaderOut = map(loaders, function(loader) {
           return findNodeModule(loader) || last(loader.split(slashes));
         }).reverse().join('!'.grey);
 
-        var pathOut = compact([loaderOut, fileOut]).join('!'.red);
+        pathOut = compact([loaderOut, fileOut]).join('!'.red);
       }
     }
 
@@ -297,7 +303,7 @@ function findNodeModule(path) {
 }
 
 function isExternal(module) {
-  var userRequest = module.userRequest;
+  const userRequest = module.userRequest;
 
   if (typeof userRequest !== 'string') {
     return false;
