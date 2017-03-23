@@ -36,6 +36,7 @@ import { SearchParserService } from './search';
 import { CollectionComponent } from './collection/collection';
 import { SearchBarComponent } from './search/bar/search-bar';
 import { CollectionFilterPipe } from './filter/collection-filter.pipe';
+import { FilterPipe } from './util/filter.pipe';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { CollectionFilterPipe } from './filter/collection-filter.pipe';
     ReactiveFormsModule
   ],
   declarations: [
+    FilterPipe,
     TabComponent,
     CardComponent,
     MainComponent,

@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ShortRarityDictionary } from '../../data/types';
+import { DisplayCard } from '../../data/types/card';
+import { Pack } from '../../data/types/pack';
+import { PackWithDust } from '../../data/best-packs.service';
 
 class Filters {
   byRarity : ShortRarityDictionary<boolean>;
   gold : boolean;
+  showCard : (this : Filters, card : DisplayCard) => boolean;
+  showPack : (this : Filters, pack : Pack) => boolean;
 
   constructor(comn : boolean, rare : boolean, epic : boolean, lgnd : boolean, gold : boolean) {
     this.byRarity = { comn, rare, epic, lgnd };
     this.gold = gold;
+    this.showCard = this._showCard.bind(this);
+    this.showPack = this._showPack.bind(this);
   }
 
   static get defaults() {
@@ -20,7 +27,7 @@ class Filters {
   }
 
   get all() : boolean {
-    return _.isEqual(this, Filters.defaults);
+    return _.isEqual(this.byRarity, Filters.defaults.byRarity) && !this.gold;
   }
 
   set all(value : boolean) {
@@ -31,6 +38,17 @@ class Filters {
       this.byRarity = Filters.none.byRarity;
       this.gold = false;
     }
+  }
+
+  _showCard(card : DisplayCard) {
+    if (this.gold) {
+      return card.cost === 'gold' && this.byRarity[card.rarity];
+    }
+    return this.byRarity[card.rarity];
+  }
+
+  _showPack(pack: Pack | PackWithDust) : boolean {
+    return _.some((pack as PackWithDust).pack || pack, card => this.showCard(card));
   }
 }
 
