@@ -2,7 +2,7 @@
 <div class="ui list">
   <pr-card-switch class="item"
                   *ngFor="let prop of props"
-                  (onClicked)="cfs[prop.prop](!$event)"
+                  (onClicked)="toggle(prop.prop, !$event)"
                   [value]="cfs[prop.prop]()"
                   [onData]="prop.on"
                   [offData]="prop.off"></pr-card-switch>

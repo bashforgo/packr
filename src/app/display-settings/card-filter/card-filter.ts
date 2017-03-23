@@ -22,9 +22,18 @@ export class CardFilterComponent {
       off: {
         name, rarity, cost: isGold ? 'gold' : 'norm', extra: true
       }
-    }
+    };
   });
 
   constructor(public cfs : CardFilterService) {
+  }
+
+  toggle(prop : string, value : boolean) {
+    if (ShortRarity.isA(prop) && this.cfs.all()) {
+      this.cfs.all(false);
+      this.cfs[prop](!value);
+    } else {
+      this.cfs[prop](value);
+    }
   }
 }

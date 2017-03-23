@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" (mouseleave)="this.open = false">
   <button class="ui huge black circular icon button" *ngIf="!open" (click)="toggle()">
     <i class="icon settings"></i>
   </button>
@@ -11,4 +11,3 @@
     </div>
   </div>
 </div>
-
