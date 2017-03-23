@@ -29,6 +29,7 @@ import { DisplaySettingsComponent } from './display-settings/display-settings';
 import { CardFilterComponent } from './display-settings/card-filter/card-filter';
 import { CardSwitchComponent } from './display-settings/card-switch/card-switch';
 import { CardFilterService } from './display-settings/card-filter/card-filter.service';
+import { FilterPipe } from './util/filter.pipe';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { CardFilterService } from './display-settings/card-filter/card-filter.se
     ReactiveFormsModule
   ],
   declarations: [
+    FilterPipe,
     TabComponent,
     CardComponent,
     MainComponent,

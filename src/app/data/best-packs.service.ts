@@ -3,7 +3,7 @@ import { CollectionService } from './';
 import { Dust, Pack } from './types';
 import { KHeap } from '../util';
 
-type PackWithDust = { pack : Pack, dust : number };
+export type PackWithDust = { pack : Pack, dust : number };
 
 @Injectable()
 export class BestPacksService {
