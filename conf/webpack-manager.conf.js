@@ -36,50 +36,53 @@ module.exports = function(env) {
     });
   }
 
-  manager.debug(true);
   manager.devtool(distUp ? 'hidden-source-map' : 'source-map');
 
+  const rules = manager.module.rules;
+
   if (distUp) {
-    manager.module.preLoaders.add({
+    rules.add({
+      enforce: 'pre',
       test: ts,
       exclude: test ? nodeModules : specs,
-      loader: 'tslint'
+      loaders: [{
+        loader: 'tslint-loader',
+        options: { configFile: 'tslint.json' }
+      }]
     });
   }
 
-  const loaders = manager.module.loaders;
-
   if (devUp) {
-    loaders.add({
+    rules.add({
       test: ts,
       include: new RegExp(`${conf.path.src('app').replace(slashes, slashesS)}`),
-      loader: 'baggage?[file].html=template&[file].scss=styles',
+      use: 'baggage-loader?[file].html=template&[file].scss=styles',
     });
-    loaders.add({
+    rules.add({
       test: jsts,
       include: /semantic-ui-css|ng-semantic/,
-      loader: 'imports?jQuery=jquery'
+      use: 'imports-loader?jQuery=jquery'
     })
   }
 
-  loaders.add([{
+  rules.add([{
     test: json,
     loaders: [
-      'json'
+      'json-loader'
     ]
   }, {
     test: ts,
     exclude: test ? nodeModules : specs,
-    loaders: ['ts']
+    loaders: ['ts-loader']
   }, {
     test: html,
-    loaders: ['html']
+    loaders: ['html-loader']
   }]);
 
   if (devUp) {
-    loaders.add([{
+    rules.add([{
       test: /\.(png|eot|woff2?|ttf|svg)$/i,
-      loader: `url-loader?limit=${ 100 * 1024 }&name=assets/[name].[hash:5].[ext]`
+      use: `url-loader?limit=${ 100 * 1024 }&name=assets/[name].[hash:5].[ext]`
     }, {
       test: styles,
       include: src,
@@ -88,13 +91,13 @@ module.exports = function(env) {
   }
 
   if (dev) {
-    loaders.add([{
+    rules.add([{
       test: styles,
       include: nodeModules,
-      loaders: ['style']
+      loaders: ['style-loader']
     }, {
       test: styles,
-      loaders: ['css', 'sass']
+      loaders: ['css-loader', 'sass-loader']
     }])
   }
 
@@ -108,17 +111,17 @@ module.exports = function(env) {
     };
 
     const scssLoader = {
-      loader: `css?${JSON.stringify(scssQuery)}!sass`
+      use: `css-loader?${JSON.stringify(scssQuery)}!sass-loader`
     };
 
-    loaders.add([{
+    rules.add([{
       test: styles,
       include: nodeModules,
       loaders: ExtractTextPlugin.extract(scssLoader)
     }, {
       test: styles,
       include: new RegExp(`${conf.paths.src}`),
-      loaders: [scssLoader]
+      use: scssLoader.use
     }])
   }
 
@@ -138,7 +141,7 @@ module.exports = function(env) {
     plugins.add([
       new webpack.ProgressPlugin(handler),
       new webpack.optimize.OccurrenceOrderPlugin(),
-      new webpack.NoErrorsPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
       new HtmlWebpackPlugin({
         template: conf.path.src('index.html')
       }),
@@ -212,15 +215,11 @@ module.exports = function(env) {
   }
 
   manager.resolve.extensions([
-    '',
     '.webpack.js',
     '.web.js',
     '.js',
     '.ts'
   ]);
-
-  manager.set('ts', { configFileName: 'tsconfig.json' });
-  manager.set('tslint', { configuration: require('../tslint.json') });
 
   return manager.setup();
 };
