@@ -67,4 +67,4 @@ export type CardClassDictionary<T> = {
   KABAL? : T,
   LOTUS? : T,
   NEUTRAL? : T
-}
+};

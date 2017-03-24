@@ -5,7 +5,7 @@ export type ShortRarityDictionary<T> = {
   rare : T;
   epic : T;
   lgnd : T
-}
+};
 
 export namespace Rarity {
   export const COMMON : Rarity = 'COMMON';
@@ -49,4 +49,4 @@ export namespace Cost {
 export type CostDictionary<T> = {
   gold? : T,
   norm? : T
-}
+};

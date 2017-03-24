@@ -13,7 +13,7 @@ type GeneratorState = {
   cards : CardsAccessor,
   amount : number,
   counts : CountByCost
-}
+};
 
 const goldDrops = <CountByRarity>{ comn: 2.0637, rare: 5.5395, epic: 4.5173, lgnd: 7.3107 };
 

@@ -124,8 +124,8 @@ export class BiasedRandomList<RandomListItem> {
   }
 
   peek() : RandomListItem;
-  peek(n : One, andRemove) : RandomListItem;
-  peek(n : number, andRemove) : RandomListItem[];
+  peek(n : One, andRemove : any) : RandomListItem;
+  peek(n : number, andRemove : any) : RandomListItem[];
   peek(n : number = 1, andRemove : any = false) {
     andRemove = !!andRemove;
 

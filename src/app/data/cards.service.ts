@@ -20,7 +20,7 @@ export type CardsAccessor = {
     byClass : CardClassDictionary<number>
   };
   type : CardSet;
-}
+};
 
 @Injectable()
 export class CardsService {

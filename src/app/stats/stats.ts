@@ -5,7 +5,7 @@ import { Rarity, CardClass, CardSet } from '../data/types';
 type Field = {
   name: string;
   prop: string;
-}
+};
 
 @Component({
   selector: 'pr-stats',
