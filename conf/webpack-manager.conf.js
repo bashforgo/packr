@@ -60,11 +60,6 @@ module.exports = function(env) {
       include: new RegExp(`${conf.path.src('app').replace(slashes, slashesS)}`),
       use: 'baggage-loader?[file].html=template&[file].scss=styles',
     });
-    rules.add({
-      test: jsts,
-      include: /semantic-ui-css|ng-semantic/,
-      use: 'imports-loader?jQuery=jquery'
-    })
   }
 
   rules.add([{

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { APP_BASE_HREF } from '@angular/common';
-import { NgSemanticModule } from 'ng-semantic';
 import { routing } from './root/routes';
 import { MainComponent } from './main/main';
 import { RootComponent } from './root/root';
@@ -31,7 +30,6 @@ import { AnalyticsService } from './analytics/analytics.service';
     routing,
     BrowserModule,
     SemanticModule,
-    NgSemanticModule,
     ReactiveFormsModule
   ],
   declarations: [
