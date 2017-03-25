@@ -9,6 +9,8 @@ const conf = require('./gulp.conf');
 
 const slashes = /[\/\\]/;
 
+const DEBUG_BUNDLE = false;
+
 module.exports = function(env) {
   const manager = new Manager();
 
@@ -126,6 +128,16 @@ module.exports = function(env) {
   }
 
   const plugins = manager.plugins;
+
+  if (DEBUG_BUNDLE) {
+    manager.profile(true);
+
+    const StatsPlugin = require('stats-webpack-plugin');
+
+    plugins.add([
+      new StatsPlugin('stats.json', 'verbose')
+    ]);
+  }
 
   plugins.add([
     new webpack.ContextReplacementPlugin(
@@ -248,7 +260,7 @@ function normalize(details) {
   'use strict';
   const separator = ' | '.grey;
 
-  if(!details.length) {
+  if (!details.length) {
     return null;
   } else if (details.length === 3) {
     let [modules, active, path] = details;
