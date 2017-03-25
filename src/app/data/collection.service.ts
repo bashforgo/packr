@@ -11,7 +11,10 @@ import {
   CardSet,
   ShortRarityDictionary
 } from './types';
-import { ReplaySubject } from 'rxjs';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import 'rxjs/add/operator/withLatestFrom';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/multicast';
 import Dictionary = _.Dictionary;
 
 type Card = DisplayCard;

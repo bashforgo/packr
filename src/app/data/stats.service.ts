@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { CardsService, CollectionService } from './';
 import { Rarity, ShortRarity, CostDictionary, CardClass, Dust } from './types';
-import { ReplaySubject } from 'rxjs';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import 'rxjs/add/operator/withLatestFrom';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/multicast';
 import Dictionary = _.Dictionary;
 
 @Injectable()

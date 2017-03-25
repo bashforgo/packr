@@ -1,6 +1,12 @@
 import { Injectable } from '@angular/core';
 import { CardSet } from './types';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { BehaviorSubject} from 'rxjs/BehaviorSubject';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/share';
+import 'rxjs/add/operator/scan';
 import { AnalyticsService } from '../analytics/analytics.service';
 
 export interface PacksOpeningEvent {

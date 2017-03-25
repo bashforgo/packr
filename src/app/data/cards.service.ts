@@ -5,7 +5,9 @@ import {
 import { PacksOpenerService } from './packs-opener.service';
 import { RandomList } from '../util/random';
 import Dictionary = _.Dictionary;
-import { ReplaySubject } from 'rxjs';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/multicast';
 
 type Card = JSONCard;
 export type CardsAccessor = {

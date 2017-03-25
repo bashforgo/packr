@@ -2,7 +2,12 @@ import { Injectable } from '@angular/core';
 import { PacksOpenerService } from './packs-opener.service';
 import { ShortRarityDictionary, Cost, ShortRarity, DisplayCard, Packs, Pack, JSONCard } from './types';
 import { PacksOpeningEvent, CardsService, CardsAccessor } from './';
-import { Observable, ReplaySubject } from 'rxjs';
+import { Observable } from 'rxjs/Observable';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import 'rxjs/add/operator/withLatestFrom';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/multicast';
+import 'rxjs/add/observable/zip';
 import { MersenneRandomList, Generator } from '../util/random';
 
 type Card = DisplayCard;
