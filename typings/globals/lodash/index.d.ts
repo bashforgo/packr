@@ -20794,9 +20794,3 @@ declare module "lodash/fp" {
 declare module "lodash" {
     export = _;
 }
-
-// Backward compatibility with --target es5
-interface Set<T> {}
-interface Map<K, V> {}
-interface WeakSet<T> {}
-interface WeakMap<K, V> {}

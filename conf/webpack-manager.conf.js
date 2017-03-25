@@ -141,7 +141,7 @@ module.exports = function(env) {
 
   plugins.add([
     new webpack.ContextReplacementPlugin(
-      new RegExp(`angular${slashesS}core${slashesS}(esm${slashesS}src|src)${slashesS}linker`),
+      new RegExp(`angular${slashesS}core${slashesS}@angular`),
       conf.paths.src
     ),
     new webpack.DefinePlugin({
