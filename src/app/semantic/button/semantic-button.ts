@@ -5,7 +5,7 @@ import { Component, Input } from '@angular/core';
   template
 })
 export class SemanticButtonComponent {
-  @Input('class') klass: string;
+  @Input() innerClass: string;
   @Input() icon: string;
   @Input() disabled: boolean = false;
 }
