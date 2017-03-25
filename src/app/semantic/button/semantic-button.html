@@ -1,0 +1,4 @@
+<button [ngClass]="{icon: icon}" [attr.disabled]="disabled || null" class="ui {{klass}} button">
+  <i *ngIf="icon" class="{{icon}} icon"></i>
+  <ng-content></ng-content>
+</button>

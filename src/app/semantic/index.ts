@@ -3,6 +3,7 @@ import { SemanticRadioGroupComponent } from './radio-group/semantic-radio-group'
 import { CommonModule } from '@angular/common';
 import { SemanticInputComponent } from './input/semantic-input';
 import { FormsModule } from '@angular/forms';
+import { SemanticButtonComponent } from './button/semantic-button';
 
 @NgModule({
   imports: [
@@ -10,16 +11,19 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   declarations: [
-    SemanticRadioGroupComponent,
-    SemanticInputComponent
+    SemanticInputComponent,
+    SemanticButtonComponent,
+    SemanticRadioGroupComponent
   ],
   exports: [
-    SemanticRadioGroupComponent,
-    SemanticInputComponent
+    SemanticInputComponent,
+    SemanticButtonComponent,
+    SemanticRadioGroupComponent
   ]
 })
 export class SemanticModule {
 }
 
 export * from './input/semantic-input';
+export * from './button/semantic-button';
 export * from './radio-group/semantic-radio-group';
