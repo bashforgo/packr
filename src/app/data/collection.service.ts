@@ -21,11 +21,12 @@ type Card = DisplayCard;
 export type Collection = CardClassDictionary<CostDictionary<Dictionary<number>>>;
 type CollectionIOSignature = [Collection, {}, Packs];
 type CollectionResetSignature =
-  [Collection, {}, ((pks : Packs) => CollectionIOSignature)];
+  [{}, Collection, {}, ((pks : Packs) => CollectionIOSignature)];
 
 @Injectable()
 export class CollectionService {
   public events;
+  public klass;
   public packs;
   public rarity;
   private _events;
@@ -35,7 +36,8 @@ export class CollectionService {
       .withLatestFrom<Packs, CollectionResetSignature>(
         pos.events
           .map(({ type }) => {
-            const collection = _.transform(
+            const collection : {[cardName: string]: CostDictionary<number>} = {};
+            const klassBreakdown = _.transform(
               CardClass.classList(CardSet.isMSG(type)),
               (res, name) => res[name] = {},
               {}
@@ -50,9 +52,12 @@ export class CollectionService {
                 pack,
                 (card : Card) => {
                   const { cardClass, cost, detail, name, rarity } = card;
-                  const path = [cardClass, name, cost];
+                  const path = [name, cost];
                   const count = _.get(collection, path, 0) + 1;
                   _.set(collection, path, count);
+
+                  path.unshift(cardClass);
+                  _.set(klassBreakdown, path, count);
 
                   path[0] = rarity;
                   _.set(rarityBreakdown, path, count);
@@ -65,23 +70,26 @@ export class CollectionService {
               );
             });
 
-            const packsProcessor = (pks) => [collection, rarityBreakdown, _.map(pks, _packsProcessor)];
+            const packsProcessor = (pks) => [collection, klassBreakdown, rarityBreakdown, _.map(pks, _packsProcessor)];
 
-            return [collection, rarityBreakdown, packsProcessor];
+            return [collection, klassBreakdown, rarityBreakdown, packsProcessor];
           })
       )
-      .map(([pks, [, , pksProc]] : [Packs, CollectionResetSignature]) => pksProc(pks))
+      .map(([pks, [, , , pksProc]] : [Packs, CollectionResetSignature]) => pksProc(pks))
       .multicast(() => new ReplaySubject<CollectionIOSignature>(1))
       .refCount();
 
     this.events = this._events
-      .map(([coll, ]) => coll);
+      .map(([coll]) => coll)
+
+    this.klass = this._events
+      .map(([, cbd]) => cbd);
 
     this.rarity = this._events
-      .map(([, rbd]) => rbd);
+      .map(([, , rbd]) => rbd);
 
     this.packs = this._events
-      .map(([, , packs]) => packs);
+      .map(([, , , packs]) => packs);
   }
 
   debug() {

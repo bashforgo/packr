@@ -14,7 +14,7 @@ export class ClassBreakdownComponent {
   private getRarity;
 
   constructor(private cs : CollectionService, private ss : StatsService, cards : CardsService) {
-    this._events = cs.events
+    this._events = cs.klass
       .withLatestFrom(cards.currentSet)
       .map(([collection, { filtered, type }]) => ({
           collection, filtered, classes: CardClass.classList(CardSet.isMSG(type))

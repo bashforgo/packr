@@ -48,7 +48,7 @@ export class StatsService {
       .multicast(() => new ReplaySubject<any>(1))
       .refCount();
 
-    this.completion.byClass = cs.events
+    this.completion.byClass = cs.klass
       .withLatestFrom(cards.currentSet)
       .map(([collection, cards]) => {
         return _.mapValues(collection, (countsByName, klass : CardClass) => {

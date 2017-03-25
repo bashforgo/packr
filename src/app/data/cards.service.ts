@@ -16,6 +16,7 @@ export type CardsAccessor = {
     byRarity : ShortRarityDictionary<Card[]>,
     byClass : CardClassDictionary<Card[]>
   };
+  sorted : Card[],
   rand : ShortRarityDictionary<RandomList<Card>>;
   target : {
     byRarity : ShortRarityDictionary<number>,
@@ -62,6 +63,7 @@ export class CardsService {
         {}
       ))
     };
+    const sorted = sortByManaThenName({ all }).all;
 
     const rand = _.mapValues<Card[], RandomList<Card>>(filtered.byRarity, f => new RandomList(f)) as
       ShortRarityDictionary<RandomList<Card>>;
@@ -83,6 +85,6 @@ export class CardsService {
       ) as CardClassDictionary<number>
     };
 
-    return { all, filtered, rand, target, type };
+    return { all, filtered, sorted, rand, target, type };
   }
 }
