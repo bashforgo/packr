@@ -27,6 +27,7 @@ module.exports = function(env) {
   const json = /\.json$/;
   const html = /\.html$/;
   const styles = /\.s?css$/;
+  const nearley = /\.ne$/;
 
   const nodeModules = /node_modules/;
   const src = new RegExp(`${conf.paths.src}`);
@@ -74,6 +75,9 @@ module.exports = function(env) {
   }, {
     test: html,
     loaders: ['html-loader']
+  }, {
+    test: nearley,
+    loaders: ['nearley-loader']
   }]);
 
   if (devUp) {
