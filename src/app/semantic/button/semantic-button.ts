@@ -1,7 +1,8 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'pr-semantic-button',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template
 })
 export class SemanticButtonComponent {

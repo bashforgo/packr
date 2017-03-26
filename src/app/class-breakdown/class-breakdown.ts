@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CollectionService, CardsService, Collection, StatsService } from '../data';
 import { CardClass, CardSet, Rarity, Cost } from '../data/types';
 
 @Component({
   selector: 'pr-class-breakdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template
 })
 export class ClassBreakdownComponent {

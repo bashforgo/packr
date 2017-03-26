@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CollectionService, CardsService, Collection, StatsService } from '../data';
 import { Rarity, Cost } from '../data/types';
 
 @Component({
   selector: 'pr-rarity-breakdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template
 })
 export class RarityBreakdownComponent {

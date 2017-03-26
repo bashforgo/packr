@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CardsService, CollectionService } from '../data';
-import { CardClass, CardSet, Cost, Rarity } from '../data/types';
+import { Cost, Rarity } from '../data/types';
 
 @Component({
   selector: 'pr-collection',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template
 })
 export class CollectionComponent {
