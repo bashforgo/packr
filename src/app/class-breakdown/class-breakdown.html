@@ -11,8 +11,8 @@
   <div class="ui padded collapsed grid">
     <div class="five column doubling collapsed row">
       <pr-card class="column" [name]="card.name" [rarity]="getRarity(card.rarity)" [cardId]="card.id"
-               [count]="getCount(collection | async, klass, card.name, 'norm')"
-               [goldCount]="getCount(collection | async, klass, card.name, 'gold')"
+               [count]="getCount(collection | async, card.name, 'norm')"
+               [goldCount]="getCount(collection | async, card.name, 'gold')"
                *ngFor="let card of (cards | async)[klass]"></pr-card>
     </div>
   </div>

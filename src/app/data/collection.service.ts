@@ -18,10 +18,10 @@ import 'rxjs/add/operator/multicast';
 import Dictionary = _.Dictionary;
 
 type Card = DisplayCard;
-export type Collection = CardClassDictionary<CostDictionary<Dictionary<number>>>;
+export type Collection = Dictionary<CostDictionary<number>>;
 type CollectionIOSignature = [Collection, {}, Packs];
 type CollectionResetSignature =
-  [{}, Collection, {}, ((pks : Packs) => CollectionIOSignature)];
+  [Collection, {}, {}, ((pks : Packs) => CollectionIOSignature)];
 
 @Injectable()
 export class CollectionService {

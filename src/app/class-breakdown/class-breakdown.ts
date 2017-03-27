@@ -15,7 +15,7 @@ export class ClassBreakdownComponent {
   private getRarity;
 
   constructor(private cs : CollectionService, private ss : StatsService, cards : CardsService) {
-    this._events = cs.klass
+    this._events = cs.events
       .withLatestFrom(cards.currentSet)
       .map(([collection, { filtered, type }]) => ({
           collection, filtered, classes: CardClass.classList(CardSet.isMSG(type))
@@ -34,8 +34,8 @@ export class ClassBreakdownComponent {
     this.getRarity = Rarity.short;
   }
 
-  getCount(collection : Collection, cardClass : CardClass, name : string, cost : Cost) {
-    return _.get(collection, [cardClass, name, cost], 0);
+  getCount(collection : Collection, name : string, cost : Cost) {
+    return _.get(collection, [name, cost], 0);
   }
 
   getPercent(field : { target : number }, prop : string) {
