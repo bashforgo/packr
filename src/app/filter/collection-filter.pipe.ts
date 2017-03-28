@@ -1,4 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { filter } from 'fuzzaldrin';
+
 import { JSONCard, Rarity, ShortRarity } from '../data/types';
 import { Search } from '../search/bar/search-bar';
 import { Collection } from '../data';
@@ -49,12 +51,18 @@ export class CollectionFilterPipe implements PipeTransform {
 
   transform(cards : Card[], collection : Collection, search : Search) {
     if (search.text) {
+      if (!search.sts) {
+        return [{
+          name: 'Invalid search'
+        }];
+      }
+
       const types = _.groupBy(search.sts, 'type');
 
       if (types.word) {
         const words = _.map(types.word, 'query');
 
-        console.log(`fuzzaldrin(${ words.join(' ') })`);
+        cards = filter(cards, words.join(' '), { key: 'name' });
       }
 
       if (types.keyword) {
@@ -74,6 +82,12 @@ export class CollectionFilterPipe implements PipeTransform {
           .value();
 
         return _.filter(cards, groups);
+      }
+
+      if (!cards.length) {
+        return [{
+          name: 'No results'
+        }];
       }
 
       return cards;

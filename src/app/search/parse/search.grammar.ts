@@ -27,6 +27,9 @@ export const isEtc = w => _.filter(etcKws, matchesKw(w)).length > 0;
 export const isRarity = w => _.filter(rarityKws, matchesKw(w)).length > 0;
 export const isBinary = w => _.filter(binaryKws, matchesKw(w)).length > 0;
 export const isRanged = w => _.filter(rangedKws, matchesKw(w)).length > 0;
+export const isNonKeyword = w => {
+  return !isBinary(w) && !(_.includes(w, ':') && isRanged(w.split(':')[0]));
+};
 
 type SearchTermTypes = 'word' | 'keyword';
 
@@ -37,6 +40,7 @@ export interface SearchTerm {
 
 class Word implements SearchTerm {
   readonly type : SearchTermTypes = 'word';
+
   constructor(public query : string) {
   }
 }
@@ -53,6 +57,7 @@ interface KeywordQuery {
 
 class Keyword implements SearchTerm {
   readonly type : SearchTermTypes = 'keyword';
+
   constructor(public query : KeywordQuery) {
   }
 }
@@ -78,13 +83,17 @@ export interface Range {
 
 type RangedTypes = 'single' | 'up' | 'down' | 'double';
 
-const range = (min : number, max: number) => ({ min, max } as Range);
+const range = (min : number, max : number) => ({ min, max } as Range);
 export const ranged = (type : RangedTypes, a, b) => (args : number[]) => {
   switch (type) {
-    case 'single': return range(args[a], args[a]);
-    case 'up': return range(args[a], 99);
-    case 'down': return range(0, args[a]);
-    case 'double': return range(args[a], args[b]);
+    case 'single':
+      return range(args[a], args[a]);
+    case 'up':
+      return range(args[a], 99);
+    case 'down':
+      return range(0, args[a]);
+    case 'double':
+      return range(args[a], args[b]);
   }
 };
 

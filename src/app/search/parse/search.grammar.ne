@@ -17,7 +17,7 @@ word -> keyword
         {% s.word %}
 
 nonkeyword -> ws
-              {% s.predicate(s.isBinary, true) %}
+              {% s.predicate(s.isNonKeyword) %}
 
 keyword -> binary
            {% id %}
@@ -61,7 +61,7 @@ number -> [0-9]
         | [1-9] [0-9]
           {% s.numberNumber %}
 
-ws -> [\w]:+
+ws -> [!',\-.0-9:a-z]:+
       {% s.join %}
 
 _ -> " ":*
