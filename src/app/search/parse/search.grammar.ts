@@ -42,7 +42,7 @@ class Word implements SearchTerm {
 }
 export const word = ([d]) => new Word(d);
 
-type KeywordTypes = 'binary/rarity'
+export type KeywordTypes = 'binary/rarity'
   | 'binary/golden' | 'binary/extra' | 'binary/missing'
   | 'ranged/owned' | 'ranged/mana';
 
@@ -71,7 +71,7 @@ export const rangedQuery = ([type, c, data] : [string, string, Range]) => ({
   type: `ranged/${type}`, data
 } as KeywordQuery);
 
-interface Range {
+export interface Range {
   min : number;
   max : number;
 }
@@ -83,7 +83,7 @@ export const ranged = (type : RangedTypes, a, b) => (args : number[]) => {
   switch (type) {
     case 'single': return range(args[a], args[a]);
     case 'up': return range(args[a], 99);
-    case 'down': return range(0, a);
+    case 'down': return range(0, args[a]);
     case 'double': return range(args[a], args[b]);
   }
 };

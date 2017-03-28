@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CardsService, CollectionService } from '../data';
 import { Cost, Rarity } from '../data/types';
+import { SearchTerm } from '../search/parse/search.grammar';
+import { Search } from '../search/bar/search-bar';
 
 @Component({
   selector: 'pr-collection',
@@ -12,6 +14,7 @@ export class CollectionComponent {
   private collection;
   private cards;
   private getRarity;
+  private search : Search = { text: '', sts: null };
 
   constructor(private cs : CollectionService, cards : CardsService) {
     this._events = cs.events
@@ -32,5 +35,9 @@ export class CollectionComponent {
 
   getCount(collection : {}, name : string, cost : Cost) {
     return _.get(collection, [name, cost], 0);
+  }
+
+  onTerms(search : Search) {
+    this.search = search;
   }
 }

@@ -16,7 +16,7 @@ export class TabsComponent implements AfterContentInit {
   ngAfterContentInit() : void {
     this.tabs.forEach(t => t.active = false);
 
-    this.selectTab(this.tabs.first);
+    this.selectTab(this.tabs.toArray()[3]);
   }
 
   selectTab(tab : TabComponent) {

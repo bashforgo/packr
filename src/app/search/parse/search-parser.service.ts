@@ -12,8 +12,12 @@ export class SearchParserService {
   }
 
   parse(input : string) : SearchTerm[] {
-    this.parser.feed(input);
-    const res = this.parser.results[0];
+    try {
+      this.parser.feed(input);
+    } catch (e) {
+      _.noop();
+    }
+    const res = this.parser.results[0] || null;
     this.parser.rewind(0);
     return res;
   }

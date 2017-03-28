@@ -30,6 +30,8 @@ import { StatsComponent } from './stats/stats';
 import { AnalyticsService } from './analytics/analytics.service';
 import { SearchParserService } from './search';
 import { CollectionComponent } from './collection/collection';
+import { SearchBarComponent } from './search/bar/search-bar';
+import { CollectionFilterPipe } from './filter/collection-filter.pipe';
 
 @NgModule({
   imports: [
@@ -51,7 +53,9 @@ import { CollectionComponent } from './collection/collection';
     ToolbarComponent,
     ContentComponent,
     OneMoreComponent,
+    SearchBarComponent,
     CollectionComponent,
+    CollectionFilterPipe,
     PacksOpenerComponent,
     ClassBreakdownComponent,
     RarityBreakdownComponent
