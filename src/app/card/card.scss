@@ -6,6 +6,10 @@
   &.legend .count {
     display: none;
   }
+
+  &.inline {
+    display: inline-block;
+  }
 }
 
 .clickable {

@@ -24,16 +24,21 @@ keyword -> binary
          | ranged
            {% id %}
 
-binary -> rarityKeyword
+binary -> classKeyword
+          {% s.classQuery %}
+        | rarityKeyword
           {% s.rarityQuery %}
         | etcKeyword
           {% s.etcQuery %}
 
-etcKeyword -> ws
-              {% s.predicate(s.isEtc) %}
+classKeyword -> ws
+                {% s.predicate(s.isClass) %}
 
 rarityKeyword -> ws
                  {% s.predicate(s.isRarity) %}
+
+etcKeyword -> ws
+              {% s.predicate(s.isEtc) %}
 
 ranged -> rangedKeyword ":" range
           {% s.rangedQuery %}

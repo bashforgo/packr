@@ -1,4 +1,4 @@
-import { Rarity } from '../../data/types';
+import { CardClass, Rarity } from '../../data/types';
 export const noop = (d, l, r) => null;
 export const join = d => d[0].join('');
 export const trim = a => _.filter(a, Boolean);
@@ -9,10 +9,18 @@ const rarityKws = [
   ...rarities,
   ...shorts
 ];
+const classKws = [
+  ..._(CardClass.classList(true))
+    .map(_.lowerCase)
+    .map(s => s.split(' '))
+    .flatten()
+    .value()
+];
 const etcKws = [
   'golden', 'extra', 'missing'
 ];
 const binaryKws = [
+  ...classKws,
   ...rarityKws,
   ...etcKws
 ];
@@ -24,6 +32,7 @@ export const toShort = (s : string) => Rarity.short(s.toUpperCase() as Rarity);
 
 const matchesKw = w => kw => kw === w;
 export const isEtc = w => _.filter(etcKws, matchesKw(w)).length > 0;
+export const isClass = w => _.filter(classKws, matchesKw(w)).length > 0;
 export const isRarity = w => _.filter(rarityKws, matchesKw(w)).length > 0;
 export const isBinary = w => _.filter(binaryKws, matchesKw(w)).length > 0;
 export const isRanged = w => _.filter(rangedKws, matchesKw(w)).length > 0;
@@ -46,7 +55,7 @@ class Word implements SearchTerm {
 }
 export const word = ([d]) => new Word(d);
 
-export type KeywordTypes = 'binary/rarity'
+export type KeywordTypes = 'binary/rarity' | 'binary/class'
   | 'binary/golden' | 'binary/extra' | 'binary/missing'
   | 'ranged/owned' | 'ranged/mana';
 
@@ -62,6 +71,11 @@ class Keyword implements SearchTerm {
   }
 }
 export const keyword = ([d]) => new Keyword(d);
+
+export const classQuery = ([klass] : string[]) => ({
+  type: 'binary/class',
+  data: _.find(CardClass.classList(true), c => _.includes(c, klass))
+} as KeywordQuery);
 
 export const rarityQuery = ([rarity] : string[]) => ({
   type: 'binary/rarity',

@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { filter } from 'fuzzaldrin';
 
-import { JSONCard, Rarity, ShortRarity } from '../data/types';
+import { CardClass, JSONCard, Rarity, ShortRarity } from '../data/types';
 import { Search } from '../search/bar/search-bar';
 import { Collection } from '../data';
 import { KeywordTypes, Range } from '../search/parse/search.grammar';
@@ -17,6 +17,9 @@ export class CollectionFilterPipe implements PipeTransform {
   static predicates : Dictionary<Predicate> = {
     'binary/rarity': (data : ShortRarity, card : Card, coll : Collection, keywords : {}[]) => {
       return data === Rarity.short(card.rarity);
+    },
+    'binary/class': (data : CardClass, card : Card, coll : Collection, keywords : {}[]) => {
+      return null;
     },
     'binary/golden': (data, card : Card, coll : Collection, keywords : {}[]) => {
       const handled = 'binary/extra' in keywords || 'binary/missing' in keywords || 'ranged/owned' in keywords;

@@ -7,3 +7,145 @@
              *ngFor="let card of cards | async | prCollectionFilter : (collection | async) : search"></pr-card>
   </div>
 </div>
+
+<pr-legend>
+  <div><p>
+    You can use similar search tags
+    <a href="http://us.battle.net/hearthstone/en/blog/20056284/search-your-hearthstone-collection-like-never-before-3-17-2016"
+       target="_blank">
+      as in the Hearthstone client
+    </a>
+    to filter your collection. Assuming that you are opening Gadgetzan packs you can search for:
+  </p>
+    <div>
+      <ul>
+        <li>
+          Exact card name
+          <ul>
+            <li>
+              searching for <strong>patches</strong> will show
+              <pr-card class="inline legend" [name]="'Patches the pirate'" [rarity]="'lgnd'" [count]="2" [goldCount]="0"></pr-card>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Consecutive characters in the card name (fuzzy search)
+          <ul>
+            <li>
+              searching for <strong>mom</strong> will show
+              <pr-card class="inline legend" [name]="'Mistress of Mixtures'" [rarity]="'comn'" [count]="2" [goldCount]="0"></pr-card>
+            </li>
+            <li>
+              searching for <strong>vp</strong> will show
+              <pr-card class="inline legend" [name]="'Volcanic Potion'" [rarity]="'rare'" [count]="2" [goldCount]="0"></pr-card>
+            </li>
+          </ul>
+        </li>
+        <li>
+          Rarity
+          <ul>
+            <li>
+              searching for <strong>rare</strong> will show all rare cards
+            </li>
+            <li>
+              searching for <strong>epic common</strong> will show all epic and common cards
+            </li>
+            <li>
+              searching for <strong>lgnd comn</strong> will show all legendary and common cards
+            </li>
+          </ul>
+        </li>
+        <li>
+          Class
+          <ul>
+            <li>
+              searching for <strong>mage</strong> will show all mage cards
+            </li>
+            <li>
+              searching for <strong>kabal</strong> will show all Kabal, Mage, Warlock and Priest cards
+            </li>
+            <li>
+              searching for <strong>hunter neutral</strong> will show all Hunter and Neutral cards
+            </li>
+          </ul>
+        </li>
+        <li>
+          Mana
+          <ul>
+            <li>
+              searching for <strong>mana:1</strong> will show all OP one-drops
+            </li>
+            <li>
+              searching for <strong>mana:6+</strong> will show all cards that cost 6 or more mana
+            </li>
+            <li>
+              searching for <strong>mana:1-</strong> will show all cards that cost 1 or less mana
+            </li>
+            <li>
+              searching for <strong>mana:3-4</strong> will show all cards that cost 3 or more but 4 or less mana
+            </li>
+            <li>
+              searching for <strong>mana:2 mana:4</strong> will show all cards that cost 2 or 4 mana
+            </li>
+          </ul>
+        </li>
+        <li>
+          Owned
+          <ul>
+            <li>
+              searching for <strong>owned:1</strong> will show cards that you have only one of
+            </li>
+            <li>
+              the same ranges can be used as for mana
+            </li>
+          </ul>
+        </li>
+        <li>
+          Extra
+          <ul>
+            <li>
+              searching for <strong>extra</strong> will show legendaries that you have more than two of and other rarities that you have three of (including golden cards)
+            </li>
+          </ul>
+        </li>
+        <li>
+          Missing
+          <ul>
+            <li>
+              searching for <strong>missing</strong> will show legendaries that you have no copies of and other rarities that you have less than two of (including golden cards)
+            </li>
+          </ul>
+        </li>
+        <li>
+          Golden
+          <ul>
+            <li>
+              searching for <strong>golden</strong> will show cards that you have at least one golden copy of
+            </li>
+          </ul>
+        </li>
+        <li>
+          Combinations
+          <ul>
+            <li>
+              searching for <strong>golden epic</strong> will show epics that you have at least one golden copy of
+            </li>
+            <li>
+              searching for <strong>lgnd mana:2-5</strong> will show legendaries that you have at 2 to 5 copies of
+            </li>
+            <li>
+              searching for <strong>mana comn</strong> will show
+              <pr-card class="inline legend" [name]="'Red Mana Wyrm'" [rarity]="'comn'" [count]="2" [goldCount]="0"></pr-card>
+            </li>
+            <li>
+              searching for <strong>owned:2 mana:3 a comn rare golden</strong> will show golden rare and common cards that
+              cost 3 mana that you have exactly two of that also have an 'a' in their name
+            </li>
+            <li>
+              go crazy
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div></div>
+</pr-legend>
