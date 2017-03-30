@@ -74,7 +74,7 @@ export const keyword = ([d]) => new Keyword(d);
 
 export const classQuery = ([klass] : string[]) => ({
   type: 'binary/class',
-  data: _.find(CardClass.classList(true), c => _.includes(c, klass))
+  data: _.find(CardClass.classList(true), c => _.includes(c, klass.toUpperCase()))
 } as KeywordQuery);
 
 export const rarityQuery = ([rarity] : string[]) => ({

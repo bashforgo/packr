@@ -19,7 +19,7 @@ export class CollectionFilterPipe implements PipeTransform {
       return data === Rarity.short(card.rarity);
     },
     'binary/class': (data : CardClass, card : Card, coll : Collection, keywords : {}[]) => {
-      return null;
+      return card.multiClassGroup === data || card.playerClass === data;
     },
     'binary/golden': (data, card : Card, coll : Collection, keywords : {}[]) => {
       const handled = 'binary/extra' in keywords || 'binary/missing' in keywords || 'ranged/owned' in keywords;
