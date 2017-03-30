@@ -22,7 +22,7 @@ export class SearchBarComponent {
     });
 
     this.form.controls.search.valueChanges
-      .map(text => ({ text, sts: sps.parse(text) }))
+      .map(text => ({ text, sts: sps.parse(text.toLowerCase()) }))
       .subscribe(this.terms);
   }
 }
