@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CollectionService, CardsService, Collection, StatsService } from '../data';
 import { Rarity, Cost } from '../data/types';
 
 @Component({
   selector: 'pr-rarity-breakdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template
 })
 export class RarityBreakdownComponent {
@@ -15,7 +16,7 @@ export class RarityBreakdownComponent {
   private getName;
 
   constructor(cs : CollectionService, private ss : StatsService, cards : CardsService) {
-    this._events = cs.rarity
+    this._events = cs.events
       .withLatestFrom(cards.currentSet)
       .map(([collection, { filtered }]) => ({ collection, filtered }));
 
@@ -29,8 +30,8 @@ export class RarityBreakdownComponent {
     this.getName = Rarity.shortBack;
   }
 
-  getCount(collection : Collection, rarity : Rarity, name : string, cost : Cost) {
-    return _.get(collection, [rarity, name, cost], 0);
+  getCount(collection : Collection, name : string, cost : Cost) {
+    return _.get(collection, [name, cost], 0);
   }
 
   getPercent(field : { target : number }, prop : string) {

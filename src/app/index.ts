@@ -10,8 +10,12 @@ import { PacksOpenerComponent } from './packs-opener/packs-opener';
 import { SemanticModule } from './semantic';
 import { ReactiveFormsModule } from '@angular/forms';
 import {
-  PacksOpenerService, PacksGeneratorService, CardsService, CollectionService, StatsService,
-  BestPacksService
+  BestPacksService,
+  CardsService,
+  CollectionService,
+  PacksGeneratorService,
+  PacksOpenerService,
+  StatsService
 } from './data';
 import { TabsComponent } from './tabs/tabs';
 import { OneMoreComponent } from './one-more/one-more';
@@ -24,6 +28,10 @@ import { RarityBreakdownComponent } from './rarity-breakdown/rarity-breakdown';
 import { TitleCasePipe } from './util';
 import { StatsComponent } from './stats/stats';
 import { AnalyticsService } from './analytics/analytics.service';
+import { SearchParserService } from './search';
+import { CollectionComponent } from './collection/collection';
+import { SearchBarComponent } from './search/bar/search-bar';
+import { CollectionFilterPipe } from './filter/collection-filter.pipe';
 
 @NgModule({
   imports: [
@@ -45,6 +53,9 @@ import { AnalyticsService } from './analytics/analytics.service';
     ToolbarComponent,
     ContentComponent,
     OneMoreComponent,
+    SearchBarComponent,
+    CollectionComponent,
+    CollectionFilterPipe,
     PacksOpenerComponent,
     ClassBreakdownComponent,
     RarityBreakdownComponent
@@ -57,6 +68,7 @@ import { AnalyticsService } from './analytics/analytics.service';
     BestPacksService,
     CollectionService,
     PacksOpenerService,
+    SearchParserService,
     PacksGeneratorService
   ],
   bootstrap: [RootComponent]

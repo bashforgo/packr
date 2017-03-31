@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CollectionService, CardsService, Collection, StatsService } from '../data';
 import { CardClass, CardSet, Rarity, Cost } from '../data/types';
 
 @Component({
   selector: 'pr-class-breakdown',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template
 })
 export class ClassBreakdownComponent {
@@ -33,8 +34,8 @@ export class ClassBreakdownComponent {
     this.getRarity = Rarity.short;
   }
 
-  getCount(collection : Collection, cardClass : CardClass, name : string, cost : Cost) {
-    return _.get(collection, [cardClass, name, cost], 0);
+  getCount(collection : Collection, name : string, cost : Cost) {
+    return _.get(collection, [name, cost], 0);
   }
 
   getPercent(field : { target : number }, prop : string) {

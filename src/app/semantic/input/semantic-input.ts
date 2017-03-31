@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 export interface SemanticInputErrorLabel {
@@ -7,6 +7,7 @@ export interface SemanticInputErrorLabel {
 
 @Component({
   selector: 'pr-semantic-input',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template,
   styles
 })

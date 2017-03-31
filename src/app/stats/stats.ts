@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { StatsService, CardsService, CollectionService } from '../data';
 import { Rarity, CardClass, CardSet } from '../data/types';
 
@@ -9,6 +9,7 @@ type Field = {
 
 @Component({
   selector: 'pr-stats',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template
 })
 export class StatsComponent {

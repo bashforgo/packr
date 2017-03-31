@@ -1,7 +1,8 @@
-import { Component, HostListener, HostBinding } from '@angular/core';
+import { Component, HostListener, HostBinding, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'pr-legend',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template,
   styles
 })
