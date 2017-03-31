@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ShortRarityDictionary } from '../../data/types';
-import { DisplayCard } from '../../data/types/card';
-import { Pack } from '../../data/types/pack';
-import { PackWithDust } from '../../data/best-packs.service';
+import { PackWithDust, ShortRarityDictionary, DisplayCard, Pack } from '../../data/types';
 
 class Filters {
   byRarity : ShortRarityDictionary<boolean>;
@@ -47,8 +44,8 @@ class Filters {
     return this.byRarity[card.rarity];
   }
 
-  _showPack(pack: Pack | PackWithDust) : boolean {
-    return _.some((pack as PackWithDust).pack || pack, card => this.showCard(card));
+  _showPack(pack : Pack | PackWithDust) : boolean {
+    return _.some((pack as PackWithDust).pack || pack, card => this.showCard(card as DisplayCard));
   }
 }
 
@@ -63,6 +60,7 @@ export class CardFilterService {
 
   readonly events;
   private _value;
+
   constructor() {
     this._value = Filters.defaults;
     this.events = new BehaviorSubject<Filters>(this._value);

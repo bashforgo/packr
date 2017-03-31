@@ -42,8 +42,8 @@ export namespace Rarity {
 
 export namespace ShortRarity {
   export const isA = function (s : string) : s is ShortRarity {
-    return _.includes(Rarity.shortList(), s)
-  }
+    return _.includes(Rarity.shortList(), s);
+  };
 }
 
 export type Cost = 'gold' | 'norm';

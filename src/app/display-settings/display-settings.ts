@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, HostBinding } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { AnalyticsService } from '../analytics/analytics.service';
 
 @Component({
@@ -8,7 +8,7 @@ import { AnalyticsService } from '../analytics/analytics.service';
   styles
 })
 export class DisplaySettingsComponent {
-  open: boolean = true;
+  open: boolean = false;
   constructor(private analytics : AnalyticsService) {}
 
   toggle() {
