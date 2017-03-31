@@ -84,7 +84,7 @@ export class CollectionFilterPipe implements PipeTransform {
           .overEvery()
           .value();
 
-        return _.filter(cards, groups);
+        cards = _.filter(cards, groups);
       }
 
       if (!cards.length) {
@@ -92,10 +92,8 @@ export class CollectionFilterPipe implements PipeTransform {
           name: 'No results'
         }];
       }
-
-      return cards;
-    } else {
-      return cards;
     }
+
+    return cards;
   }
 }
