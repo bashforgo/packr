@@ -17,7 +17,7 @@ export interface PacksOpeningEvent {
 @Injectable()
 export class PacksOpenerService {
   static initial : PacksOpeningEvent = {
-    type: CardSet.MSG,
+    type: CardSet.JUG,
     amount: 50
   };
 
