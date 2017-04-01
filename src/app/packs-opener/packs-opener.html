@@ -1,6 +1,3 @@
-<div class="ui center aligned basic segment">
-  <pr-suggested-content></pr-suggested-content>
-</div>
 <form novalidate class="ui form stackable center aligned grid" (ngSubmit)="onOpen()" [formGroup]="form">
   <pr-semantic-input class="six wide column" innerClass="left labeled" type="number" label="#" placeholder="Packs"
                      [control]="form.controls.amount" [errorLabels]="errors"></pr-semantic-input>

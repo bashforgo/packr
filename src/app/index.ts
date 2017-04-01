@@ -37,7 +37,6 @@ import { CollectionComponent } from './collection/collection';
 import { SearchBarComponent } from './search/bar/search-bar';
 import { CollectionFilterPipe } from './filter/collection-filter.pipe';
 import { FilterPipe } from './util/filter.pipe';
-import { SuggestedContentComponent } from './suggested-content/suggested-content';
 
 @NgModule({
   imports: [
@@ -68,8 +67,7 @@ import { SuggestedContentComponent } from './suggested-content/suggested-content
     PacksOpenerComponent,
     ClassBreakdownComponent,
     DisplaySettingsComponent,
-    RarityBreakdownComponent,
-    SuggestedContentComponent
+    RarityBreakdownComponent
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: process.env.BASE_HREF },
