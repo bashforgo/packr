@@ -3,6 +3,7 @@ import { ShortRarity, Cost, ShortRarityDictionary, Rarity } from '../data/types'
 import { AnalyticsService } from '../analytics/analytics.service';
 
 const BASE_URL = 'https://images.weserv.nl/?trim=1&url=media.services.zam.com/v1/media/byName/hs/cards/enus/';
+const ALT_URL = 'https://images.weserv.nl/?trim=1&url=media-hearth.cursecdn.com/';
 const EXT = '.png';
 
 @Component({
@@ -63,7 +64,11 @@ export class CardComponent {
   }
 
   getImage() {
-    return `${BASE_URL}${this.cardId}${EXT}`;
+    if (_.includes(this.cardId, 'avatars')) {
+      return `${ALT_URL}${this.cardId}`;
+    } else {
+      return `${BASE_URL}${this.cardId}${EXT}`;
+    }
   }
 
   openImage(event? : MouseEvent) {

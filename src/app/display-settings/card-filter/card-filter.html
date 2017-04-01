@@ -1,0 +1,9 @@
+<h3><i class="icon filter"></i>Filters</h3>
+<div class="ui list">
+  <pr-card-switch class="item"
+                  *ngFor="let prop of props"
+                  (onClicked)="toggle(prop.prop, !$event)"
+                  [value]="cfs[prop.prop]()"
+                  [onData]="prop.on"
+                  [offData]="prop.off"></pr-card-switch>
+</div>

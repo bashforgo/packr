@@ -12,10 +12,6 @@
   }
 }
 
-.clickable {
-  cursor: pointer;
-}
-
 .gold {
   font-weight: bold;
 }
@@ -30,6 +26,7 @@
     left: 0;
     position: absolute;
     right: 0;
+    z-index: 9999;
   }
 }
 

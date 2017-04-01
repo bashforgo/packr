@@ -1,3 +1,4 @@
+<pr-display-settings></pr-display-settings>
 <h2 class="ui header">
   <i class="sort numeric descending icon"></i>
   <span class="content">
@@ -6,9 +7,10 @@
   </span>
 </h2>
 <div class="ui padded collapsed grid">
-  <div class="six column doubling collapsed row" *ngFor="let pack of bps.events | async">
+  <div class="six column doubling collapsed row"
+       *ngFor="let pack of bps.events | async | prFilter : (cfs.events | async).showPack">
     <pr-card class="column" [name]="card.name" [rarity]="card.rarity" [cost]="card.cost" [cardId]="card.detail.id"
-             *ngFor="let card of pack.pack"></pr-card>
+             *ngFor="let card of pack.pack | prFilter : (cfs.events | async).showCard"></pr-card>
     <div><div class="ui basic centered mini segment">Disenchant value: {{ pack.dust }}</div></div>
   </div>
 </div>
@@ -20,14 +22,17 @@
 </h2>
 <div class="ui padded collapsed grid">
   <div class="ui twice collapsed row" *ngFor="let pack of cs.packs | async; let $index = index">
-    <div class="two wide mobile one wide tablet one wide computer column">
+    <div class="two wide mobile one wide tablet one wide computer column"
+         *ngIf="(cfs.events | async).showPack(pack)">
       <div class="ui mini basic centered segment">{{ $index + 1 }}</div>
     </div>
-    <div class="fourteen wide mobile fifteen wide tablet fifteen wide computer column">
+    <div class="fourteen wide mobile fifteen wide tablet fifteen wide computer column"
+         *ngIf="(cfs.events | async).showPack(pack)">
       <div class="ui collapsed grid">
         <div class="five column doubling row">
           <pr-card class="column" [name]="card.name" [rarity]="card.rarity" [extra]="card.extra"
-                   [cardId]="card.detail.id" [cost]="card.cost" *ngFor="let card of pack"></pr-card>
+                   [cardId]="card.detail.id" [cost]="card.cost"
+                   *ngFor="let card of pack | prFilter : (cfs.events | async).showCard"></pr-card>
         </div>
       </div>
     </div>

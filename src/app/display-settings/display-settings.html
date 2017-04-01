@@ -1,0 +1,13 @@
+<div class="container" (mouseleave)="this.open = false">
+  <button class="ui huge black circular icon button" *ngIf="!open" (click)="toggle()">
+    <i class="icon settings"></i>
+  </button>
+  <div class="ui raised segments" *ngIf="open">
+    <div class="ui inverted red right aligned clickable segment" (click)="toggle()">
+      <i class="large icon close"></i>
+    </div>
+    <div class="ui segment">
+      <pr-card-filter></pr-card-filter>
+    </div>
+  </div>
+</div>
