@@ -1,7 +1,14 @@
+<ng-container *ngIf="!rules">
+  <div class="ui red inverted segment uppercase">
+    <i class="warning sign icon"></i>
+    <strong>using old pack opening rules</strong>
+  </div>
+</ng-container>
 <form novalidate class="ui form stackable center aligned grid" (ngSubmit)="onOpen()" [formGroup]="form">
   <pr-semantic-input class="six wide column" innerClass="left labeled" type="number" label="#" placeholder="Packs"
                      [control]="form.controls.amount" [errorLabels]="errors"></pr-semantic-input>
   <pr-semantic-radio-group class="six wide column radio-group" [options]="options"
                            formControlName="type"></pr-semantic-radio-group>
-  <pr-semantic-button class="three wide column" innerClass="primary uppercase" [disabled]="!form.valid">open</pr-semantic-button>
+  <pr-semantic-button class="three wide column"
+                      innerClass="primary uppercase" [disabled]="!form.valid">open</pr-semantic-button>
 </form>
