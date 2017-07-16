@@ -1,13 +1,13 @@
+@import './app/mixins';
+
+body {
+  overflow-y: scroll;
+}
+
 .ui {
   &.menu {
     &.no-radius {
       border-radius: 0;
-    }
-  }
-
-  &.button {
-    &.uppercase {
-      text-transform: uppercase;
     }
   }
 
@@ -81,6 +81,8 @@
   cursor: pointer;
 }
 
-body {
-  overflow-y: scroll;
+.uppercase {
+  @include increase-specificity(2) {
+    text-transform: uppercase;
+  }
 }
