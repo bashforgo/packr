@@ -138,7 +138,7 @@ export class BiasedRandomList<RandomListItem> {
     let result = this._heap.gen(n, andRemove);
 
     if (andRemove) {
-      this._items = this._items.filter(v => result.indexOf(v) >= 0);
+      this._items = this._items.filter(v => result.indexOf(v) < 0);
     }
 
     return n === 1 ? result[0] : result;
@@ -151,8 +151,15 @@ export class BiasedRandomList<RandomListItem> {
     return val;
   }
 
-  pop(n : number) {
+  pop() : RandomListItem;
+  pop(n : One) : RandomListItem;
+  pop(n : number) : RandomListItem[];
+  pop(n : number = 1) : RandomListItem | RandomListItem[] {
     return this.peek(n, true);
+  }
+
+  clone() {
+    return new BiasedRandomList([...this._items], this.weighter, this.generator);
   }
 
   private _createHeap() {
