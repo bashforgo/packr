@@ -29,8 +29,9 @@ export class PacksOpenerService {
 
   constructor(private analytics : AnalyticsService) {
     this.events = this._events
-      .asObservable()
-      .do(({ type, amount }) => analytics.open(amount, type));
+      .asObservable();
+
+    this._events.subscribe(({ type, amount }) => analytics.open(amount, type));
 
     this._addEvents = this._events
       .switchMap(() => {
