@@ -36,6 +36,10 @@ export class AnalyticsService {
     this.analytics.event('card', 'click', { eventLabel: name });
   }
 
+  legend() {
+    this.analytics.event('analytics', 'view');
+  }
+
   social(type : string, label : string = null) {
     this.analytics.event('social', type, label ? { eventLabel: label } : undefined);
   }
