@@ -65,7 +65,7 @@ export class CardComponent {
 
   getImage() {
     if (_.includes(this.cardId, 'avatars')) {
-      return `${ALT_URL}${this.cardId}`;
+      return `${ALT_URL}${this.cardId}${EXT}`;
     } else {
       return `${BASE_URL}${this.cardId}${EXT}`;
     }

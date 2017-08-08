@@ -1,13 +1,15 @@
-export type CardSet = 'JUG' | 'GANGS' | 'OG' | 'TGT' | 'EXPERT1';
-export type CardSetLabel = 'JUG' | 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
+export type CardSet = 'KFT'| 'UNGORO' | 'GANGS' | 'OG' | 'TGT' | 'EXPERT1';
+export type CardSetLabel = 'KFT'| 'JUG' | 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
 
 export namespace CardSet {
-  export const JUG : CardSet = 'JUG';
+  export const KFT : CardSet = 'KFT';
+  export const JUG : CardSet = 'UNGORO';
   export const MSG : CardSet = 'GANGS';
   export const WOG : CardSet = 'OG';
   // export const TGT : CardSet = 'TGT';
   export const CLASSIC : CardSet = 'EXPERT1';
   const _long = {
+    [KFT]: 'Knights of the Frozen Throne',
     [JUG]: 'Journey to Un\'Goro',
     [MSG]: 'Mean Streets of Gadgetzan',
     [WOG]: 'Whispers of the Old Gods',
@@ -15,6 +17,7 @@ export namespace CardSet {
     [CLASSIC]: 'Classic'
   };
   const _labels = {
+    [KFT]: <CardSetLabel>'KFT',
     [JUG]: <CardSetLabel>'JUG',
     [MSG]: <CardSetLabel>'MSG',
     [WOG]: <CardSetLabel>'WOG',
