@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CardsService, CollectionService } from '../data';
 import { Cost, Rarity } from '../data/types';
-import { SearchTerm } from '../search/parse/search.grammar';
 import { Search } from '../search/bar/search-bar';
 
 @Component({
