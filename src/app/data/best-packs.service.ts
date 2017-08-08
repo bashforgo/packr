@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { CollectionService } from './';
-import { Dust, Pack, PackWithDust } from './types';
 import { KHeap } from '../util';
+import { CollectionService } from './';
+import { Dust, PackWithDust } from './types';
 
 @Injectable()
 export class BestPacksService {

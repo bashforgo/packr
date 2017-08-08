@@ -80,7 +80,7 @@ export class CollectionService {
       .refCount();
 
     this.events = this._events
-      .map(([coll]) => coll)
+      .map(([coll]) => coll);
 
     this.klass = this._events
       .map(([, cbd]) => cbd);
