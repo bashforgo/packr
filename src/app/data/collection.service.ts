@@ -72,6 +72,17 @@ export class CollectionService {
 
             const packsProcessor = (pks) => [collection, klassBreakdown, rarityBreakdown, _.map(pks, _packsProcessor)];
 
+            if (CardSet.isWOG(type)) {
+              _packsProcessor([
+                { cardClass: 'NEUTRAL', cost: 'norm', name: `C'Thun`, rarity: 'lgnd', detail: {
+                  name: `C'Thun`, id: 'avatars/333/918/31110', rarity: 'LEGENDARY', set: 'OG', cost: 10, playerClass: 'NEUTRAL'} } as Card,
+                { cardClass: 'NEUTRAL', cost: 'norm', name: 'Beckoner of Evil', rarity: 'comn', detail: {
+                  name: 'Beckoner of Evil', id: 'avatars/333/921/31114', rarity: 'COMMON', set: 'OG', cost: 2, playerClass: 'NEUTRAL'} } as Card,
+                { cardClass: 'NEUTRAL', cost: 'norm', name: 'Beckoner of Evil', rarity: 'comn', detail: {
+                  name: 'Beckoner of Evil', id: 'avatars/333/921/31114', rarity: 'COMMON', set: 'OG', cost: 2, playerClass: 'NEUTRAL'} } as Card
+              ] as Pack);
+            }
+
             return [collection, klassBreakdown, rarityBreakdown, packsProcessor];
           })
       )

@@ -66,8 +66,16 @@ export class CardsService {
     };
     const sorted = sortByManaThenName({ all }).all;
 
-    const rand = _.mapValues<Card[], RandomList<Card>>(filtered.byRarity, f => new RandomList(f)) as
-      ShortRarityDictionary<RandomList<Card>>;
+    const rand = _.mapValues<Card[], RandomList<Card>>(filtered.byRarity, f => {
+      if (CardSet.isWOG(type)) {
+        f = [...f];
+        _.remove(f, _.overSome([
+          _.matches({ name: `C'Thun` }),
+          _.matches({ name: `Beckoner of Evil` })
+        ]));
+      }
+      return new RandomList(f);
+    }) as ShortRarityDictionary<RandomList<Card>>;
 
     const target = {
       byRarity: _.transform(

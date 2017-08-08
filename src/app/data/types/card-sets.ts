@@ -29,4 +29,5 @@ export namespace CardSet {
   export const list = () => _.keys(_long);
   export const label = (s : CardSet) : CardSetLabel => _labels[s];
   export const isMSG = (s : CardSet) => s === MSG;
+  export const isWOG = (s : CardSet) => s === WOG;
 }
