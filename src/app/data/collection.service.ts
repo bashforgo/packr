@@ -36,7 +36,7 @@ export class CollectionService {
       .withLatestFrom<Packs, CollectionResetSignature>(
         pos.events
           .map(({ type }) => {
-            const collection : {[cardName: string]: CostDictionary<number>} = {};
+            const collection : { [cardName : string] : CostDictionary<number> } = {};
             const klassBreakdown = _.transform(
               CardClass.classList(CardSet.isMSG(type)),
               (res, name) => res[name] = {},
@@ -74,12 +74,50 @@ export class CollectionService {
 
             if (CardSet.isWOG(type)) {
               _packsProcessor([
-                { cardClass: 'NEUTRAL', cost: 'norm', name: `C'Thun`, rarity: 'lgnd', detail: {
-                  name: `C'Thun`, id: 'avatars/333/918/31110', rarity: 'LEGENDARY', set: 'OG', cost: 10, playerClass: 'NEUTRAL'} } as Card,
-                { cardClass: 'NEUTRAL', cost: 'norm', name: 'Beckoner of Evil', rarity: 'comn', detail: {
-                  name: 'Beckoner of Evil', id: 'avatars/333/921/31114', rarity: 'COMMON', set: 'OG', cost: 2, playerClass: 'NEUTRAL'} } as Card,
-                { cardClass: 'NEUTRAL', cost: 'norm', name: 'Beckoner of Evil', rarity: 'comn', detail: {
-                  name: 'Beckoner of Evil', id: 'avatars/333/921/31114', rarity: 'COMMON', set: 'OG', cost: 2, playerClass: 'NEUTRAL'} } as Card
+                {
+                  cardClass: 'NEUTRAL', cost: 'norm', name: `C'Thun`, rarity: 'lgnd', detail: {
+                    name: `C'Thun`,
+                    id: 'avatars/333/918/31110',
+                    rarity: 'LEGENDARY',
+                    set: 'OG',
+                    cost: 10,
+                    playerClass: 'NEUTRAL'
+                  }
+                } as Card,
+                {
+                  cardClass: 'NEUTRAL', cost: 'norm', name: 'Beckoner of Evil', rarity: 'comn', detail: {
+                    name: 'Beckoner of Evil',
+                    id: 'avatars/333/921/31114',
+                    rarity: 'COMMON',
+                    set: 'OG',
+                    cost: 2,
+                    playerClass: 'NEUTRAL'
+                  }
+                } as Card,
+                {
+                  cardClass: 'NEUTRAL', cost: 'norm', name: 'Beckoner of Evil', rarity: 'comn', detail: {
+                    name: 'Beckoner of Evil',
+                    id: 'avatars/333/921/31114',
+                    rarity: 'COMMON',
+                    set: 'OG',
+                    cost: 2,
+                    playerClass: 'NEUTRAL'
+                  }
+                } as Card
+              ] as Pack);
+            }
+            if (CardSet.isKNC(type)) {
+              _packsProcessor([
+                {
+                  cardClass: 'NEUTRAL', cost: 'norm', name: 'Marin the Fox', rarity: 'lgnd', detail: {
+                    name: 'Marin the Fox',
+                    id: 'avatars/353/214/636468816086287167',
+                    rarity: 'LEGENDARY',
+                    set: 'KNC',
+                    cost: 8,
+                    playerClass: 'NEUTRAL'
+                  }
+                } as Card
               ] as Pack);
             }
 

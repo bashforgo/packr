@@ -433,7 +433,7 @@
 	},
 	{
 		"name": "Starfall",
-		"id": "avatars/333/441/464",
+		"id": "avatars/349/598/636444885532834189",
 		"rarity": "RARE",
 		"set": "EXPERT1",
 		"cost": 5,
@@ -481,7 +481,7 @@
 	},
 	{
 		"name": "Earth Elemental",
-		"id": "avatars/330/689/124",
+		"id": "avatars/339/175/124",
 		"rarity": "EPIC",
 		"set": "EXPERT1",
 		"cost": 5,
@@ -561,7 +561,7 @@
 	},
 	{
 		"name": "Bite",
-		"id": "avatars/331/10/266",
+		"id": "avatars/339/187/266",
 		"rarity": "RARE",
 		"set": "EXPERT1",
 		"cost": 4,
@@ -1137,7 +1137,7 @@
 	},
 	{
 		"name": "Murloc Warleader",
-		"id": "avatars/330/923/222",
+		"id": "avatars/345/600/222",
 		"rarity": "EPIC",
 		"set": "EXPERT1",
 		"cost": 3,
@@ -1361,7 +1361,7 @@
 	},
 	{
 		"name": "Wrath",
-		"id": "avatars/330/567/633",
+		"id": "avatars/349/83/636440873128110708",
 		"rarity": "COMMON",
 		"set": "EXPERT1",
 		"cost": 2,
@@ -2289,7 +2289,7 @@
 	},
 	{
 		"name": "Princess Huhuran",
-		"id": "avatars/333/966/35188",
+		"id": "avatars/340/21/35188",
 		"rarity": "LEGENDARY",
 		"set": "OG",
 		"cost": 5,
@@ -2425,7 +2425,7 @@
 	},
 	{
 		"name": "Fandral Staghelm",
-		"id": "avatars/333/588/35208",
+		"id": "avatars/339/997/35208",
 		"rarity": "LEGENDARY",
 		"set": "OG",
 		"cost": 4,
@@ -2617,7 +2617,7 @@
 	},
 	{
 		"name": "Darkshire Councilman",
-		"id": "avatars/333/696/35224",
+		"id": "avatars/340/6/35224",
 		"rarity": "COMMON",
 		"set": "OG",
 		"cost": 3,
@@ -3217,7 +3217,7 @@
 	},
 	{
 		"name": "Cryomancer",
-		"id": "avatars/329/364/49739",
+		"id": "avatars/339/149/49739",
 		"rarity": "COMMON",
 		"set": "GANGS",
 		"cost": 5,
@@ -3729,7 +3729,7 @@
 	},
 	{
 		"name": "Unlicensed Apothecary",
-		"id": "avatars/329/580/49747",
+		"id": "avatars/348/675/49747",
 		"rarity": "EPIC",
 		"set": "GANGS",
 		"cost": 3,
@@ -3737,7 +3737,7 @@
 	},
 	{
 		"name": "Wickerflame Burnbristle",
-		"id": "avatars/329/559/49633",
+		"id": "avatars/339/153/49633",
 		"rarity": "LEGENDARY",
 		"set": "GANGS",
 		"cost": 3,
@@ -5121,7 +5121,7 @@
 	},
 	{
 		"name": "Snowfury Giant",
-		"id": "avatars/338/784/636376617369090534",
+		"id": "avatars/339/446/62918",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 11,
@@ -5129,7 +5129,7 @@
 	},
 	{
 		"name": "Bloodreaver Gul'dan",
-		"id": "avatars/338/968/636377321353219107",
+		"id": "avatars/340/191/62934",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 10,
@@ -5137,7 +5137,7 @@
 	},
 	{
 		"name": "Ultimate Infestation",
-		"id": "avatars/338/97/636372820191589539",
+		"id": "avatars/339/431/62879",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 10,
@@ -5145,7 +5145,7 @@
 	},
 	{
 		"name": "Frost Lich Jaina",
-		"id": "avatars/338/157/636373045712013435",
+		"id": "avatars/339/729/61810",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 9,
@@ -5153,7 +5153,7 @@
 	},
 	{
 		"name": "Uther of the Ebon Blade",
-		"id": "avatars/338/974/636377323471542679",
+		"id": "avatars/339/680/62906",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 9,
@@ -5161,7 +5161,7 @@
 	},
 	{
 		"name": "Valeera the Hollow",
-		"id": "avatars/338/306/636373848424207995",
+		"id": "avatars/339/660/62876",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 9,
@@ -5169,7 +5169,7 @@
 	},
 	{
 		"name": "Hadronox",
-		"id": "avatars/338/154/636373041772515567",
+		"id": "avatars/339/743/61828",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 9,
@@ -5177,7 +5177,7 @@
 	},
 	{
 		"name": "Obsidian Statue",
-		"id": "avatars/338/303/636373844224214351",
+		"id": "avatars/339/497/62870",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 9,
@@ -5185,7 +5185,7 @@
 	},
 	{
 		"name": "Scourgelord Garrosh",
-		"id": "avatars/338/965/636377320806509638",
+		"id": "avatars/339/736/62927",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 8,
@@ -5193,7 +5193,7 @@
 	},
 	{
 		"name": "Shadowreaper Anduin",
-		"id": "avatars/338/973/636377322216673729",
+		"id": "avatars/339/699/62889",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 8,
@@ -5201,7 +5201,7 @@
 	},
 	{
 		"name": "Glacial Mysteries",
-		"id": "avatars/338/299/636373835928739511",
+		"id": "avatars/339/437/62869",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 8,
@@ -5209,7 +5209,7 @@
 	},
 	{
 		"name": "Rotface",
-		"id": "avatars/338/628/636375830317204893",
+		"id": "avatars/339/575/62898",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 8,
@@ -5217,7 +5217,7 @@
 	},
 	{
 		"name": "Sindragosa",
-		"id": "avatars/336/490/636368692637503103",
+		"id": "avatars/339/752/61822",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 8,
@@ -5225,7 +5225,7 @@
 	},
 	{
 		"name": "The Lich King",
-		"id": "avatars/338/961/636377318406093128",
+		"id": "avatars/339/548/62922",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 8,
@@ -5233,7 +5233,7 @@
 	},
 	{
 		"name": "Malfurion the Pestilent",
-		"id": "avatars/338/928/636377278918582971",
+		"id": "avatars/340/193/62904",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 7,
@@ -5241,7 +5241,7 @@
 	},
 	{
 		"name": "Abominable Bowman",
-		"id": "avatars/338/131/636373010380185609",
+		"id": "avatars/339/657/61829",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 7,
@@ -5249,7 +5249,7 @@
 	},
 	{
 		"name": "Archbishop Benedictus",
-		"id": "avatars/338/138/636373022589357934",
+		"id": "avatars/339/500/62856",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 7,
@@ -5257,7 +5257,7 @@
 	},
 	{
 		"name": "Bonemare",
-		"id": "avatars/336/820/636371262527637471",
+		"id": "avatars/339/618/61834",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 7,
@@ -5265,7 +5265,7 @@
 	},
 	{
 		"name": "Deathstalker Rexxar",
-		"id": "avatars/338/155/636373041893767889",
+		"id": "avatars/339/667/58724",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 6,
@@ -5273,7 +5273,7 @@
 	},
 	{
 		"name": "Embrace Darkness",
-		"id": "avatars/338/207/636373203811944490",
+		"id": "avatars/339/761/62857",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 6,
@@ -5281,15 +5281,23 @@
 	},
 	{
 		"name": "Shadow Essence",
-		"id": "avatars/338/631/636375836139136090",
+		"id": "avatars/339/515/62896",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 6,
 		"playerClass": "PRIEST"
 	},
 	{
+		"name": "Spreading Plague",
+		"id": "avatars/345/603/62841",
+		"rarity": "RARE",
+		"set": "KFT",
+		"cost": 6,
+		"playerClass": "DRUID"
+	},
+	{
 		"name": "Blackguard",
-		"id": "avatars/338/787/636376623021199738",
+		"id": "avatars/339/533/62907",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 6,
@@ -5297,7 +5305,7 @@
 	},
 	{
 		"name": "Bone Drake",
-		"id": "avatars/338/632/636375838348248301",
+		"id": "avatars/339/310/62899",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 6,
@@ -5305,7 +5313,7 @@
 	},
 	{
 		"name": "Furnacefire Colossus",
-		"id": "avatars/338/960/636377318247956780",
+		"id": "avatars/339/461/62924",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 6,
@@ -5313,7 +5321,7 @@
 	},
 	{
 		"name": "Moorabi",
-		"id": "avatars/336/836/636371270087171387",
+		"id": "avatars/339/545/62845",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 6,
@@ -5321,7 +5329,7 @@
 	},
 	{
 		"name": "Necrotic Geist",
-		"id": "avatars/336/818/636371261826695981",
+		"id": "avatars/339/788/62850",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 6,
@@ -5329,7 +5337,7 @@
 	},
 	{
 		"name": "Nerubian Unraveler",
-		"id": "avatars/336/485/636368687841385512",
+		"id": "avatars/339/621/61817",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 6,
@@ -5337,7 +5345,7 @@
 	},
 	{
 		"name": "Skulking Geist",
-		"id": "avatars/338/313/636373859552179626",
+		"id": "avatars/339/612/62883",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 6,
@@ -5345,7 +5353,7 @@
 	},
 	{
 		"name": "Spectral Pillager",
-		"id": "avatars/338/972/636377322013375872",
+		"id": "avatars/339/809/62945",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 6,
@@ -5353,7 +5361,7 @@
 	},
 	{
 		"name": "Spellweaver",
-		"id": "avatars/338/955/636377317068981979",
+		"id": "avatars/339/782/62938",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 6,
@@ -5361,7 +5369,7 @@
 	},
 	{
 		"name": "Thrall, Deathseer",
-		"id": "avatars/336/989/636372084783602471",
+		"id": "avatars/340/195/62861",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 5,
@@ -5369,23 +5377,15 @@
 	},
 	{
 		"name": "Devour Mind",
-		"id": "avatars/338/304/636373844576717251",
+		"id": "avatars/339/485/62868",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 5,
 		"playerClass": "PRIEST"
 	},
 	{
-		"name": "Spreading Plague",
-		"id": "avatars/338/129/636373006884381676",
-		"rarity": "RARE",
-		"set": "KFT",
-		"cost": 5,
-		"playerClass": "DRUID"
-	},
-	{
 		"name": "Webweave",
-		"id": "avatars/338/652/636375966020588402",
+		"id": "avatars/339/355/62900",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 5,
@@ -5393,7 +5393,7 @@
 	},
 	{
 		"name": "Blood-Queen Lana'thel",
-		"id": "avatars/336/834/636371268829516884",
+		"id": "avatars/339/758/61814",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 5,
@@ -5401,7 +5401,7 @@
 	},
 	{
 		"name": "Bloodworm",
-		"id": "avatars/338/953/636377316703394738",
+		"id": "avatars/339/806/62933",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 5,
@@ -5409,7 +5409,7 @@
 	},
 	{
 		"name": "Bolvar, Fireblood",
-		"id": "avatars/336/846/636371274012942797",
+		"id": "avatars/339/785/61831",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 5,
@@ -5417,7 +5417,7 @@
 	},
 	{
 		"name": "Bone Baron",
-		"id": "avatars/338/970/636377321718637401",
+		"id": "avatars/339/397/62939",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 5,
@@ -5425,7 +5425,7 @@
 	},
 	{
 		"name": "Cobalt Scalebane",
-		"id": "avatars/336/819/636371262088416363",
+		"id": "avatars/339/316/62851",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 5,
@@ -5433,7 +5433,7 @@
 	},
 	{
 		"name": "Corpse Raiser",
-		"id": "avatars/338/314/636373861512495531",
+		"id": "avatars/339/539/62866",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 5,
@@ -5441,7 +5441,7 @@
 	},
 	{
 		"name": "Corpse Widow",
-		"id": "avatars/338/298/636373833700297608",
+		"id": "avatars/339/527/62867",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 5,
@@ -5449,7 +5449,7 @@
 	},
 	{
 		"name": "Death Revenant",
-		"id": "avatars/338/963/636377319081446554",
+		"id": "avatars/339/590/62926",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 5,
@@ -5457,7 +5457,7 @@
 	},
 	{
 		"name": "Despicable Dreadlord",
-		"id": "avatars/338/967/636377321236929760",
+		"id": "avatars/339/412/62903",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 5,
@@ -5465,7 +5465,7 @@
 	},
 	{
 		"name": "Fatespinner",
-		"id": "avatars/338/128/636373005520008258",
+		"id": "avatars/339/337/61830",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 5,
@@ -5473,7 +5473,7 @@
 	},
 	{
 		"name": "Skelemancer",
-		"id": "avatars/338/886/636377173383485757",
+		"id": "avatars/339/286/62943",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 5,
@@ -5481,7 +5481,7 @@
 	},
 	{
 		"name": "Sunborne Val'kyr",
-		"id": "avatars/336/815/636371258305913508",
+		"id": "avatars/339/313/62855",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 5,
@@ -5489,7 +5489,7 @@
 	},
 	{
 		"name": "Tomb Lurker",
-		"id": "avatars/338/181/636373072065452617",
+		"id": "avatars/339/467/62863",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 5,
@@ -5497,7 +5497,7 @@
 	},
 	{
 		"name": "Venomancer",
-		"id": "avatars/338/954/636377316910684874",
+		"id": "avatars/339/322/62953",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 5,
@@ -5505,7 +5505,7 @@
 	},
 	{
 		"name": "Voodoo Hexxer",
-		"id": "avatars/336/489/636368689126002822",
+		"id": "avatars/339/440/61826",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 5,
@@ -5513,7 +5513,7 @@
 	},
 	{
 		"name": "Blood Razor",
-		"id": "avatars/336/481/636368686167811251",
+		"id": "avatars/339/394/61815",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 4,
@@ -5521,7 +5521,7 @@
 	},
 	{
 		"name": "Light's Sorrow",
-		"id": "avatars/338/136/636373019959768970",
+		"id": "avatars/339/409/61833",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 4,
@@ -5529,7 +5529,7 @@
 	},
 	{
 		"name": "Avalanche",
-		"id": "avatars/338/969/636377321521134391",
+		"id": "avatars/339/415/62921",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5537,7 +5537,7 @@
 	},
 	{
 		"name": "Eternal Servitude",
-		"id": "avatars/338/140/636373023729707616",
+		"id": "avatars/339/494/61835",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5545,7 +5545,7 @@
 	},
 	{
 		"name": "Arfus",
-		"id": "avatars/338/962/636377318572500952",
+		"id": "avatars/339/776/62923",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 4,
@@ -5553,7 +5553,7 @@
 	},
 	{
 		"name": "Arrogant Crusader",
-		"id": "avatars/338/975/636377324559986639",
+		"id": "avatars/339/325/62930",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5561,7 +5561,7 @@
 	},
 	{
 		"name": "Chillblade Champion",
-		"id": "avatars/338/158/636373046077753539",
+		"id": "avatars/339/651/58721",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 4,
@@ -5569,7 +5569,7 @@
 	},
 	{
 		"name": "Corpsetaker",
-		"id": "avatars/338/182/636373072240966727",
+		"id": "avatars/339/815/61832",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 4,
@@ -5577,7 +5577,7 @@
 	},
 	{
 		"name": "Deathaxe Punisher",
-		"id": "avatars/338/959/636377318066526019",
+		"id": "avatars/339/642/62949",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 4,
@@ -5585,7 +5585,7 @@
 	},
 	{
 		"name": "Exploding Bloatbat",
-		"id": "avatars/338/977/636377324908149622",
+		"id": "avatars/339/292/62942",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5593,7 +5593,7 @@
 	},
 	{
 		"name": "Ghastly Conjurer",
-		"id": "avatars/336/141/636366283264333741",
+		"id": "avatars/339/406/61820",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5601,7 +5601,7 @@
 	},
 	{
 		"name": "Grave Shambler",
-		"id": "avatars/338/950/636377316152413619",
+		"id": "avatars/339/464/62950",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 4,
@@ -5609,7 +5609,7 @@
 	},
 	{
 		"name": "Grim Necromancer",
-		"id": "avatars/338/951/636377316337506254",
+		"id": "avatars/339/304/62947",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 4,
@@ -5617,7 +5617,7 @@
 	},
 	{
 		"name": "Keening Banshee",
-		"id": "avatars/338/956/636377317351873249",
+		"id": "avatars/339/812/62954",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5625,7 +5625,7 @@
 	},
 	{
 		"name": "Lilian Voss",
-		"id": "avatars/338/308/636373851789055605",
+		"id": "avatars/339/645/62872",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 4,
@@ -5633,7 +5633,7 @@
 	},
 	{
 		"name": "Meat Wagon",
-		"id": "avatars/338/183/636373072423708348",
+		"id": "avatars/339/648/62849",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 4,
@@ -5641,7 +5641,7 @@
 	},
 	{
 		"name": "Night Howler",
-		"id": "avatars/338/952/636377316541313523",
+		"id": "avatars/339/319/62919",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 4,
@@ -5649,7 +5649,7 @@
 	},
 	{
 		"name": "Phantom Freebooter",
-		"id": "avatars/338/185/636373072780980900",
+		"id": "avatars/339/283/62858",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5657,7 +5657,7 @@
 	},
 	{
 		"name": "Prince Valanar",
-		"id": "avatars/336/825/636371265306701743",
+		"id": "avatars/339/773/62844",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 4,
@@ -5665,7 +5665,7 @@
 	},
 	{
 		"name": "Professor Putricide",
-		"id": "avatars/336/492/636368693371001210",
+		"id": "avatars/339/479/61819",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 4,
@@ -5673,7 +5673,7 @@
 	},
 	{
 		"name": "Rattling Rascal",
-		"id": "avatars/338/958/636377317912342760",
+		"id": "avatars/339/298/62893",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 4,
@@ -5681,7 +5681,7 @@
 	},
 	{
 		"name": "Runeforge Haunter",
-		"id": "avatars/338/147/636373029581885940",
+		"id": "avatars/339/524/62865",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5689,7 +5689,7 @@
 	},
 	{
 		"name": "Saronite Chain Gang",
-		"id": "avatars/338/786/636376621415659147",
+		"id": "avatars/339/593/62901",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5697,7 +5697,7 @@
 	},
 	{
 		"name": "Strongshell Scavenger",
-		"id": "avatars/338/929/636377279138766619",
+		"id": "avatars/339/633/62936",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5705,7 +5705,7 @@
 	},
 	{
 		"name": "Ticking Abomination",
-		"id": "avatars/338/184/636373072546922531",
+		"id": "avatars/339/470/61811",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 4,
@@ -5713,7 +5713,7 @@
 	},
 	{
 		"name": "Wicked Skeleton",
-		"id": "avatars/338/949/636377315927203279",
+		"id": "avatars/339/803/62944",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 4,
@@ -5721,7 +5721,7 @@
 	},
 	{
 		"name": "Ice Breaker",
-		"id": "avatars/338/149/636373032301641157",
+		"id": "avatars/339/518/61813",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5729,7 +5729,7 @@
 	},
 	{
 		"name": "Shadowblade",
-		"id": "avatars/338/146/636373029475788128",
+		"id": "avatars/339/764/62838",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5737,7 +5737,7 @@
 	},
 	{
 		"name": "Frozen Clone",
-		"id": "avatars/338/540/636375311491657609",
+		"id": "avatars/339/424/62895",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5745,7 +5745,7 @@
 	},
 	{
 		"name": "Gnash",
-		"id": "avatars/338/978/636377325067455811",
+		"id": "avatars/339/418/62955",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5753,7 +5753,7 @@
 	},
 	{
 		"name": "Simulacrum",
-		"id": "avatars/338/301/636373836072176976",
+		"id": "avatars/339/654/62871",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 3,
@@ -5761,7 +5761,7 @@
 	},
 	{
 		"name": "Treachery",
-		"id": "avatars/338/311/636373856418273201",
+		"id": "avatars/339/482/62875",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 3,
@@ -5769,7 +5769,7 @@
 	},
 	{
 		"name": "Unwilling Sacrifice",
-		"id": "avatars/338/312/636373857759989012",
+		"id": "avatars/339/602/62873",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5777,7 +5777,7 @@
 	},
 	{
 		"name": "Acolyte of Agony",
-		"id": "avatars/338/333/636373949829744010",
+		"id": "avatars/339/491/62886",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5785,7 +5785,7 @@
 	},
 	{
 		"name": "Bearshark",
-		"id": "avatars/336/486/636368688457394277",
+		"id": "avatars/339/587/61827",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5793,7 +5793,7 @@
 	},
 	{
 		"name": "Coldwraith",
-		"id": "avatars/336/488/636368689011688025",
+		"id": "avatars/339/536/61825",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5801,7 +5801,7 @@
 	},
 	{
 		"name": "Crypt Lord",
-		"id": "avatars/338/267/636373579025518522",
+		"id": "avatars/339/636/62860",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5809,7 +5809,7 @@
 	},
 	{
 		"name": "Deathspeaker",
-		"id": "avatars/338/442/636374682579233400",
+		"id": "avatars/339/596/62892",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5817,7 +5817,7 @@
 	},
 	{
 		"name": "Doomed Apprentice",
-		"id": "avatars/338/133/636373016058575756",
+		"id": "avatars/339/428/62847",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5825,7 +5825,7 @@
 	},
 	{
 		"name": "Drakkari Defender",
-		"id": "avatars/338/450/636374720767395471",
+		"id": "avatars/339/421/62887",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5833,7 +5833,7 @@
 	},
 	{
 		"name": "Drakkari Enchanter",
-		"id": "avatars/338/957/636377317707865929",
+		"id": "avatars/339/794/62929",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 3,
@@ -5841,7 +5841,7 @@
 	},
 	{
 		"name": "Happy Ghoul",
-		"id": "avatars/338/790/636376628022148609",
+		"id": "avatars/339/609/62902",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5849,7 +5849,7 @@
 	},
 	{
 		"name": "Howlfiend",
-		"id": "avatars/338/630/636375834186512495",
+		"id": "avatars/339/503/62894",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5857,7 +5857,7 @@
 	},
 	{
 		"name": "Howling Commander",
-		"id": "avatars/338/137/636373021201674359",
+		"id": "avatars/339/627/62836",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5865,7 +5865,7 @@
 	},
 	{
 		"name": "Hyldnir Frostrider",
-		"id": "avatars/338/947/636377315237193583",
+		"id": "avatars/339/779/62920",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5873,7 +5873,7 @@
 	},
 	{
 		"name": "Mindbreaker",
-		"id": "avatars/338/187/636373073103910522",
+		"id": "avatars/339/797/62859",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5881,7 +5881,7 @@
 	},
 	{
 		"name": "Mountainfire Armor",
-		"id": "avatars/338/171/636373062240279945",
+		"id": "avatars/339/391/61818",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5889,7 +5889,7 @@
 	},
 	{
 		"name": "Plague Scientist",
-		"id": "avatars/338/265/636373566250309625",
+		"id": "avatars/339/639/61812",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5897,7 +5897,7 @@
 	},
 	{
 		"name": "Prince Taldaram",
-		"id": "avatars/336/75/636365772011619677",
+		"id": "avatars/339/770/61816",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 3,
@@ -5905,7 +5905,7 @@
 	},
 	{
 		"name": "Shallow Gravedigger",
-		"id": "avatars/338/186/636373072980971965",
+		"id": "avatars/339/615/58720",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5913,7 +5913,7 @@
 	},
 	{
 		"name": "Stitched Tracker",
-		"id": "avatars/338/156/636373042020647486",
+		"id": "avatars/339/584/62854",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5921,7 +5921,7 @@
 	},
 	{
 		"name": "Val'kyr Soulclaimer",
-		"id": "avatars/338/172/636373062463000076",
+		"id": "avatars/339/581/62853",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 3,
@@ -5929,7 +5929,7 @@
 	},
 	{
 		"name": "Vryghoul",
-		"id": "avatars/338/948/636377315688132577",
+		"id": "avatars/339/400/62941",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 3,
@@ -5937,7 +5937,7 @@
 	},
 	{
 		"name": "Bring It On!",
-		"id": "avatars/338/169/636373061619943215",
+		"id": "avatars/339/749/61824",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 2,
@@ -5945,7 +5945,7 @@
 	},
 	{
 		"name": "Cryostasis",
-		"id": "avatars/338/148/636373031086916365",
+		"id": "avatars/339/385/62846",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 2,
@@ -5953,7 +5953,7 @@
 	},
 	{
 		"name": "Dark Conviction",
-		"id": "avatars/338/981/636377338227250257",
+		"id": "avatars/339/331/62932",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -5961,7 +5961,7 @@
 	},
 	{
 		"name": "Dead Man's Hand",
-		"id": "avatars/338/170/636373061742494812",
+		"id": "avatars/339/449/62842",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 2,
@@ -5969,7 +5969,7 @@
 	},
 	{
 		"name": "Defile",
-		"id": "avatars/338/151/636373034591859617",
+		"id": "avatars/339/334/62840",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 2,
@@ -5977,7 +5977,7 @@
 	},
 	{
 		"name": "Desperate Stand",
-		"id": "avatars/338/214/636373263646101915",
+		"id": "avatars/339/530/62880",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 2,
@@ -5985,7 +5985,7 @@
 	},
 	{
 		"name": "Drain Soul",
-		"id": "avatars/338/966/636377321108409054",
+		"id": "avatars/339/382/62928",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -5993,7 +5993,7 @@
 	},
 	{
 		"name": "Forge of Souls",
-		"id": "avatars/338/785/636376619586069464",
+		"id": "avatars/339/542/62917",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6001,7 +6001,7 @@
 	},
 	{
 		"name": "Ice Fishing",
-		"id": "avatars/338/451/636374721050679716",
+		"id": "avatars/339/443/62884",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6009,7 +6009,7 @@
 	},
 	{
 		"name": "Leeching Poison",
-		"id": "avatars/336/487/636368688643865995",
+		"id": "avatars/339/509/61821",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6017,7 +6017,7 @@
 	},
 	{
 		"name": "Roll the Bones",
-		"id": "avatars/338/449/636374720313795470",
+		"id": "avatars/339/476/62885",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 2,
@@ -6025,7 +6025,7 @@
 	},
 	{
 		"name": "Spirit Lash",
-		"id": "avatars/338/141/636373024685355856",
+		"id": "avatars/339/630/58722",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6033,7 +6033,7 @@
 	},
 	{
 		"name": "Toxic Arrow",
-		"id": "avatars/338/896/636377179436313363",
+		"id": "avatars/339/352/62952",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 2,
@@ -6041,7 +6041,7 @@
 	},
 	{
 		"name": "Venomstrike Trap",
-		"id": "avatars/338/132/636373011614426198",
+		"id": "avatars/339/473/62837",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 2,
@@ -6049,7 +6049,7 @@
 	},
 	{
 		"name": "Brrrloc",
-		"id": "avatars/338/326/636373933006155761",
+		"id": "avatars/339/388/62874",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6057,7 +6057,7 @@
 	},
 	{
 		"name": "Druid of the Swarm",
-		"id": "avatars/338/793/636376630873047369",
+		"id": "avatars/339/358/62905",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 2,
@@ -6065,7 +6065,7 @@
 	},
 	{
 		"name": "Fallen Sun Cleric",
-		"id": "avatars/338/484/636374950910246252",
+		"id": "avatars/339/458/62888",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6073,7 +6073,7 @@
 	},
 	{
 		"name": "Gnomeferatu",
-		"id": "avatars/338/262/636373558167403582",
+		"id": "avatars/339/578/62852",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 2,
@@ -6081,7 +6081,7 @@
 	},
 	{
 		"name": "Ice Walker",
-		"id": "avatars/338/134/636373017673459139",
+		"id": "avatars/339/403/62848",
 		"rarity": "RARE",
 		"set": "KFT",
 		"cost": 2,
@@ -6089,7 +6089,7 @@
 	},
 	{
 		"name": "Prince Keleseth",
-		"id": "avatars/336/824/636371265069202986",
+		"id": "avatars/339/767/58723",
 		"rarity": "LEGENDARY",
 		"set": "KFT",
 		"cost": 2,
@@ -6097,7 +6097,7 @@
 	},
 	{
 		"name": "Shadow Ascendant",
-		"id": "avatars/338/305/636373846638122491",
+		"id": "avatars/339/488/62882",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6105,7 +6105,7 @@
 	},
 	{
 		"name": "Tainted Zealot",
-		"id": "avatars/338/944/636377314544408509",
+		"id": "avatars/339/818/62951",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6113,7 +6113,7 @@
 	},
 	{
 		"name": "Tuskarr Fisherman",
-		"id": "avatars/338/945/636377314704228802",
+		"id": "avatars/339/455/62937",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 2,
@@ -6121,7 +6121,7 @@
 	},
 	{
 		"name": "Breath of Sindragosa",
-		"id": "avatars/338/629/636375832488753437",
+		"id": "avatars/339/746/62897",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 1,
@@ -6129,7 +6129,7 @@
 	},
 	{
 		"name": "Doomerang",
-		"id": "avatars/338/971/636377321851330362",
+		"id": "avatars/339/512/62940",
 		"rarity": "EPIC",
 		"set": "KFT",
 		"cost": 1,
@@ -6137,7 +6137,7 @@
 	},
 	{
 		"name": "Play Dead",
-		"id": "avatars/338/976/636377324800483759",
+		"id": "avatars/339/376/62891",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 1,
@@ -6145,7 +6145,7 @@
 	},
 	{
 		"name": "Acherus Veteran",
-		"id": "avatars/338/943/636377314375447652",
+		"id": "avatars/339/452/62948",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 1,
@@ -6153,7 +6153,7 @@
 	},
 	{
 		"name": "Animated Berserker",
-		"id": "avatars/338/173/636373063194206753",
+		"id": "avatars/339/521/62834",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 1,
@@ -6161,15 +6161,15 @@
 	},
 	{
 		"name": "Deadscale Knight",
-		"id": "avatars/338/941/636377314049115399",
+		"id": "avatars/339/506/62931",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 1,
 		"playerClass": "NEUTRAL"
 	},
 	{
-		"name": "Righteous Defender",
-		"id": "avatars/336/993/636372086017920867",
+		"name": "Righteous Protector",
+		"id": "avatars/339/328/62864",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 1,
@@ -6177,7 +6177,7 @@
 	},
 	{
 		"name": "Sanguine Reveler",
-		"id": "avatars/338/266/636373569346474401",
+		"id": "avatars/339/800/62835",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 1,
@@ -6185,7 +6185,7 @@
 	},
 	{
 		"name": "Wretched Tiller",
-		"id": "avatars/338/942/636377314208698180",
+		"id": "avatars/339/599/62946",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 1,
@@ -6193,10 +6193,1090 @@
 	},
 	{
 		"name": "Snowflipper Penguin",
-		"id": "avatars/336/814/636371258062804731",
+		"id": "avatars/339/295/62839",
 		"rarity": "COMMON",
 		"set": "KFT",
 		"cost": 0,
 		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Dragoncaller Alanna",
+		"id": "avatars/354/834/636476730203947602",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 9,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Dragonhatcher",
+		"id": "avatars/355/77/636477719049308580",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 9,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Master Oakheart",
+		"id": "avatars/355/589/636479932478562225",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 9,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Sleepy Dragon",
+		"id": "avatars/355/611/636479997619142379",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 9,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Voidlord",
+		"id": "avatars/354/213/636474018484490284",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 9,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "The Runespear",
+		"id": "avatars/354/403/636474879817411388",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Woecleaver",
+		"id": "avatars/355/496/636479714667997227",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Geosculptor Yip",
+		"id": "avatars/354/392/636474867413305995",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Grand Archivist",
+		"id": "avatars/354/214/636474018732269147",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Grizzled Guardian",
+		"id": "avatars/354/215/636474018877005647",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Kathrena Winterwisp",
+		"id": "avatars/353/64/636468063772302520",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "King Togwaggle",
+		"id": "avatars/354/430/636474955386602695",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Marin the Fox",
+		"id": "avatars/353/214/636468816086287167",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Violet Wurm",
+		"id": "avatars/355/642/636480047630947578",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 8,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Rhok'delar",
+		"id": "avatars/355/569/636479898349019537",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Crushing Walls",
+		"id": "avatars/351/12/636454408316480660",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Lesser Diamond Spellstone",
+		"id": "avatars/354/770/636476444627042321",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Lesser Mithril Spellstone",
+		"id": "avatars/353/40/636467987797420584",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Lesser Sapphire Spellstone",
+		"id": "avatars/350/998/636454390764679944",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Psychic Scream",
+		"id": "avatars/354/217/636474019273345721",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Corridor Creeper",
+		"id": "avatars/355/668/636480069387005828",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Lynessa Sunsorrow",
+		"id": "avatars/354/431/636474955497249613",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Silver Vanguard",
+		"id": "avatars/353/309/636469417849344214",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Temporus",
+		"id": "avatars/354/219/636474019648490605",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 7,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Aluneth",
+		"id": "avatars/354/395/636474871385101467",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Val'anyr",
+		"id": "avatars/354/797/636476597493002974",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Gather Your Party",
+		"id": "avatars/351/13/636454408546792198",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "To My Side!",
+		"id": "avatars/355/213/636478453188719619",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Unidentified Shield",
+		"id": "avatars/354/631/636475756899540688",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Crystal Lion",
+		"id": "avatars/355/99/636477912402951006",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Gemstudded Golem",
+		"id": "avatars/355/629/636480041425478566",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Grumble, Worldshaker",
+		"id": "avatars/354/432/636474955604125535",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Hungry Ettin",
+		"id": "avatars/354/225/636474023044208530",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Rin, the First Disciple",
+		"id": "avatars/354/433/636474955717112649",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Seeping Oozeling",
+		"id": "avatars/353/415/636469772611128686",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Spiteful Summoner",
+		"id": "avatars/354/408/636474880939573808",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 6,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Skull of the Man'ari",
+		"id": "avatars/354/393/636474867569145046",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Deck of Wonders",
+		"id": "avatars/354/632/636475757735500371",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Dragon's Fury",
+		"id": "avatars/355/76/636477717055619941",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Lesser Emerald Spellstone",
+		"id": "avatars/354/798/636476597836332652",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Lesser Onyx Spellstone",
+		"id": "avatars/354/799/636476598050406360",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Level Up!",
+		"id": "avatars/355/349/636479001532110062",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Arcane Tyrant",
+		"id": "avatars/354/226/636474023228509307",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Carnivorous Cube",
+		"id": "avatars/354/409/636474881125669378",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Corrosive Sludge",
+		"id": "avatars/355/628/636480041204698438",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Fungalmancer",
+		"id": "avatars/355/599/636479954719040019",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Furbolg Mossbinder",
+		"id": "avatars/354/633/636475757921183080",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Green Jelly",
+		"id": "avatars/355/634/636480044620978559",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Guild Recruiter",
+		"id": "avatars/350/973/636454359630534442",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Ixlid, Fungal Lord",
+		"id": "avatars/354/800/636476598517527124",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Possessed Lackey",
+		"id": "avatars/354/695/636476186102068245",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Trogg Gloomeater",
+		"id": "avatars/355/645/636480048090064861",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Windshear Stormcaller",
+		"id": "avatars/354/227/636474023500775371",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 5,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Twig of the World Tree",
+		"id": "avatars/353/206/636468809269448064",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Branching Paths",
+		"id": "avatars/353/38/636467987063971575",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Call to Arms",
+		"id": "avatars/354/230/636474023988128295",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Cataclysm",
+		"id": "avatars/354/228/636474023656364041",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Flanking Strike",
+		"id": "avatars/355/582/636479925049058548",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Lesser Amethyst Spellstone",
+		"id": "avatars/354/229/636474023798279504",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Oaken Summons",
+		"id": "avatars/355/69/636477597007485419",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Astral Tiger",
+		"id": "avatars/355/583/636479927840987203",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Cursed Disciple",
+		"id": "avatars/355/598/636479948994465181",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Duskbreaker",
+		"id": "avatars/353/37/636467986239629519",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Ebon Dragonsmith",
+		"id": "avatars/355/603/636479965325231522",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Elven Minstrel",
+		"id": "avatars/354/634/636475758841086425",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Fal'dorei Strider",
+		"id": "avatars/354/231/636474024227058884",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Hoarding Dragon",
+		"id": "avatars/354/232/636474024508046221",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Hooked Reaver",
+		"id": "avatars/355/639/636480046544717619",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Ironwood Golem",
+		"id": "avatars/355/82/636477722843288779",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Kobold Illusionist",
+		"id": "avatars/355/676/636480102819776408",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Kobold Monk",
+		"id": "avatars/355/641/636480046767210002",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Leyline Manipulator",
+		"id": "avatars/354/635/636475760252973062",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Shimmering Courser",
+		"id": "avatars/355/591/636479935395311150",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Shroom Brewer",
+		"id": "avatars/355/662/636480058675159481",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Sneaky Devil",
+		"id": "avatars/355/649/636480049977401097",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "The Darkness",
+		"id": "avatars/355/592/636479936953624077",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Dragon Soul",
+		"id": "avatars/354/397/636474872465433985",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Unidentified Maul",
+		"id": "avatars/353/393/636469701604693258",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Explosive Runes",
+		"id": "avatars/354/233/636474024668236858",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Healing Rain",
+		"id": "avatars/355/635/636480044772855100",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Primal Talismans",
+		"id": "avatars/354/234/636474024854526552",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Reckless Flurry",
+		"id": "avatars/354/636/636475760488140870",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Twilight's Call",
+		"id": "avatars/354/831/636476724609916115",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Unidentified Elixir",
+		"id": "avatars/351/20/636454413521223296",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Benevolent Djinn",
+		"id": "avatars/354/235/636474025126357675",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Boisterous Bard",
+		"id": "avatars/355/623/636480035350224191",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Cave Hydra",
+		"id": "avatars/355/580/636479912499439531",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Dragonslayer",
+		"id": "avatars/355/625/636480038429160033",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Fungal Enchanter",
+		"id": "avatars/355/627/636480039670084469",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Gilded Gargoyle",
+		"id": "avatars/355/630/636480042958129821",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Greedy Sprite",
+		"id": "avatars/355/276/636478741643541933",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Kobold Apprentice",
+		"id": "avatars/355/608/636479979730961143",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Kobold Barbarian",
+		"id": "avatars/355/572/636479906727897687",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Lone Champion",
+		"id": "avatars/353/414/636469772401284024",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Rummaging Kobold",
+		"id": "avatars/354/399/636474872948274412",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Sewer Crawler",
+		"id": "avatars/355/643/636480047862548839",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Shrieking Shroom",
+		"id": "avatars/355/648/636480049557533760",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Sonya Shadowdancer",
+		"id": "avatars/354/212/636474012949441456",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Stoneskin Basilisk",
+		"id": "avatars/355/655/636480052588896029",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Toothy Chest",
+		"id": "avatars/355/646/636480048580073906",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Twilight Acolyte",
+		"id": "avatars/355/435/636479357267851367",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Void Ripper",
+		"id": "avatars/355/317/636478923637132595",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Zola the Gorgon",
+		"id": "avatars/354/398/636474872676707601",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Bladed Gauntlet",
+		"id": "avatars/355/116/636478021551554285",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Cheat Death",
+		"id": "avatars/353/36/636467985884868363",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Crushing Hand",
+		"id": "avatars/355/622/636480030037294703",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Evasion",
+		"id": "avatars/354/638/636475761030716543",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Lesser Pearl Spellstone",
+		"id": "avatars/354/236/636474025546815914",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Lesser Ruby Spellstone",
+		"id": "avatars/354/237/636474025642776259",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Potion of Heroism",
+		"id": "avatars/355/593/636479938273427123",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Sudden Betrayal",
+		"id": "avatars/353/35/636467985430871225",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Wandering Monster",
+		"id": "avatars/351/21/636454413686074052",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Cavern Shinyfinder",
+		"id": "avatars/355/590/636479933693032029",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Drygulch Jailor",
+		"id": "avatars/350/979/636454367025027734",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Drywhisker Armorer",
+		"id": "avatars/355/675/636480101073286994",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Kobold Hermit",
+		"id": "avatars/354/238/636474025800432752",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Murmuring Elemental",
+		"id": "avatars/355/262/636478667814457186",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Plated Beetle",
+		"id": "avatars/355/614/636480021823467774",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Raven Familiar",
+		"id": "avatars/353/392/636469701452193238",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Scorp-o-matic",
+		"id": "avatars/355/644/636480048043174315",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Vulgar Homunculus",
+		"id": "avatars/354/239/636474025947006458",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 2,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Candleshot",
+		"id": "avatars/355/613/636480019383260847",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Kingsbane",
+		"id": "avatars/355/74/636477696359317298",
+		"rarity": "LEGENDARY",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Barkskin",
+		"id": "avatars/355/618/636480026804244006",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Dark Pact",
+		"id": "avatars/355/570/636479900985409412",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Lesser Jasper Spellstone",
+		"id": "avatars/350/997/636454390332024541",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Psionic Probe",
+		"id": "avatars/355/597/636479941092655839",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Unstable Evolution",
+		"id": "avatars/354/394/636474867693887746",
+		"rarity": "EPIC",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Arcane Artificer",
+		"id": "avatars/354/241/636474026279086257",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Dire Mole",
+		"id": "avatars/355/615/636480024946680084",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Feral Gibberer",
+		"id": "avatars/354/400/636474873071916211",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Gravelsnout Knight",
+		"id": "avatars/355/631/636480043234857010",
+		"rarity": "RARE",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Kobold Librarian",
+		"id": "avatars/354/240/636474026149254234",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Wax Elemental",
+		"id": "avatars/355/638/636480046192117147",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Shifting Scroll",
+		"id": "avatars/355/647/636480049059700348",
+		"rarity": "COMMON",
+		"set": "KNC",
+		"cost": 0,
+		"playerClass": "MAGE"
 	}
 ]

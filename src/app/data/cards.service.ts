@@ -74,6 +74,10 @@ export class CardsService {
           _.matches({ name: `Beckoner of Evil` })
         ]));
       }
+      if (CardSet.isKNC(type)) {
+        f = [...f];
+        _.remove(f, { name: 'Marin the Fox' });
+      }
       return new RandomList(f);
     }) as ShortRarityDictionary<RandomList<Card>>;
 
