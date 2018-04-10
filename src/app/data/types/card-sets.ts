@@ -1,7 +1,8 @@
-export type CardSet = 'KNC' | 'KFT' | 'UNGORO' | 'GANGS' | 'OG' | 'TGT' | 'EXPERT1';
-export type CardSetLabel = 'KNC' | 'KFT' | 'JUG' | 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
+export type CardSet = 'WWD' | 'KNC' | 'KFT' | 'UNGORO' | 'GANGS' | 'OG' | 'TGT' | 'EXPERT1';
+export type CardSetLabel = 'WWD' | 'KNC' | 'KFT' | 'JUG' | 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
 
 export namespace CardSet {
+  export const WWD : CardSet = 'WWD';
   export const KNC : CardSet = 'KNC';
   export const KFT : CardSet = 'KFT';
   export const JUG : CardSet = 'UNGORO';
@@ -10,6 +11,7 @@ export namespace CardSet {
   // export const TGT : CardSet = 'TGT';
   export const CLASSIC : CardSet = 'EXPERT1';
   const _long = {
+    [WWD]: 'The Witchwood',
     [KNC]: 'Kobolds and Catacombs',
     [KFT]: 'Knights of the Frozen Throne',
     [JUG]: 'Journey to Un\'Goro',
@@ -19,6 +21,7 @@ export namespace CardSet {
     [CLASSIC]: 'Classic'
   };
   const _labels = {
+    [WWD]: <CardSetLabel>'WWD',
     [KNC]: <CardSetLabel>'KNC',
     [KFT]: <CardSetLabel>'KFT',
     [JUG]: <CardSetLabel>'JUG',

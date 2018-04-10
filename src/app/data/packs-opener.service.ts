@@ -17,8 +17,8 @@ export interface PacksOpeningEvent {
 @Injectable()
 export class PacksOpenerService {
   static initial : PacksOpeningEvent = {
-    type: CardSet.KNC,
-    amount: 50
+    type: CardSet.WWD,
+    amount: 70
   };
 
   public events : Observable<PacksOpeningEvent>;
