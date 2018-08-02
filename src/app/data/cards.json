@@ -8358,5 +8358,1085 @@
 		"set": "WWD",
 		"cost": 0,
 		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Mecha'thun",
+		"id": "avatars/375/877/636685164584329562",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 10,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Mulchmuncher",
+		"id": "avatars/375/128/636676611518876008",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 10,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "The Boomship",
+		"id": "avatars/375/556/636682105396773192",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 9,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Zerek's Cloning Gallery",
+		"id": "avatars/375/405/636680563542817679",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 9,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Bull Dozer",
+		"id": "avatars/376/153/636687479805268757",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 9,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Flark's Boom-Zooka",
+		"id": "avatars/376/160/636687498814726638",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 8,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Dr. Morrigan",
+		"id": "avatars/376/7/636686353244639116",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 8,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Gloop Sprayer",
+		"id": "avatars/375/478/636681422427569528",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 8,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Dr. Boom, Mad Genius",
+		"id": "avatars/375/327/636679688916000520",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Kangor's Endless Army",
+		"id": "avatars/375/317/636679666638765015",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Luna's Pocket Galaxy",
+		"id": "avatars/375/989/636686137342619756",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "The Storm Bringer",
+		"id": "avatars/376/28/636686503933034016",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Astromancer",
+		"id": "avatars/375/400/636680425837471345",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Beryllium Nullifier",
+		"id": "avatars/374/991/636674462172698416",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Boommaster Flark",
+		"id": "avatars/375/505/636681637466146814",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Dreampetal Florist",
+		"id": "avatars/375/894/636685380443258212",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Star Aligner",
+		"id": "avatars/375/428/636680880574982790",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 7,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Ectomancy",
+		"id": "avatars/376/149/636687474655197577",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Eureka!",
+		"id": "avatars/375/549/636682032559461988",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Arcane Dynamo",
+		"id": "avatars/375/914/636685562684402779",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Damaged Stegotron",
+		"id": "avatars/376/150/636687476900872225",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Glowstone Technician",
+		"id": "avatars/376/146/636687471546228708",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Mechanical Whelp",
+		"id": "avatars/375/526/636681816926421483",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Meteorologist",
+		"id": "avatars/375/934/636685691244789524",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Missile Launcher",
+		"id": "avatars/375/567/636682213881699685",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Security Rover",
+		"id": "avatars/375/853/636684876758228011",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Spark Drill",
+		"id": "avatars/376/136/636687460445959099",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Tending Tauren",
+		"id": "avatars/376/108/636687406801795512",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Zerek, Master Cloner",
+		"id": "avatars/375/635/636682969462290765",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 6,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Supercollider",
+		"id": "avatars/375/91/636676193421541093",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Myra's Unstable Element",
+		"id": "avatars/374/993/636674466757851523",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Necrium Vial",
+		"id": "avatars/375/887/636685271997714554",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Power Word: Replicate",
+		"id": "avatars/375/734/636683846749870215",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Shrink Ray",
+		"id": "avatars/375/645/636683004972566551",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Crazed Chemist",
+		"id": "avatars/376/151/636687477897570806",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Dyn-o-matic",
+		"id": "avatars/376/58/636687000507848452",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "E.M.P. Operative",
+		"id": "avatars/375/930/636685685596187015",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Giggling Inventor",
+		"id": "avatars/375/395/636680377391719279",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Holomancer",
+		"id": "avatars/376/144/636687469646331698",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Loose Specimen",
+		"id": "avatars/376/142/636687467380284760",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Mechano-Egg",
+		"id": "avatars/376/109/636687408007404607",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Myra Rotspring",
+		"id": "avatars/375/670/636683149382483938",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Necromechanic",
+		"id": "avatars/376/125/636687435025271665",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Omega Agent",
+		"id": "avatars/375/325/636679685678805736",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Reckless Experimenter",
+		"id": "avatars/375/319/636679671383940599",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Rusty Recycler",
+		"id": "avatars/376/137/636687461843611472",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Seaforium Bomber",
+		"id": "avatars/375/978/636686030169162422",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Subject 9",
+		"id": "avatars/376/0/636686347845537016",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Wargear",
+		"id": "avatars/374/990/636674457914409174",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Zilliax",
+		"id": "avatars/375/3/636674500079731700",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Academic Espionage",
+		"id": "avatars/375/575/636682284046435368",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Juicy Psychmelon",
+		"id": "avatars/375/701/636683544167162623",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Prismatic Lens",
+		"id": "avatars/376/37/636686605155111221",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Unexpected Results",
+		"id": "avatars/375/316/636679663522225239",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Annoy-o-Module",
+		"id": "avatars/375/41/636675304056543492",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Blightnozzle Crawler",
+		"id": "avatars/375/423/636680854438174416",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Coppertail Imposter",
+		"id": "avatars/376/107/636687405551892629",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Cosmic Anomaly",
+		"id": "avatars/375/618/636682790216466801",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Explodinator",
+		"id": "avatars/376/118/636687419176121308",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Flobbidinous Floop",
+		"id": "avatars/375/92/636676197086581654",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Harbinger Celestia",
+		"id": "avatars/376/117/636687418205989798",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Omega Defender",
+		"id": "avatars/375/728/636683813899577429",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Piloted Reaper",
+		"id": "avatars/376/139/636687463891884668",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Replicating Menace",
+		"id": "avatars/375/847/636684841204307010",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Steel Rager",
+		"id": "avatars/376/133/636687456235100228",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Storm Chaser",
+		"id": "avatars/375/822/636684697511317092",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Thunderhead",
+		"id": "avatars/375/793/636684408916613865",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Weaponized Pinata",
+		"id": "avatars/375/333/636679698972389198",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Whizbang the Wonderful",
+		"id": "avatars/375/93/636676199449876689",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Necrium Blade",
+		"id": "avatars/375/784/636684301692809900",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Extra Arms",
+		"id": "avatars/376/120/636687423011771337",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Landscaping",
+		"id": "avatars/375/97/636676242036629305",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Violet Haze",
+		"id": "avatars/376/128/636687451321824897",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Augmented Elekk",
+		"id": "avatars/375/756/636684012712755933",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Brainstormer",
+		"id": "avatars/376/154/636687480784975509",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Bronze Gatekeeper",
+		"id": "avatars/376/104/636687401685753164",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Doubling Imp",
+		"id": "avatars/376/159/636687498514540111",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Electra Stormsurge",
+		"id": "avatars/374/995/636674474796912219",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Electrowright",
+		"id": "avatars/376/148/636687473805174953",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Kaboom Bot",
+		"id": "avatars/376/143/636687468532130314",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Microtech Controller",
+		"id": "avatars/376/140/636687465121048581",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Nethersoul Buster",
+		"id": "avatars/376/114/636687414473693808",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Omega Medic",
+		"id": "avatars/375/331/636679696107733707",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Spider Bomb",
+		"id": "avatars/374/999/636674477672530838",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Spring Rocket",
+		"id": "avatars/376/134/636687457147549733",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Stargazer Luna",
+		"id": "avatars/374/997/636674476812289831",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 3,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Astral Rift",
+		"id": "avatars/376/123/636687433303660497",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Bomb Toss",
+		"id": "avatars/376/157/636687497701949759",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Cloning Device",
+		"id": "avatars/375/383/636680340493479343",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Crystology",
+		"id": "avatars/375/493/636681612992168481",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Cybertech Chip",
+		"id": "avatars/375/433/636680952311939758",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Demonic Project",
+		"id": "avatars/375/326/636679687230329459",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Elementary Reaction",
+		"id": "avatars/376/147/636687472719056520",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Goblin Prank",
+		"id": "avatars/376/145/636687470633909348",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Research Project",
+		"id": "avatars/376/124/636687434206637206",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Rocket Boots",
+		"id": "avatars/376/138/636687462730108046",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Spirit Bomb",
+		"id": "avatars/376/161/636687499313890046",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Weapons Project",
+		"id": "avatars/376/156/636687495808864991",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Celestial Emissary",
+		"id": "avatars/375/377/636680305646002740",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Cloakscale Chemist",
+		"id": "avatars/376/152/636687478953945973",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Crystalsmith Kangor",
+		"id": "avatars/375/607/636682680715221806",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Dead Ringer",
+		"id": "avatars/375/336/636679707210984829",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Dendrologist",
+		"id": "avatars/375/98/636676243210871621",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Fireworks Tech",
+		"id": "avatars/375/533/636681924659219399",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Galvanizer",
+		"id": "avatars/376/15/636686424647272734",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Lab Recruiter",
+		"id": "avatars/375/323/636679681108598812",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Menacing Nimbus",
+		"id": "avatars/375/324/636679683770176695",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Omega Mind",
+		"id": "avatars/375/949/636685740861883031",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Pogo-Hopper",
+		"id": "avatars/375/459/636681240261656406",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Spark Engine",
+		"id": "avatars/376/135/636687458167630863",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Toxicologist",
+		"id": "avatars/376/131/636687454253894426",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Unpowered Mauler",
+		"id": "avatars/376/130/636687453367707798",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Upgradeable Framebot",
+		"id": "avatars/374/992/636674465124746627",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Venomizer",
+		"id": "avatars/376/129/636687452406803101",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Void Analyst",
+		"id": "avatars/375/968/636685956655278107",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Whirliglider",
+		"id": "avatars/376/127/636687449909280965",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Autodefense Matrix",
+		"id": "avatars/375/318/636679669043487743",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Biology Project",
+		"id": "avatars/375/0/636674478121871352",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Floop's Glorious Gloop",
+		"id": "avatars/376/106/636687404347724127",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Omega Assembly",
+		"id": "avatars/375/472/636681351413161691",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Secret Plan",
+		"id": "avatars/376/122/636687432520599538",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Shooting Star",
+		"id": "avatars/375/619/636682790235458164",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Soul Infusion",
+		"id": "avatars/376/115/636687416342817154",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "The Soularium",
+		"id": "avatars/375/908/636685489960476142",
+		"rarity": "LEGENDARY",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Voltaic Burst",
+		"id": "avatars/375/694/636683436498717572",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Crystallizer",
+		"id": "avatars/376/158/636687498179321270",
+		"rarity": "EPIC",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Eternium Rover",
+		"id": "avatars/375/516/636681709278547367",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Faithful Lumi",
+		"id": "avatars/375/335/636679700376449557",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Glow-Tron",
+		"id": "avatars/376/110/636687408969581175",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Goblin Bomb",
+		"id": "avatars/375/507/636681641321375570",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Mecharoo",
+		"id": "avatars/376/141/636687466135059050",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Skaterbot",
+		"id": "avatars/376/105/636687402917414988",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Test Subject",
+		"id": "avatars/376/227/636688127410688288",
+		"rarity": "RARE",
+		"set": "TBP",
+		"cost": 1,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Topsy Turvy",
+		"id": "avatars/376/132/636687455424081860",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 0,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Beakered Lightning",
+		"id": "avatars/376/155/636687481701785395",
+		"rarity": "COMMON",
+		"set": "TBP",
+		"cost": 0,
+		"playerClass": "SHAMAN"
 	}
 ]

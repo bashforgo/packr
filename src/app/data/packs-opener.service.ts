@@ -17,7 +17,7 @@ export interface PacksOpeningEvent {
 @Injectable()
 export class PacksOpenerService {
   static initial : PacksOpeningEvent = {
-    type: CardSet.WWD,
+    type: CardSet.TBP,
     amount: 70
   };
 
