@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { get } from 'lodash';
 import { Observable } from 'rxjs';
 import { map, withLatestFrom } from 'rxjs/operators';
-import { CardsService, CollectionService, Collection } from '../data';
-import { Cost, Rarity, JSONCard } from '../data/types';
+import { CardsService, Collection, CollectionService } from '../data';
+import { Cost, JSONCard, Rarity } from '../data/types';
 import { Search } from '../search/bar/search-bar';
 
 @Component({
@@ -37,7 +38,7 @@ export class CollectionComponent {
   }
 
   getCount(collection: {}, name: string, cost: Cost) {
-    return _.get(collection, [name, cost], 0);
+    return get(collection, [name, cost], 0);
   }
 
   onTerms(search: Search) {

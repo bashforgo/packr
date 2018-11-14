@@ -1,17 +1,19 @@
+import { clamp, each } from 'lodash';
+
 export type Comparison = -1 | 0 | 1;
-export type Comparator<T> = (a : T, b : T) => Comparison;
+export type Comparator<T> = (a: T, b: T) => Comparison;
 
 export class KHeap<T> {
-  public static defaultComparator = ((a, b) => _.clamp(a - b, -1, 1)) as Comparator<any>;
+  public static defaultComparator = ((a, b) => clamp(a - b, -1, 1)) as Comparator<any>;
 
   private heap = [];
   private _sorted = [];
   private changed = false;
 
   //k sized heap built from arr that uses comparator to compare items
-  constructor(private k : number, arr : T[] = null, private comparator : Comparator<T> = KHeap.defaultComparator) {
+  constructor(private k: number, arr: T[] = null, private comparator: Comparator<T> = KHeap.defaultComparator) {
     if (arr) {
-      _.each(arr, el => this.push(el));
+      each(arr, el => this.push(el));
     }
   }
 
@@ -23,7 +25,7 @@ export class KHeap<T> {
     return this.heap.length;
   }
 
-  push(item : T) : T | null {
+  push(item: T): T | null {
     //puts the item on the heap
     const size = this.heap.push(item);
     let current = size - 1;
@@ -44,7 +46,7 @@ export class KHeap<T> {
     return popped;
   }
 
-  pop() : T {
+  pop(): T {
     //removes the top of the heap
     const first = this.peek();
     const last = this.heap.pop();
@@ -86,7 +88,7 @@ export class KHeap<T> {
     return this.heap[0];
   }
 
-  sorted() : T[] {
+  sorted(): T[] {
     //pop and then push everything, cached
     if (this.changed) {
       this._sorted = [];
@@ -101,13 +103,13 @@ export class KHeap<T> {
     }
   }
 
-  swap(i : number, j : number) {
+  swap(i: number, j: number) {
     const temp = this.heap[i];
     this.heap[i] = this.heap[j];
     this.heap[j] = temp;
   }
 
-  compare(i : number, j : number) : Comparison {
+  compare(i: number, j: number): Comparison {
     return this.comparator(this.heap[i], this.heap[j]);
   }
 }

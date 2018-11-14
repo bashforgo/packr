@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
+import { assign, assignWith, clamp, Dictionary, map, mapValues, reduce } from 'lodash';
+import { Observable, ReplaySubject } from 'rxjs';
+import { map as rxMap, multicast, refCount, tap, withLatestFrom } from 'rxjs/operators';
 import { CardsService, CollectionService } from './';
-import { Rarity, ShortRarity, CostDictionary, CardClass, Dust, ShortRarityDictionary, CardClassDictionary } from './types';
-import { ReplaySubject, Observable } from 'rxjs';
-import { withLatestFrom, map, tap, multicast, refCount } from 'rxjs/operators';
+import { CardClass, CardClassDictionary, CostDictionary, Dust, Rarity, ShortRarity, ShortRarityDictionary } from './types';
 
-import Dictionary = _.Dictionary;
 type StatsDictionary = { target?: number, norm: number, normExtra?: number, gold: number, goldExtra?: number, any?: number };
 
 @Injectable()
@@ -23,16 +23,16 @@ export class StatsService {
       byRarity: cs.rarity
         .pipe(
           withLatestFrom(cards.currentSet),
-          map(([collection, cards]) => {
-            return _.mapValues(collection, (countsByName, rarity: ShortRarity) => {
+          rxMap(([collection, cards]) => {
+            return mapValues(collection, (countsByName, rarity: ShortRarity) => {
               const target = cards.target.byRarity[rarity];
 
-              const [norm, gold, any] = _.reduce(
+              const [norm, gold, any] = reduce(
                 countsByName as Dictionary<CostDictionary<number>>,
                 ([norm, gold, any], counts) => {
-                  const [nNorm, nGold, nAny] = _.map(
+                  const [nNorm, nGold, nAny] = map(
                     [(counts.norm || 0), (counts.gold || 0), (counts.norm || 0) + (counts.gold || 0)],
-                    v => _.clamp(v, 0, Rarity.max(rarity))
+                    v => clamp(v, 0, Rarity.max(rarity))
                   );
                   return [norm + nNorm, gold + nGold, any + nAny];
                 },
@@ -42,9 +42,9 @@ export class StatsService {
               return { target, norm, gold, any };
             });
           }),
-          tap((rarities: Dictionary<StatsDictionary>) => rarities.total = _.reduce(
+          tap((rarities: Dictionary<StatsDictionary>) => rarities.total = reduce(
             rarities,
-            (res, obj) => _.assignWith(res, obj, (a: number, b: number) => (a || 0) + (b || 0)),
+            (res, obj) => assignWith(res, obj, (a: number, b: number) => (a || 0) + (b || 0)),
             {} as StatsDictionary
           )),
           multicast(() => new ReplaySubject<ShortRarityDictionary<StatsDictionary> & { total: StatsDictionary }>(1)),
@@ -53,16 +53,16 @@ export class StatsService {
       byClass: cs.klass
         .pipe(
           withLatestFrom(cards.currentSet),
-          map(([collection, cards]) => {
-            return _.mapValues(collection, (countsByName, klass: CardClass) => {
+          rxMap(([collection, cards]) => {
+            return mapValues(collection, (countsByName, klass: CardClass) => {
               const target = cards.target.byClass[klass];
 
-              const [norm, gold, any] = _.reduce(
+              const [norm, gold, any] = reduce(
                 countsByName as Dictionary<CostDictionary<number>>,
                 ([norm, gold, any], counts, name) => {
-                  const [nNorm, nGold, nAny] = _.map(
+                  const [nNorm, nGold, nAny] = map(
                     [(counts.norm || 0), (counts.gold || 0), (counts.norm || 0) + (counts.gold || 0)],
-                    v => _.clamp(v, 0, Rarity.max(Rarity.short(cards.all[name].rarity)))
+                    v => clamp(v, 0, Rarity.max(Rarity.short(cards.all[name].rarity)))
                   );
                   return [norm + nNorm, gold + nGold, any + nAny];
                 },
@@ -79,9 +79,9 @@ export class StatsService {
 
     this._card = cs.rarity
       .pipe(
-        map(rarities => {
-          return _.mapValues<ShortRarityDictionary<Dictionary<CostDictionary<number>>>, StatsDictionary>(rarities, (countsByName, rarity: ShortRarity) => {
-            const [total, norm, normExtra, gold, goldExtra] = _.reduce(
+        rxMap(rarities => {
+          return mapValues<ShortRarityDictionary<Dictionary<CostDictionary<number>>>, StatsDictionary>(rarities, (countsByName, rarity: ShortRarity) => {
+            const [total, norm, normExtra, gold, goldExtra] = reduce(
               countsByName as Dictionary<CostDictionary<number>>,
               ([total, tNorm, normExtra, tGold, goldExtra], counts) => {
                 const norm = counts.norm || 0;
@@ -89,9 +89,9 @@ export class StatsService {
                 return [
                   total + norm + gold,
                   tNorm + norm,
-                  normExtra + _.clamp(norm - Rarity.max(rarity), 0, Infinity),
+                  normExtra + clamp(norm - Rarity.max(rarity), 0, Infinity),
                   tGold + gold,
-                  goldExtra + _.clamp(gold - Rarity.max(rarity), 0, Infinity)
+                  goldExtra + clamp(gold - Rarity.max(rarity), 0, Infinity)
                 ];
               },
               [0, 0, 0, 0, 0]
@@ -106,10 +106,10 @@ export class StatsService {
 
     this.card = this._card
       .pipe(
-        map((rarities) => _.assign({
-          total: _.reduce(
+        rxMap((rarities) => assign({
+          total: reduce(
             rarities,
-            (res, obj) => _.assignWith(res, obj, (a: number, b: number) => (a || 0) + (b || 0)),
+            (res, obj) => assignWith(res, obj, (a: number, b: number) => (a || 0) + (b || 0)),
             {}
           )
         }, rarities)),
@@ -119,7 +119,7 @@ export class StatsService {
 
     this.dust = this._card
       .pipe(
-        map(rarities => _.mapValues(rarities, ({ norm, normExtra, gold, goldExtra }, rarity: ShortRarity) => {
+        rxMap(rarities => mapValues(rarities, ({ norm, normExtra, gold, goldExtra }, rarity: ShortRarity) => {
           const dNorm = norm * Dust.value({ cost: 'norm', rarity });
           const dGold = gold * Dust.value({ cost: 'gold', rarity });
           const dNormExtra = normExtra * Dust.value({ cost: 'norm', rarity });
@@ -133,10 +133,10 @@ export class StatsService {
             totalExtra: dNormExtra + dGoldExtra
           };
         }) as unknown as ShortRarityDictionary<StatsDictionary>),
-        map((rarities) => _.assign({
-          total: _.reduce(
+        rxMap((rarities) => assign({
+          total: reduce(
             rarities,
-            (res, obj) => _.assignWith(res, obj, (a: number, b: number) => (a || 0) + (b || 0)),
+            (res, obj) => assignWith(res, obj, (a: number, b: number) => (a || 0) + (b || 0)),
             {}
           )
         }, rarities)),

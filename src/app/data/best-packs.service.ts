@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { chain } from 'lodash';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { KHeap } from '../util';
@@ -14,7 +15,7 @@ export class BestPacksService {
       .pipe(map(
         packs => new KHeap<PackWithDust>(
           5,
-          _(packs)
+          chain(packs)
             .map(pack => ({ pack, dust: Dust.value(pack) }))
             .value(),
           (l, r) => KHeap.defaultComparator(r.dust, l.dust)

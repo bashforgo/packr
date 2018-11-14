@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CollectionService, CardsService, Collection, StatsService } from '../data';
-import { Rarity, Cost } from '../data/types';
-import { withLatestFrom, map } from 'rxjs/operators';
+import { get, round } from 'lodash';
 import { Observable } from 'rxjs';
+import { map, withLatestFrom } from 'rxjs/operators';
+import { CardsService, Collection, CollectionService, StatsService } from '../data';
 import { CardsAccessor } from '../data/cards.service';
+import { Cost, Rarity } from '../data/types';
 
 @Component({
   selector: 'pr-rarity-breakdown',
@@ -18,7 +19,7 @@ export class RarityBreakdownComponent {
   private cards;
   private getName;
 
-  constructor(cs : CollectionService, private ss : StatsService, cards : CardsService) {
+  constructor(cs: CollectionService, private ss: StatsService, cards: CardsService) {
     this._events = cs.events
       .pipe(
         withLatestFrom(cards.currentSet),
@@ -35,15 +36,15 @@ export class RarityBreakdownComponent {
     this.getName = Rarity.shortBack;
   }
 
-  getCount(collection : Collection, name : string, cost : Cost) {
-    return _.get(collection, [name, cost], 0);
+  getCount(collection: Collection, name: string, cost: Cost) {
+    return get(collection, [name, cost], 0);
   }
 
-  getPercent(field : { target : number }, prop : string) {
+  getPercent(field: { target: number }, prop: string) {
     if (field[prop] === 0) {
       return '';
     } else {
-      return `(${_.round(field[prop] / field.target * 100, 1)}%)`;
+      return `(${round(field[prop] / field.target * 100, 1)}%)`;
     }
   }
 }

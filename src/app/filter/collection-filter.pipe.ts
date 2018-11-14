@@ -1,11 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { filter } from 'fuzzaldrin';
-
+import { filter as fuzz } from 'fuzzaldrin';
+import { chain, Dictionary, filter, get, groupBy, map } from 'lodash';
+import { Collection } from '../data';
 import { CardClass, JSONCard, Rarity, ShortRarity } from '../data/types';
 import { Search } from '../search/bar/search-bar';
-import { Collection } from '../data';
 import { KeywordTypes, Range, SearchTerm } from '../search/parse/search.grammar';
-import Dictionary = _.Dictionary;
 
 type Card = JSONCard;
 type Predicate = (data: (string | Range), card: Card, coll: Collection, keywords: Dictionary<SearchTerm[]>) => boolean;
@@ -23,7 +22,7 @@ export class CollectionFilterPipe implements PipeTransform {
     },
     'binary/golden': (data, card: Card, coll: Collection, keywords: Dictionary<SearchTerm[]>) => {
       const handled = 'binary/extra' in keywords || 'binary/missing' in keywords || 'ranged/owned' in keywords;
-      return handled || _.get(coll, [card.name, 'gold']) > 0;
+      return handled || get(coll, [card.name, 'gold']) > 0;
     },
     'binary/extra': (data, card: Card, coll: Collection, keywords: Dictionary<SearchTerm[]>) => {
       const count = CollectionFilterPipe.getCount(card, coll, 'binary/golden' in keywords);
@@ -45,9 +44,9 @@ export class CollectionFilterPipe implements PipeTransform {
   static getCount({ name }: Card, coll: Collection, golden: any): number {
     let count = 0;
     if (!golden) {
-      count += _.get(coll, [name, 'norm'], 0);
+      count += get(coll, [name, 'norm'], 0);
     }
-    count += _.get(coll, [name, 'gold'], 0);
+    count += get(coll, [name, 'gold'], 0);
 
     return count;
   }
@@ -60,20 +59,20 @@ export class CollectionFilterPipe implements PipeTransform {
         }];
       }
 
-      const types = _.groupBy(search.sts, 'type');
+      const types = groupBy(search.sts, 'type');
 
       if (types.word) {
-        const words = _.map(types.word, 'query');
+        const words = map(types.word, 'query');
 
-        cards = filter(cards, words.join(' '), { key: 'name' });
+        cards = fuzz(cards, words.join(' '), { key: 'name' });
       }
 
       if (types.keyword) {
-        const groups: (c: JSONCard) => boolean = _(types.keyword)
+        const groups: (c: JSONCard) => boolean = chain(types.keyword)
           .groupBy('query.type')
-          .mapValues((a: SearchTerm[]) => _.map(a, 'query.data'))
+          .mapValues((a: SearchTerm[]) => map(a, 'query.data'))
           .mapValues((a: (string | Range)[], t: KeywordTypes, gs: Dictionary<SearchTerm[]>) => {
-            return _(a)
+            return chain(a)
               .map((data) => {
                 return (card: Card) => CollectionFilterPipe.predicates[t](data, card, collection, gs);
               })
@@ -84,7 +83,7 @@ export class CollectionFilterPipe implements PipeTransform {
           .overEvery()
           .value();
 
-        cards = _.filter(cards, groups);
+        cards = filter(cards, groups);
       }
 
       if (!cards.length) {

@@ -1,23 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Dictionary, get, map, memoize, set, transform } from 'lodash';
+import { Observable, ReplaySubject } from 'rxjs';
+import { map as rxMap, multicast, refCount, withLatestFrom } from 'rxjs/operators';
 import { PacksGeneratorService, PacksOpenerService } from './';
-import {
-  DisplayCard,
-  Packs,
-  CardClassDictionary,
-  CostDictionary,
-  Rarity,
-  Pack,
-  CardClass,
-  CardSet,
-  ShortRarityDictionary
-} from './types';
-import { ReplaySubject, Observable } from 'rxjs';
-import { withLatestFrom, map, multicast, refCount } from 'rxjs/operators';
-
-import Dictionary = _.Dictionary;
+import { CardClass, CardClassDictionary, CardSet, CostDictionary, DisplayCard, Pack, Packs, Rarity, ShortRarityDictionary } from './types';
 
 type Card = Required<DisplayCard>;
-type CollectionPack = [Card, Card, Card, Card, Card]
+type CollectionPack = [Card, Card, Card, Card, Card];
 export type Collection = Dictionary<CostDictionary<number>>;
 type CollectionIOSignature = [
   Collection,
@@ -45,32 +34,32 @@ export class CollectionService {
       .pipe(
         withLatestFrom(
           pos.events
-            .pipe(map(({ type }): CollectionResetSignature => {
+            .pipe(rxMap(({ type }): CollectionResetSignature => {
               const collection: { [cardName: string]: CostDictionary<number> } = {};
-              const klassBreakdown = _.transform(
+              const klassBreakdown = transform(
                 CardClass.classList(CardSet.isMSG(type)),
                 (res, name) => res[name] = {},
                 {}
               ) as CardClassDictionary<Dictionary<CostDictionary<number>>>;
-              const rarityBreakdown = _.transform(
+              const rarityBreakdown = transform(
                 Rarity.shortList(),
                 (res, name) => res[name] = {},
                 {}
               ) as ShortRarityDictionary<Dictionary<CostDictionary<number>>>;
-              const _packsProcessor = _.memoize((pack: Pack) => {
-                return _.map(
+              const _packsProcessor = memoize((pack: Pack) => {
+                return map(
                   pack,
                   (card: Card) => {
                     const { cardClass, cost, detail, name, rarity } = card;
                     const path = [name, cost];
-                    const count = _.get(collection, path, 0) + 1;
-                    _.set(collection, path, count);
+                    const count = get(collection, path, 0) + 1;
+                    set(collection, path, count);
 
                     path.unshift(cardClass);
-                    _.set(klassBreakdown, path, count);
+                    set(klassBreakdown, path, count);
 
                     path[0] = rarity;
-                    _.set(rarityBreakdown, path, count);
+                    set(rarityBreakdown, path, count);
 
                     return {
                       extra: Rarity.isExtra(rarity, count),
@@ -85,7 +74,7 @@ export class CollectionService {
                 CardClassDictionary<Dictionary<CostDictionary<number>>>,
                 ShortRarityDictionary<Dictionary<CostDictionary<number>>>,
                 CollectionPack[]
-              ] = (pks) => [collection, klassBreakdown, rarityBreakdown, _.map(pks, _packsProcessor)];
+              ] = (pks) => [collection, klassBreakdown, rarityBreakdown, map(pks, _packsProcessor)];
 
               if (CardSet.isWOG(type)) {
                 _packsProcessor([
@@ -139,22 +128,22 @@ export class CollectionService {
               return [collection, klassBreakdown, rarityBreakdown, packsProcessor];
             }))
         ),
-        map(([pks, [, , , pksProc]]: [Packs, CollectionResetSignature]) => pksProc(pks)),
+        rxMap(([pks, [, , , pksProc]]: [Packs, CollectionResetSignature]) => pksProc(pks)),
         multicast(() => new ReplaySubject<CollectionIOSignature>(1)),
         refCount()
       );
 
     this.events = this._events
-      .pipe(map(([coll]) => coll));
+      .pipe(rxMap(([coll]) => coll));
 
     this.klass = this._events
-      .pipe(map(([, cbd]) => cbd));
+      .pipe(rxMap(([, cbd]) => cbd));
 
     this.rarity = this._events
-      .pipe(map(([, , rbd]) => rbd));
+      .pipe(rxMap(([, , rbd]) => rbd));
 
     this.packs = this._events
-      .pipe(map(([, , , packs]) => packs));
+      .pipe(rxMap(([, , , packs]) => packs));
   }
 
   debug() {

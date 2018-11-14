@@ -1,4 +1,5 @@
-import { Pack, ShortRarity, Cost } from './';
+import { chain } from 'lodash';
+import { Cost, Pack, ShortRarity } from './';
 export namespace Dust {
   const _disenchant = {
     norm: {
@@ -15,12 +16,13 @@ export namespace Dust {
     }
   };
 
-  export const value = (packOrCard : Pack | { cost: Cost, rarity: ShortRarity }) : number => {
+  export const value = (packOrCard: Pack | { cost: Cost, rarity: ShortRarity }): number => {
     if ((<Pack>packOrCard).length === 5) {
       const pack = packOrCard as Pack;
 
-      return _(pack)
-        .reduce((acc, card) => acc + value(card), 0);
+      return chain(pack)
+        .reduce((acc, card) => acc + value(card), 0)
+        .value();
     } else {
       const card = packOrCard as { cost: Cost, rarity: ShortRarity };
       return _disenchant[card.cost][card.rarity];

@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { filter } from 'lodash';
 
 @Pipe({
   name: 'prFilter',
@@ -6,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 
 export class FilterPipe implements PipeTransform {
-  transform(value: any[], predicate: (v : any) => boolean): any {
-    return _.filter(value, predicate);
+  transform(value: any[], predicate: (v: any) => boolean): any {
+    return filter(value, predicate);
   }
 }

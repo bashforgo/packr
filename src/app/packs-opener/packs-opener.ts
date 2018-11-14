@@ -1,9 +1,10 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
-import { SemanticRadioGroupOption, SemanticInputErrorLabel } from '../semantic';
-import { CardSet } from '../data/types';
-import { PacksOpenerService } from '../data';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { map, parseInt } from 'lodash';
+import { PacksOpenerService } from '../data';
+import { CardSet } from '../data/types';
+import { SemanticInputErrorLabel, SemanticRadioGroupOption } from '../semantic';
 
 @Component({
   selector: 'pr-packs-opener',
@@ -14,7 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PacksOpenerComponent {
   form: FormGroup;
   rules: boolean;
-  options: SemanticRadioGroupOption[] = _.map(CardSet.list(), (k, v) => ({ label: CardSet.label(k), value: k }));
+  options: SemanticRadioGroupOption[] = map(CardSet.list(), (k, v) => ({ label: CardSet.label(k), value: k }));
   errors: SemanticInputErrorLabel = {
     rangeError: 'Should be between 1 and 1000'
   };
@@ -35,7 +36,7 @@ export class PacksOpenerComponent {
 
   static between(min: number, max: number) {
     return (control: FormControl) => {
-      const val = _.parseInt(control.value);
+      const val = parseInt(control.value, 10);
       return min < val && val <= max ? null : { rangeError: true };
     };
   }

@@ -1,21 +1,21 @@
+import { chain, filter, find, includes, lowerCase, map } from 'lodash';
 import { CardClass, Rarity } from '../../data/types';
+
 export const noop = (d, l, r) => null;
 export const join = d => d[0].join('');
-export const trim = a => _.filter(a, Boolean);
+export const trim = a => filter(a, Boolean);
 export const nth = n => d => d[n];
-const rarities = _.map(Rarity.list(), s => s.toLowerCase());
+const rarities = map(Rarity.list(), s => s.toLowerCase());
 const shorts = Rarity.shortList();
 const rarityKws = [
   ...rarities,
   ...shorts
 ];
-const classKws = [
-  ..._(CardClass.classList(true))
-    .map(_.lowerCase)
-    .map(s => s.split(' '))
-    .flatten()
-    .value()
-];
+const classKws = chain(CardClass.classList(true))
+  .map(lowerCase)
+  .map(s => s.split(' '))
+  .flatten()
+  .value();
 const etcKws = [
   'golden', 'extra', 'missing'
 ];
@@ -31,13 +31,13 @@ export const predicate = (f, inverse?) => (d, l, r) => f(d[0]) ? (inverse ? r : 
 export const toShort = (s: string) => Rarity.short(s.toUpperCase() as Rarity);
 
 const matchesKw = w => kw => kw === w;
-export const isEtc = w => _.filter(etcKws, matchesKw(w)).length > 0;
-export const isClass = w => _.filter(classKws, matchesKw(w)).length > 0;
-export const isRarity = w => _.filter(rarityKws, matchesKw(w)).length > 0;
-export const isBinary = w => _.filter(binaryKws, matchesKw(w)).length > 0;
-export const isRanged = w => _.filter(rangedKws, matchesKw(w)).length > 0;
+export const isEtc = w => filter(etcKws, matchesKw(w)).length > 0;
+export const isClass = w => filter(classKws, matchesKw(w)).length > 0;
+export const isRarity = w => filter(rarityKws, matchesKw(w)).length > 0;
+export const isBinary = w => filter(binaryKws, matchesKw(w)).length > 0;
+export const isRanged = w => filter(rangedKws, matchesKw(w)).length > 0;
 export const isNonKeyword = w => {
-  return !isBinary(w) && !(_.includes(w, ':') && isRanged(w.split(':')[0]));
+  return !isBinary(w) && !(includes(w, ':') && isRanged(w.split(':')[0]));
 };
 
 type SearchTermTypes = 'word' | 'keyword';
@@ -74,7 +74,7 @@ export const keyword = ([d]) => new Keyword(d);
 
 export const classQuery = ([klass]: string[]) => ({
   type: 'binary/class',
-  data: _.find(CardClass.classList(true), c => _.includes(c, klass.toUpperCase()))
+  data: find(CardClass.classList(true), c => includes(c, klass.toUpperCase()))
 } as KeywordQuery);
 
 export const rarityQuery = ([rarity]: string[]) => ({

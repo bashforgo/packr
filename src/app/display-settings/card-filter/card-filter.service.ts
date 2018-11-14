@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-import { PackWithDust, ShortRarityDictionary, DisplayCard, Pack } from '../../data/types';
+import { get, isEqual, set, some } from 'lodash';
+import { BehaviorSubject, Subject } from 'rxjs';
+import { isUndefined } from 'util';
+import { DisplayCard, Pack, PackWithDust, ShortRarityDictionary } from '../../data/types';
 
 class Filters {
-  byRarity : ShortRarityDictionary<boolean>;
-  gold : boolean;
-  showCard : (this : Filters, card : DisplayCard) => boolean;
-  showPack : (this : Filters, pack : Pack) => boolean;
+  byRarity: ShortRarityDictionary<boolean>;
+  gold: boolean;
+  showCard: (this: Filters, card: DisplayCard) => boolean;
+  showPack: (this: Filters, pack: Pack) => boolean;
 
-  constructor(comn : boolean, rare : boolean, epic : boolean, lgnd : boolean, gold : boolean) {
+  constructor(comn: boolean, rare: boolean, epic: boolean, lgnd: boolean, gold: boolean) {
     this.byRarity = { comn, rare, epic, lgnd };
     this.gold = gold;
     this.showCard = this._showCard.bind(this);
@@ -23,11 +25,11 @@ class Filters {
     return new Filters(false, false, false, false, false);
   }
 
-  get all() : boolean {
-    return _.isEqual(this.byRarity, Filters.defaults.byRarity) && !this.gold;
+  get all(): boolean {
+    return isEqual(this.byRarity, Filters.defaults.byRarity) && !this.gold;
   }
 
-  set all(value : boolean) {
+  set all(value: boolean) {
     if (value) {
       this.byRarity = Filters.defaults.byRarity;
       this.gold = false;
@@ -37,15 +39,15 @@ class Filters {
     }
   }
 
-  _showCard(card : DisplayCard) {
+  _showCard(card: DisplayCard) {
     if (this.gold) {
       return card.cost === 'gold' && this.byRarity[card.rarity];
     }
     return this.byRarity[card.rarity];
   }
 
-  _showPack(pack : Pack | PackWithDust) : boolean {
-    return _.some((pack as PackWithDust).pack || pack, card => this.showCard(card as DisplayCard));
+  _showPack(pack: Pack | PackWithDust): boolean {
+    return some((pack as PackWithDust).pack || pack, card => this.showCard(card as DisplayCard));
   }
 }
 
@@ -58,21 +60,21 @@ export class CardFilterService {
   gold = this.getterSetter(['gold']);
   all = this.getterSetter(['all']);
 
-  readonly events;
-  private _value;
+  readonly events: Subject<Filters>;
+  private _value: Filters;
 
   constructor() {
     this._value = Filters.defaults;
     this.events = new BehaviorSubject<Filters>(this._value);
   }
 
-  private getterSetter(prop : string[]) {
-    return (val? : boolean) => {
-      if (!_.isUndefined(val)) {
-        _.set(this._value, prop, val);
+  private getterSetter(prop: string[]) {
+    return (val?: boolean) => {
+      if (!isUndefined(val)) {
+        set(this._value, prop, val);
         this.events.next(this._value);
       } else {
-        return _.get(this._value, prop);
+        return get(this._value, prop);
       }
     };
   }

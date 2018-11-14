@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { includes, round } from 'lodash';
 import { map } from 'rxjs/operators';
 import { CardsService, CollectionService, StatsService } from '../data';
 import { CardClass, CardSet, Rarity } from '../data/types';
@@ -51,29 +52,29 @@ export class StatsComponent {
   public classes;
   private long;
 
-  constructor(private ss : StatsService, private cards : CardsService, private cs : CollectionService) {
+  constructor(private ss: StatsService, private cards: CardsService, private cs: CollectionService) {
     this.classes = cards.currentSet
       .pipe(map(({ type }) => CardClass.classList(CardSet.isMSG(type))));
     this.long = Rarity.shortBack;
   }
 
-  getCompletionPercentage(field : { target : number }, prop : string) {
+  getCompletionPercentage(field: { target: number }, prop: string) {
     if (prop === 'target' || field[prop] === 0) {
       return '';
     } else {
-      return `(${_.round(field[prop] / field.target * 100, 1)}%)`;
+      return `(${round(field[prop] / field.target * 100, 1)}%)`;
     }
   }
 
-  getCardPercentage(data : any, rarity : string, field : string) {
+  getCardPercentage(data: any, rarity: string, field: string) {
     if ((rarity === 'total' && field === 'total') || data[rarity][field] === 0) {
       return '';
-    } else if (_.includes(field, 'Extra')) {
-      return `(${_.round(data[rarity][field] / data[rarity][field.replace('Extra', '')] * 100, 1)}%)`;
+    } else if (includes(field, 'Extra')) {
+      return `(${round(data[rarity][field] / data[rarity][field.replace('Extra', '')] * 100, 1)}%)`;
     } else if (field === 'gold') {
-      return `(${_.round(data[rarity][field] / data[rarity].total * 100, 1)}%)`;
+      return `(${round(data[rarity][field] / data[rarity].total * 100, 1)}%)`;
     } else {
-      return `(${_.round(data[rarity][field] / data.total.total * 100, 1)}%)`;
+      return `(${round(data[rarity][field] / data.total.total * 100, 1)}%)`;
     }
   }
 }

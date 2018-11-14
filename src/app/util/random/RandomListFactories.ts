@@ -1,3 +1,4 @@
+import { constant } from 'lodash';
 import { BiasedRandomList } from './BiasedRandomList';
 import { Generator } from './EntropyGenerator';
 
@@ -10,6 +11,6 @@ export class MersenneRandomList<T> extends BiasedRandomList<T> {
 
 export class RandomList<T> extends MersenneRandomList<T> {
   constructor(weightedObjects : T[] = []) {
-    super(weightedObjects, _.constant(1));
+    super(weightedObjects, constant(1));
   }
 }

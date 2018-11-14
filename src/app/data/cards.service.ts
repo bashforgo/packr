@@ -1,14 +1,11 @@
 import { Injectable } from '@angular/core';
-import {
-  CardSet, JSONCard, Rarity, ShortRarity, CardClass, ShortRarityDictionary, CardClassDictionary
-} from './types';
-import { PacksOpenerService } from './packs-opener.service';
-import { RandomList } from '../util/random';
+import { chain, Dictionary, filter, includes, mapValues, matches, memoize, MemoizedFunction, NumericDictionary, overSome, reduce, remove, sortBy, transform } from 'lodash';
 import { ReplaySubject } from 'rxjs';
 import { map, multicast, refCount } from 'rxjs/operators';
-import { NumericDictionary } from 'lodash';
+import { RandomList } from '../util/random';
+import { PacksOpenerService } from './packs-opener.service';
+import { CardClass, CardClassDictionary, CardSet, JSONCard, Rarity, ShortRarity, ShortRarityDictionary } from './types';
 
-type Dictionary<T> = _.Dictionary<T>;
 type Card = JSONCard;
 
 export type CardsAccessor = {
@@ -28,70 +25,70 @@ export type CardsAccessor = {
 
 @Injectable()
 export class CardsService {
-  filterType: ((type: CardSet) => CardsAccessor) & _.MemoizedFunction;
+  filterType: ((type: CardSet) => CardsAccessor) & MemoizedFunction;
   currentSet = this.pos.events
     .pipe(
       map(poe => this.filterType(poe.type)),
       multicast(() => new ReplaySubject<CardsAccessor>(1)),
       refCount()
     )
-  private _cards: Card[] = _.filter(require('./cards.json'), (c: Card) => _.includes(CardSet.list(), c.set));
+  private _cards: Card[] = filter(require('./cards.json'), (c: Card) => includes(CardSet.list(), c.set));
 
   constructor(private pos: PacksOpenerService) {
-    this.filterType = _.memoize(this._filterType);
+    this.filterType = memoize(this._filterType);
   }
 
   private _filterType(type: CardSet): CardsAccessor {
-    const all = _(this._cards)
+    const all = chain(this._cards)
       .filter({ set: type })
       .transform((res, card) => res[card.name] = card, {})
       .value() as Dictionary<Card>;
 
     const sortByManaThenName = (obj: Dictionary<Card[]> | NumericDictionary<Card[]>): Dictionary<Card[]> => {
-      return _.mapValues(obj, (cards) => _.sortBy(cards, ['cost', 'name']));
+      return mapValues(obj, (cards) => sortBy(cards, ['cost', 'name']));
     };
 
     const filtered = {
-      byRarity: sortByManaThenName(_.transform(
+      byRarity: sortByManaThenName(transform(
         Rarity.list(),
-        (res: {}, r: Rarity) => res[Rarity.short(r)] = _.filter(all, { rarity: r }),
+        (res: {}, r: Rarity) => res[Rarity.short(r)] = filter(all, { rarity: r }),
         {}
       )) as ShortRarityDictionary<Card[]>,
-      byClass: sortByManaThenName(_.transform(
+      byClass: sortByManaThenName(transform(
         CardClass.classList(CardSet.isMSG(type)),
-        (res: {}, c: CardClass) => res[c] = _.filter(all, _.overSome([
-          _.matches({ playerClass: c }),
-          _.matches({ multiClassGroup: c })
+        (res: {}, c: CardClass) => res[c] = filter(all, overSome([
+          matches({ playerClass: c }),
+          matches({ multiClassGroup: c })
         ])),
         {}
       )) as CardClassDictionary<Card[]>
     };
     const sorted = sortByManaThenName({ all }).all;
 
-    const rand = _.mapValues<Card[], RandomList<Card>>(filtered.byRarity, f => {
+    const rand = mapValues<Card[], RandomList<Card>>(filtered.byRarity, f => {
       if (CardSet.isWOG(type)) {
         f = [...f];
-        _.remove(f, _.overSome([
-          _.matches({ name: `C'Thun` }),
-          _.matches({ name: `Beckoner of Evil` })
+        remove(f, overSome([
+          matches({ name: `C'Thun` }),
+          matches({ name: `Beckoner of Evil` })
         ]));
       }
       if (CardSet.isKNC(type)) {
         f = [...f];
-        _.remove(f, { name: 'Marin the Fox' });
+        remove(f, { name: 'Marin the Fox' });
       }
       return new RandomList(f);
     }) as ShortRarityDictionary<RandomList<Card>>;
 
     const target = {
-      byRarity: _.transform(
+      byRarity: transform(
         Rarity.shortList(),
         (res: {}, rarity: ShortRarity) => res[rarity] = filtered.byRarity[rarity].length * Rarity.max(rarity),
         {}
       ) as ShortRarityDictionary<number>,
-      byClass: _.transform(
+      byClass: transform(
         CardClass.classList(CardSet.isMSG(type)),
-        (res, klass) => res[klass] = _.reduce(
+        (res, klass) => res[klass] = reduce(
           filtered.byClass[klass],
           (res: number, { rarity }) => res + Rarity.max(Rarity.short(rarity)),
           0

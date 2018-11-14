@@ -1,3 +1,5 @@
+import { keys } from 'lodash';
+
 export type CardSet = 'TBP' | 'WWD' | 'KNC' | 'KFT' | 'UNGORO' | 'GANGS' | 'OG' | 'TGT' | 'EXPERT1';
 export type CardSetLabel = 'TBP' | 'WWD' | 'KNC' | 'KFT' | 'JUG' | 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
 
@@ -35,7 +37,7 @@ export namespace CardSet {
   };
 
   export const long = (s: CardSet) => _long[s];
-  export const list = (): CardSet[] => _.keys(_long) as CardSet[];
+  export const list = (): CardSet[] => keys(_long) as CardSet[];
   export const label = (s: CardSet): CardSetLabel => _labels[s];
   export const isKNC = (s: CardSet) => s === KNC;
   export const isMSG = (s: CardSet) => s === MSG;
