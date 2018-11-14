@@ -1,6 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { flow, map, snakeCase, startCase } from 'lodash';
+import { Rarity, ShortRarity } from '../../data/types';
 import { CardFilterService } from './card-filter.service';
-import { ShortRarity, Rarity } from '../../data/types';
 
 @Component({
   selector: 'pr-card-filter',
@@ -8,10 +9,10 @@ import { ShortRarity, Rarity } from '../../data/types';
   template
 })
 export class CardFilterComponent {
-  props = _.map(['comn', 'rare', 'epic', 'lgnd', 'gold', 'all'], prop => {
+  props = map(['comn', 'rare', 'epic', 'lgnd', 'gold', 'all'], prop => {
     const isRarity = ShortRarity.isA(prop);
     const isGold = prop === 'gold';
-    const titleCase = _.flow(_.snakeCase, _.startCase);
+    const titleCase: (s: string) => string = flow(snakeCase, startCase);
     const name = titleCase(isRarity ? Rarity.shortBack(prop as ShortRarity) : (isGold ? 'only golden' : prop));
     const rarity = isRarity ? prop : (isGold ? 'epic' : 'lgnd');
     return {
@@ -25,10 +26,10 @@ export class CardFilterComponent {
     };
   });
 
-  constructor(public cfs : CardFilterService) {
+  constructor(public cfs: CardFilterService) {
   }
 
-  toggle(prop : string, value : boolean) {
+  toggle(prop: string, value: boolean) {
     if (ShortRarity.isA(prop) && this.cfs.all()) {
       this.cfs.all(false);
       this.cfs[prop](!value);

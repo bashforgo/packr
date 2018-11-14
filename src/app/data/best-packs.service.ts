@@ -1,21 +1,25 @@
 import { Injectable } from '@angular/core';
+import { chain } from 'lodash';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { KHeap } from '../util';
 import { CollectionService } from './';
 import { Dust, PackWithDust } from './types';
 
 @Injectable()
 export class BestPacksService {
-  public events;
+  public events: Observable<PackWithDust[]>;
 
-  constructor(cs : CollectionService) {
+  constructor(cs: CollectionService) {
     this.events = cs.packs
-      .map(packs => new KHeap<PackWithDust>(
-        5,
-        _(packs)
-          .map(pack => ({ pack, dust: Dust.value(pack) }))
-          .value(),
-        (l, r) => KHeap.defaultComparator(r.dust, l.dust)
+      .pipe(map(
+        packs => new KHeap<PackWithDust>(
+          5,
+          chain(packs)
+            .map(pack => ({ pack, dust: Dust.value(pack) }))
+            .value(),
+          (l, r) => KHeap.defaultComparator(r.dust, l.dust)
         ).sorted()
-      );
+      ));
   }
 }

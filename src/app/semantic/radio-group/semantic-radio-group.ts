@@ -12,31 +12,31 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class SemanticRadioGroupComponent implements ControlValueAccessor {
   @Input()
-  options : SemanticRadioGroupOption[];
-  selected : any;
-  _onChange : (_ : any) => void;
-  _onTouched : () => void;
+  options: SemanticRadioGroupOption[];
+  selected: any;
+  _onChange: (_: any) => void;
+  _onTouched: () => void;
 
-  select(option : any) {
+  select(option: any) {
     this.selected = option;
     this._onChange(option);
     this._onTouched();
   }
 
-  writeValue(obj : any) : void {
+  writeValue(obj: any): void {
     this.selected = obj;
   }
 
-  registerOnChange(fn : any) : void {
+  registerOnChange(fn: any): void {
     this._onChange = fn;
   }
 
-  registerOnTouched(fn : any) : void {
+  registerOnTouched(fn: any): void {
     this._onTouched = fn;
   }
 }
 
 export interface SemanticRadioGroupOption {
-  label : string;
-  value : any;
+  label: string;
+  value: any;
 }

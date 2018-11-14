@@ -1,6 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CollectionService, CardsService, Collection, StatsService } from '../data';
-import { Rarity, Cost } from '../data/types';
+import { get, round } from 'lodash';
+import { Observable } from 'rxjs';
+import { map, withLatestFrom } from 'rxjs/operators';
+import { CardsService, Collection, CollectionService, StatsService } from '../data';
+import { CardsAccessor } from '../data/cards.service';
+import { Cost, Rarity } from '../data/types';
 
 @Component({
   selector: 'pr-rarity-breakdown',
@@ -9,36 +13,34 @@ import { Rarity, Cost } from '../data/types';
 })
 export class RarityBreakdownComponent {
   public rarities = Rarity.shortList();
-  private _events;
-  private collection;
-  private getRarity;
-  private cards;
-  private getName;
+  public collection;
+  public cards;
+  public getName = Rarity.shortBack;
+  private _events: Observable<Pick<CardsAccessor, 'filtered'> & { collection: Collection }>;
 
-  constructor(cs : CollectionService, private ss : StatsService, cards : CardsService) {
+  constructor(public ss: StatsService, cs: CollectionService, cards: CardsService) {
     this._events = cs.events
-      .withLatestFrom(cards.currentSet)
-      .map(([collection, { filtered }]) => ({ collection, filtered }));
+      .pipe(
+        withLatestFrom(cards.currentSet),
+        map(([collection, { filtered }]) => ({ collection, filtered }))
+      );
 
     this.collection = this._events
-      .map(({ collection }) => collection);
+      .pipe(map(({ collection }) => collection));
 
     this.cards = this._events
-      .map(({ filtered }) => filtered.byRarity);
-
-    this.getRarity = Rarity.short;
-    this.getName = Rarity.shortBack;
+      .pipe(map(({ filtered }) => filtered.byRarity));
   }
 
-  getCount(collection : Collection, name : string, cost : Cost) {
-    return _.get(collection, [name, cost], 0);
+  getCount(collection: Collection, name: string, cost: Cost) {
+    return get(collection, [name, cost], 0);
   }
 
-  getPercent(field : { target : number }, prop : string) {
+  getPercent(field: { target: number }, prop: string) {
     if (field[prop] === 0) {
       return '';
     } else {
-      return `(${_.round(field[prop] / field.target * 100, 1)}%)`;
+      return `(${round(field[prop] / field.target * 100, 1)}%)`;
     }
   }
 }

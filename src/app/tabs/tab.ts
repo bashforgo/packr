@@ -5,6 +5,6 @@ import { Component, Input } from '@angular/core';
   template
 })
 export class TabComponent {
-  @Input() tabTitle : string;
+  @Input() tabTitle: string;
   @Input() active = false;
 }

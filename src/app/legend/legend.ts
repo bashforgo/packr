@@ -11,7 +11,7 @@ export class LegendComponent {
   @HostBinding('class.open')
   private showingLegend = false;
 
-  constructor(private analytics : AnalyticsService) {}
+  constructor(private analytics: AnalyticsService) { }
 
   @HostListener('click')
   toggle() {

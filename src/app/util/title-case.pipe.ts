@@ -1,11 +1,12 @@
-import { PipeTransform, Pipe } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
+import { isEmpty, snakeCase, startCase } from 'lodash';
 
 @Pipe({ name: 'prTitleCase' })
 export class TitleCasePipe implements PipeTransform {
-  transform(value : string) : string {
-    if (_.isEmpty(value)) {
+  transform(value: string): string {
+    if (isEmpty(value)) {
       return value;
     }
-    return _.startCase(_.snakeCase(value));
+    return startCase(snakeCase(value));
   }
 }

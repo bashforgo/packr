@@ -7,7 +7,7 @@ import { PacksOpenerService } from '../data';
   template
 })
 export class OneMoreComponent {
-  constructor(private pos : PacksOpenerService) {
+  constructor(private pos: PacksOpenerService) {
   }
 
   oneMore() {

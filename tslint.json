@@ -14,7 +14,7 @@
     "no-forward-ref" :true,
     "use-life-cycle-interface": true,
     "use-pipe-transform-interface": true,
-    "pipe-naming": [true, "camelCase", "pr"],
+    "pipe-prefix": [true, "pr"],
     "component-class-suffix": true,
     "directive-class-suffix": true,
     "ban": [true,
@@ -26,13 +26,29 @@
     "curly": true,
     "eofline": true,
     "forin": true,
-    "indent": [true, 2],
+    "indent": [true, "spaces", 2],
     "jsdoc-format": true,
     "label-position": true,
     "max-line-length": [false, 140],
-    "member-ordering": [true,
-      "public-before-private",
-      "variables-before-functions"
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-instance-field",
+          "protected-instance-field",
+          "private-instance-field",
+          "constructor",
+          "public-instance-method",
+          "protected-instance-method",
+          "private-instance-method",
+          "public-static-field",
+          "protected-static-field",
+          "private-static-field",
+          "public-static-method",
+          "protected-static-method",
+          "private-static-method"
+        ]
+      }
     ],
     "no-arg": true,
     "no-bitwise": true,
@@ -53,7 +69,6 @@
     "no-switch-case-fall-through": true,
     "trailing-comma": true,
     "no-unused-expression": true,
-    "no-unused-variable": true,
     "no-use-before-declare": true,
     "no-var-requires": true,
     "one-line": [true,
@@ -73,10 +88,22 @@
       "propertySignature",
       "variableDeclarator"
     ],
-    "typedef-whitespace": [true,
-      ["callSignature", "noSpace"],
-      ["catchClause", "noSpace"],
-      ["indexSignature", "space"]
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
     ],
     "use-strict": false,
     "variable-name": false,

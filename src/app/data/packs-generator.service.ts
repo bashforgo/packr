@@ -1,58 +1,57 @@
 import { Injectable } from '@angular/core';
-import { PacksOpenerService } from './packs-opener.service';
-import { ShortRarityDictionary, Cost, ShortRarity, DisplayCard, Packs, Pack, JSONCard, Rarity } from './types';
-import { PacksOpeningEvent, CardsService, CardsAccessor } from './';
-import { Observable } from 'rxjs/Observable';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import 'rxjs/add/operator/withLatestFrom';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/multicast';
-import 'rxjs/add/observable/zip';
-import { MersenneRandomList, Generator, RandomList } from '../util/random';
 import { ActivatedRoute, Params } from '@angular/router';
+import { chain, map, mapValues } from 'lodash';
+import { Observable, ReplaySubject, zip } from 'rxjs';
+import { map as rxMap, multicast, refCount, withLatestFrom } from 'rxjs/operators';
+import { Generator, MersenneRandomList, RandomList } from '../util/random';
+import { CardsAccessor, CardsService, PacksOpeningEvent } from './';
+import { PacksOpenerService } from './packs-opener.service';
+import { Cost, DisplayCard, JSONCard, Pack, Packs, Rarity, ShortRarity, ShortRarityDictionary } from './types';
 
 type Card = DisplayCard;
 type CountByRarity = ShortRarityDictionary<number>;
-type CountByCost = { norm : CountByRarity, gold : CountByRarity };
+type CountByCost = { norm: CountByRarity, gold: CountByRarity };
 type GeneratorState = {
-  packs : Packs,
-  cards : CardsAccessor,
-  amount : number,
-  counts : CountByCost,
-  currentPack : DisplayCard[],
-  rules : { lgnd: RandomList<JSONCard>, hasLgnd: boolean } | null
+  packs: Packs,
+  cards: CardsAccessor,
+  amount: number,
+  counts: CountByCost,
+  currentPack: DisplayCard[],
+  rules: { lgnd: RandomList<JSONCard>, hasLgnd: boolean } | null
 };
 
 const goldDrops = <CountByRarity>{ comn: 2.0637, rare: 5.5395, epic: 4.5173, lgnd: 7.3107 };
 
 @Injectable()
 export class PacksGeneratorService {
-  public events : Observable<Packs>;
+  public events: Observable<Packs>;
 
-  constructor(private cs : CardsService,
-              private pos : PacksOpenerService,
-              private route : ActivatedRoute) {
+  constructor(cs: CardsService, pos: PacksOpenerService, route: ActivatedRoute) {
     this.events = pos.addEvents
-      .withLatestFrom(Observable
-        .zip(pos.events, cs.currentSet)
-        .withLatestFrom(route.queryParams)
-        .map(PacksGeneratorService.reset)
-      )
-      .map(([added, state] : [number, GeneratorState]) => {
-        const {amount, cards, counts, packs, rules, currentPack} = state;
-        return state.packs = [...state.packs, ...PacksGeneratorService.packGen({
-          amount: amount + added, cards, counts, packs, rules, currentPack
-        })];
-      })
-      .multicast(() => new ReplaySubject<Packs>(1))
-      .refCount();
+      .pipe(
+        withLatestFrom(
+          zip(pos.events, cs.currentSet)
+            .pipe(
+              withLatestFrom(route.queryParams),
+              rxMap(PacksGeneratorService.reset)
+            )
+        ),
+        rxMap(([added, state]: [number, GeneratorState]) => {
+          const { amount, cards, counts, packs, rules, currentPack } = state;
+          return state.packs = [...state.packs, ...PacksGeneratorService.packGen({
+            amount: amount + added, cards, counts, packs, rules, currentPack
+          })];
+        }),
+        multicast(() => new ReplaySubject<Packs>(1)),
+        refCount()
+      );
   }
 
   debug() {
     this.events.subscribe(d => console.log('evs', d));
   }
 
-  static reset([[poe, cards], params] : [[PacksOpeningEvent, CardsAccessor], Params]) : GeneratorState {
+  static reset([[poe, cards], params]: [[PacksOpeningEvent, CardsAccessor], Params]): GeneratorState {
     return {
       packs: [],
       cards,
@@ -69,12 +68,12 @@ export class PacksGeneratorService {
     };
   }
 
-  private static packGen(state : GeneratorState) : Packs {
+  private static packGen(state: GeneratorState): Packs {
     const { cardGen, rarityGen, isUsingNewRules } = PacksGeneratorService;
 
-    return _.map(Array(state.amount - state.packs.length).fill(0), () => {
-      state.counts.norm = _.mapValues<CountByRarity>(state.counts.norm, c => ++c);
-      state.counts.gold = _.mapValues<CountByRarity>(state.counts.gold, c => ++c);
+    return map(Array(state.amount - state.packs.length).fill(0), () => {
+      state.counts.norm = mapValues(state.counts.norm, c => ++c) as ShortRarityDictionary<number>;
+      state.counts.gold = mapValues(state.counts.gold, c => ++c) as ShortRarityDictionary<number>;
 
       if (isUsingNewRules(state) && !state.rules.hasLgnd) {
         state.counts.norm.lgnd += 3;
@@ -95,17 +94,17 @@ export class PacksGeneratorService {
     });
   }
 
-  private static cardGen([rarity, cost, state] : [ShortRarity, Cost, GeneratorState]) : Card {
-    const {isUsingNewRules, cardGen} = PacksGeneratorService;
+  private static cardGen([rarity, cost, state]: [ShortRarity, Cost, GeneratorState]): Card {
+    const { isUsingNewRules, cardGen } = PacksGeneratorService;
     let detail = state.cards.rand[rarity].peek() as JSONCard;
 
     if (isUsingNewRules(state)) {
       if (rarity === 'lgnd' && state.rules.lgnd.length) {
         detail = state.rules.lgnd.pop();
       } else {
-        const countByNames = _(state.currentPack)
+        const countByNames = chain(state.currentPack)
           .groupBy('name')
-          .mapValues((v : JSONCard[]) => v.length)
+          .mapValues((v: DisplayCard[]) => v.length)
           .value();
 
         const reroll = countByNames[detail.name] >= Rarity.max(rarity);
@@ -125,8 +124,8 @@ export class PacksGeneratorService {
     } as Card;
   }
 
-  private static rarityGen(chances : CountByRarity, state : GeneratorState) : [ShortRarity, Cost, GeneratorState] {
-    let rarity : [ShortRarity, Cost];
+  private static rarityGen(chances: CountByRarity, state: GeneratorState): [ShortRarity, Cost, GeneratorState] {
+    let rarity: [ShortRarity, Cost];
 
     if (chances.comn > 0 && state.counts.gold.comn >= 25) {
       rarity = ['comn', 'gold'];
@@ -138,14 +137,14 @@ export class PacksGeneratorService {
       rarity = ['lgnd', 'gold'];
     } else {
       const list = new MersenneRandomList(
-        _.map(
+        map(
           chances,
           (v, k) => ({ weight: v, rarity: k })
         ),
         (i) => i.weight
       );
       const chosen = list.peek().rarity as ShortRarity;
-      const isGolden : Cost = Generator.random() * 130 < goldDrops[chosen] ? 'gold' : 'norm';
+      const isGolden: Cost = Generator.random() * 130 < goldDrops[chosen] ? 'gold' : 'norm';
       rarity = [chosen, isGolden];
     }
 
@@ -160,7 +159,7 @@ export class PacksGeneratorService {
     return [chosen, isGolden, state];
   }
 
-  private static isUsingNewRules(state : GeneratorState) {
+  private static isUsingNewRules(state: GeneratorState) {
     return !!state.rules;
   }
 }
