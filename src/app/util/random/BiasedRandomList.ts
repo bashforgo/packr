@@ -1,34 +1,34 @@
 // tslint:disable no-bitwise
 interface HeapValueWeighter<T> {
-  (v : T) : number;
+  (v: T): number;
 }
 
 class HeapNode<Value> {
-  o : Value;
-  weight : number;
-  total : number;
+  o: Value;
+  weight: number;
+  total: number;
 
-  constructor(obj : Value, weighter : HeapValueWeighter<Value>) {
+  constructor(obj: Value, weighter: HeapValueWeighter<Value>) {
     this.o = obj;
     this.weight = this.total = weighter(obj);
   }
 }
 
 class WeightedHeap<Value> {
-  heap : Array<HeapNode<Value>>;
+  heap: Array<HeapNode<Value>>;
 
-  constructor(items : Value[], private weighter : HeapValueWeighter<Value>, private _generator : () => number = Math.random) {
+  constructor(items: Value[], private weighter: HeapValueWeighter<Value>, private _generator: () => number = Math.random) {
     this.heap = [null];
 
     // Put everything on the heap
     items.forEach(i => this._push(new HeapNode<Value>(i, weighter)));
   }
 
-  gen(n : number, andRemove : boolean = false) {
+  gen(n: number, andRemove: boolean = false) {
     return Array(n).fill(0).map(() => this[andRemove ? 'pop' : 'peek']());
   }
 
-  push(i : Value) {
+  push(i: Value) {
     this._push(new HeapNode(i, this.weighter));
   }
 
@@ -52,7 +52,7 @@ class WeightedHeap<Value> {
     return this.heap[this._peek()].o;
   }
 
-  private _push(item : HeapNode<Value>) {
+  private _push(item: HeapNode<Value>) {
     const i = this.heap.push(item) - 1;
 
     let parentI = i >> 1;
@@ -86,23 +86,23 @@ class WeightedHeap<Value> {
 
 // type RandomListItem = any;
 interface RandomListItemWeighter<RandomListItem> {
-  (v : RandomListItem) : number;
+  (v: RandomListItem): number;
 }
 
 type One = 1;
 
 export class BiasedRandomList<RandomListItem> {
-  private _items : RandomListItem[] = [];
-  private _heap : WeightedHeap<RandomListItem>;
+  private _items: RandomListItem[] = [];
+  private _heap: WeightedHeap<RandomListItem>;
 
-  constructor(weightedObjects : RandomListItem[] = [],
-              private weighter : RandomListItemWeighter<any> = (o => typeof o.weight === 'undefined' ? 1 : o.weight),
-              private generator : () => number = Math.random) {
+  constructor(weightedObjects: RandomListItem[] = [],
+    private weighter: RandomListItemWeighter<any> = (o => typeof o.weight === 'undefined' ? 1 : o.weight),
+    private generator: () => number = Math.random) {
     weightedObjects.forEach(obj => this.push(obj));
     this._heap = this._createHeap();
   }
 
-  push(obj : RandomListItem) {
+  push(obj: RandomListItem) {
     if (typeof this.weighter(obj) !== typeof 1) {
       throw new Error('Weight must be numeric (got ' + this.weighter(obj).toString() + ')');
     }
@@ -123,10 +123,10 @@ export class BiasedRandomList<RandomListItem> {
     return this._items.length;
   }
 
-  peek() : RandomListItem;
-  peek(n : One, andRemove : any) : RandomListItem;
-  peek(n : number, andRemove : any) : RandomListItem[];
-  peek(n : number = 1, andRemove : any = false) {
+  peek(): RandomListItem;
+  peek(n: One, andRemove: any): RandomListItem;
+  peek(n: number, andRemove: any): RandomListItem[];
+  peek(n: number = 1, andRemove: any = false) {
     andRemove = !!andRemove;
 
     if ((andRemove || !this.length) && this.length - n < 0) {
@@ -151,10 +151,10 @@ export class BiasedRandomList<RandomListItem> {
     return val;
   }
 
-  pop() : RandomListItem;
-  pop(n : One) : RandomListItem;
-  pop(n : number) : RandomListItem[];
-  pop(n : number = 1) : RandomListItem | RandomListItem[] {
+  pop(): RandomListItem;
+  pop(n: One): RandomListItem;
+  pop(n: number): RandomListItem[];
+  pop(n: number = 1): RandomListItem | RandomListItem[] {
     return this.peek(n, true);
   }
 

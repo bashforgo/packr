@@ -13,13 +13,12 @@ import { Cost, Rarity } from '../data/types';
 })
 export class RarityBreakdownComponent {
   public rarities = Rarity.shortList();
+  public collection;
+  public cards;
+  public getName = Rarity.shortBack;
   private _events: Observable<Pick<CardsAccessor, 'filtered'> & { collection: Collection }>;
-  private collection;
-  private getRarity;
-  private cards;
-  private getName;
 
-  constructor(cs: CollectionService, private ss: StatsService, cards: CardsService) {
+  constructor(public ss: StatsService, cs: CollectionService, cards: CardsService) {
     this._events = cs.events
       .pipe(
         withLatestFrom(cards.currentSet),
@@ -31,9 +30,6 @@ export class RarityBreakdownComponent {
 
     this.cards = this._events
       .pipe(map(({ filtered }) => filtered.byRarity));
-
-    this.getRarity = Rarity.short;
-    this.getName = Rarity.shortBack;
   }
 
   getCount(collection: Collection, name: string, cost: Cost) {

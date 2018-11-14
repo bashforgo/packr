@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 import { SearchParserService } from '../parse/search-parser.service';
 import { SearchTerm } from '../parse/search.grammar';
 
-export type Search = { text: string, sts: SearchTerm[]};
+export type Search = { text: string, sts: SearchTerm[] };
 
 @Component({
   selector: 'pr-search-bar',
@@ -13,11 +13,10 @@ export type Search = { text: string, sts: SearchTerm[]};
   template
 })
 export class SearchBarComponent {
-  form : FormGroup;
+  form: FormGroup;
   @Output() terms = new Subject<Search>();
 
-  constructor(formBuilder : FormBuilder,
-              sps : SearchParserService) {
+  constructor(formBuilder: FormBuilder, sps: SearchParserService) {
     this.form = formBuilder.group({
       search: ''
     });

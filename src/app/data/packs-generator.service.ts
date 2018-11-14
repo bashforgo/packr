@@ -26,9 +26,7 @@ const goldDrops = <CountByRarity>{ comn: 2.0637, rare: 5.5395, epic: 4.5173, lgn
 export class PacksGeneratorService {
   public events: Observable<Packs>;
 
-  constructor(private cs: CardsService,
-    private pos: PacksOpenerService,
-    private route: ActivatedRoute) {
+  constructor(cs: CardsService, pos: PacksOpenerService, route: ActivatedRoute) {
     this.events = pos.addEvents
       .pipe(
         withLatestFrom(

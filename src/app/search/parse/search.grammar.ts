@@ -1,7 +1,7 @@
 import { chain, filter, find, includes, lowerCase, map } from 'lodash';
 import { CardClass, Rarity } from '../../data/types';
 
-export const noop = (d, l, r) => null;
+export const noop = () => null;
 export const join = d => d[0].join('');
 export const trim = a => filter(a, Boolean);
 export const nth = n => d => d[n];
@@ -26,7 +26,7 @@ const binaryKws = [
 ];
 const rangedKws = ['owned', 'mana'];
 
-export const predicate = (f, inverse?) => (d, l, r) => f(d[0]) ? (inverse ? r : d[0]) : (inverse ? d[0] : r);
+export const predicate = (f, inverse?) => (d, _l, r) => f(d[0]) ? (inverse ? r : d[0]) : (inverse ? d[0] : r);
 
 export const toShort = (s: string) => Rarity.short(s.toUpperCase() as Rarity);
 
@@ -86,7 +86,7 @@ export const etcQuery = ([query]: string[]) => ({
   type: `binary/${query}`
 } as KeywordQuery);
 
-export const rangedQuery = ([type, c, data]: [string, string, Range]) => ({
+export const rangedQuery = ([type, _c, data]: [string, string, Range]) => ({
   type: `ranged/${type}`, data
 } as KeywordQuery);
 

@@ -21,7 +21,6 @@ module.exports = function(env) {
   const devUp = dev || dist || deploy;
   const distUp = dist || deploy;
 
-  const jsts = /\.[jt]s$/;
   const ts = /\.ts$/;
   const specs = /\.spec\./;
   const json = /\.json$/;
@@ -54,7 +53,7 @@ module.exports = function(env) {
       exclude: test ? nodeModules : specs,
       loaders: [{
         loader: 'tslint-loader',
-        options: { configFile: 'tslint.json' }
+        options: { configFile: 'tslint.json', typeCheck: true }
       }]
     });
   }
@@ -63,7 +62,13 @@ module.exports = function(env) {
     rules.add({
       test: ts,
       include: new RegExp(`${conf.path.src('app').replace(slashes, slashesS)}`),
-      use: '@nti/baggage-loader?[file].html=template&[file].scss=styles',
+      use: [{
+        loader: '@nti/baggage-loader',
+        options: {
+          '[file].html': { varName: 'template' },
+          '[file].scss': { varName: 'styles' }
+        }
+      }],
     });
   }
 
@@ -76,10 +81,6 @@ module.exports = function(env) {
     test: ts,
     exclude: test ? nodeModules : specs,
     loaders: ['ts-loader']
-    // use: [{
-    //   loader: 'ts-loader',
-    //   options: { configFile: require.resolve('../tsconfig.json') }
-    // }]
   }, {
     test: html,
     loaders: ['html-loader']
@@ -246,14 +247,9 @@ module.exports = function(env) {
 const includes = require('lodash/includes');
 const padStart = require('lodash/padStart');
 const map = require('lodash/map');
-const invokeMap = require('lodash/invokeMap');
 const compact = require('lodash/compact');
-const flow = require('lodash/flow');
-const head = require('lodash/head');
 const indexOf = require('lodash/indexOf');
 const last = require('lodash/last');
-
-const colors = require('colors');
 
 function handler(percentage, msg) {
   const details = Array.prototype.slice.call(arguments, 2);

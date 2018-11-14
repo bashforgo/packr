@@ -88,7 +88,7 @@ export default class MersenneTwister {
   private mti = this.N + 1;
   /* mti==N+1 means mt[N] is not initialized */
 
-  constructor(seed? : number) {
+  constructor(seed?: number) {
     if (typeof seed === 'undefined') {
       seed = new Date().getTime();
     }
@@ -218,7 +218,7 @@ export default class MersenneTwister {
   /* These real versions are due to Isaku Wada, 2002/01/09 added */
 
   /* initializes mt[N] with a seed */
-  private init_genrand(s : number) {
+  private init_genrand(s: number) {
     this.mt[0] = s >>> 0;
     for (this.mti = 1; this.mti < this.N; this.mti++) {
       s = this.mt[this.mti - 1] ^ (this.mt[this.mti - 1] >>> 30);

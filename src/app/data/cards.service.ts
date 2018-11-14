@@ -31,7 +31,7 @@ export class CardsService {
       map(poe => this.filterType(poe.type)),
       multicast(() => new ReplaySubject<CardsAccessor>(1)),
       refCount()
-    )
+    );
   private _cards: Card[] = filter(require('./cards.json'), (c: Card) => includes(CardSet.list(), c.set));
 
   constructor(private pos: PacksOpenerService) {

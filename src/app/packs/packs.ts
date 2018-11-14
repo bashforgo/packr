@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { CollectionService, BestPacksService } from '../data';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { BestPacksService, CollectionService } from '../data';
 import { CardFilterService } from '../display-settings/card-filter/card-filter.service';
 
 @Component({
@@ -9,6 +9,6 @@ import { CardFilterService } from '../display-settings/card-filter/card-filter.s
   styles
 })
 export class PacksComponent {
-  constructor(private cs : CollectionService, private bps : BestPacksService, private cfs : CardFilterService) {
+  constructor(public cs: CollectionService, public bps: BestPacksService, public cfs: CardFilterService) {
   }
 }

@@ -4,8 +4,6 @@ export type Comparison = -1 | 0 | 1;
 export type Comparator<T> = (a: T, b: T) => Comparison;
 
 export class KHeap<T> {
-  public static defaultComparator = ((a, b) => clamp(a - b, -1, 1)) as Comparator<any>;
-
   private heap = [];
   private _sorted = [];
   private changed = false;
@@ -112,4 +110,6 @@ export class KHeap<T> {
   compare(i: number, j: number): Comparison {
     return this.comparator(this.heap[i], this.heap[j]);
   }
+
+  public static defaultComparator = ((a, b) => clamp(a - b, -1, 1)) as Comparator<any>;
 }

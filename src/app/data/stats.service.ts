@@ -9,13 +9,12 @@ type StatsDictionary = { target?: number, norm: number, normExtra?: number, gold
 
 @Injectable()
 export class StatsService {
-  public events;
-  private completion: {
+  public completion: {
     byRarity: Observable<ShortRarityDictionary<StatsDictionary> & { total: StatsDictionary }>,
     byClass: Observable<CardClassDictionary<StatsDictionary>>
   };
-  private card: Observable<ShortRarityDictionary<StatsDictionary>>;
-  private dust: Observable<ShortRarityDictionary<StatsDictionary>>;
+  public card: Observable<ShortRarityDictionary<StatsDictionary>>;
+  public dust: Observable<ShortRarityDictionary<StatsDictionary>>;
   private _card: Observable<ShortRarityDictionary<StatsDictionary>>;
 
   constructor(cards: CardsService, cs: CollectionService) {

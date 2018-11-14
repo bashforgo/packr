@@ -6,19 +6,19 @@ import { ActivatedRoute } from '@angular/router';
 export class AnalyticsService {
   private analytics = require('universal-ga');
   private initial = true;
-  private packRules : boolean;
+  private packRules: boolean;
 
-  constructor(route : ActivatedRoute) {
+  constructor(route: ActivatedRoute) {
     this.analytics.initialize('UA-48744326-4');
     route.queryParams.subscribe((params) => this.packRules = params.packRules !== 'old');
   }
 
-  view(page : string) {
+  view(page: string) {
     this.analytics.set('page', this.labelIfOld(page));
     this.analytics.pageview();
   }
 
-  open(amount : number, type : CardSet) {
+  open(amount: number, type: CardSet) {
     this.analytics.event(
       'packs', this.initial ? 'initial' : 'open', {
         eventValue: amount,
@@ -28,11 +28,11 @@ export class AnalyticsService {
     this.initial = false;
   }
 
-  add(type : CardSet) {
+  add(type: CardSet) {
     this.analytics.event('packs', 'add', { eventValue: 1, eventLabel: this.labelIfOld(CardSet.label(type)) });
   }
 
-  card(name : string) {
+  card(name: string) {
     this.analytics.event('card', 'click', { eventLabel: name });
   }
 
@@ -40,11 +40,11 @@ export class AnalyticsService {
     this.analytics.event('analytics', 'view');
   }
 
-  social(type : string, label : string = null) {
+  social(type: string, label: string = null) {
     this.analytics.event('social', type, label ? { eventLabel: label } : undefined);
   }
 
-  private labelIfOld(v : string) {
-    return `${v}${ !this.packRules ? ' (old rules)' : '' }`;
+  private labelIfOld(v: string) {
+    return `${v}${!this.packRules ? ' (old rules)' : ''}`;
   }
 }

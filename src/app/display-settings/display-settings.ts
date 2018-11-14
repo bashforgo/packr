@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { AnalyticsService } from '../analytics/analytics.service';
 
 @Component({
   selector: 'pr-display-settings',
@@ -9,7 +8,6 @@ import { AnalyticsService } from '../analytics/analytics.service';
 })
 export class DisplaySettingsComponent {
   open: boolean = false;
-  constructor(private analytics : AnalyticsService) {}
 
   toggle() {
     this.open = !this.open;

@@ -12,11 +12,6 @@ export interface PacksOpeningEvent {
 
 @Injectable()
 export class PacksOpenerService {
-  static initial: PacksOpeningEvent = {
-    type: CardSet.TBP,
-    amount: 70
-  };
-
   public events: Observable<PacksOpeningEvent>;
   public addEvents: Observable<number>;
   private _events = new BehaviorSubject<PacksOpeningEvent>(PacksOpenerService.initial);
@@ -35,7 +30,7 @@ export class PacksOpenerService {
           this._currentAdder = new BehaviorSubject(0);
 
           return this._currentAdder
-            .pipe(scan((prev, curr) => prev + curr, 0))
+            .pipe(scan((prev, curr) => prev + curr, 0));
         })
       );
 
@@ -58,4 +53,9 @@ export class PacksOpenerService {
     this._currentAdder.next(1);
     this.analytics.add(this.current().type);
   }
+
+  static initial: PacksOpeningEvent = {
+    type: CardSet.TBP,
+    amount: 70
+  };
 }

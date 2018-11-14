@@ -15,7 +15,7 @@ import { SemanticInputErrorLabel, SemanticRadioGroupOption } from '../semantic';
 export class PacksOpenerComponent {
   form: FormGroup;
   rules: boolean;
-  options: SemanticRadioGroupOption[] = map(CardSet.list(), (k, v) => ({ label: CardSet.label(k), value: k }));
+  options: SemanticRadioGroupOption[] = map(CardSet.list(), k => ({ label: CardSet.label(k), value: k }));
   errors: SemanticInputErrorLabel = {
     rangeError: 'Should be between 1 and 1000'
   };

@@ -8,9 +8,9 @@ import { DisplayCard } from '../../data/types';
   template
 })
 export class CardSwitchComponent {
-  @Input() value : boolean;
-  @Input() onData : DisplayCard;
-  @Input() offData : DisplayCard;
+  @Input() value: boolean;
+  @Input() onData: DisplayCard;
+  @Input() offData: DisplayCard;
   @Output() onClicked = new Subject<boolean>();
 
   toggle() {

@@ -23,8 +23,6 @@ export class CardComponent {
   @Input() goldCount: number = null;
   imageOpen = false;
 
-  static activeCard: CardComponent = null;
-
   colors: ShortRarityDictionary<string> = {
     comn: 'grey',
     rare: 'blue',
@@ -93,4 +91,6 @@ export class CardComponent {
       event.preventDefault();
     }
   }
+
+  static activeCard: CardComponent = null;
 }

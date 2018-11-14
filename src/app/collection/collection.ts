@@ -12,17 +12,17 @@ import { Search } from '../search/bar/search-bar';
   template
 })
 export class CollectionComponent {
+  public collection: Observable<Collection>;
+  public cards: Observable<JSONCard[]>;
+  public getRarity = Rarity.short;
+  public search: Search = { text: '', sts: null };
   private _events: Observable<{
     collection: Collection;
     sorted: JSONCard[];
   }>;
-  private collection: Observable<Collection>;
-  private cards: Observable<JSONCard[]>;
-  private getRarity = Rarity.short;
-  private search: Search = { text: '', sts: null };
 
-  constructor(private cs: CollectionService, cards: CardsService) {
-    const _events = cs.events
+  constructor(cs: CollectionService, cards: CardsService) {
+    this._events = cs.events
       .pipe(
         withLatestFrom(cards.currentSet),
         map(([collection, { sorted }]) => ({

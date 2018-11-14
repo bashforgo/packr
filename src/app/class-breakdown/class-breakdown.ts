@@ -12,13 +12,13 @@ import { CardClass, CardClassDictionary, CardSet, Cost, JSONCard, Rarity } from 
   template
 })
 export class ClassBreakdownComponent {
+  public collection: Observable<Collection>;
+  public classes: Observable<CardClass[]>;
+  public cards: Observable<CardClassDictionary<JSONCard[]>>;
+  public getRarity = Rarity.short;
   private _events: Observable<{ collection: Collection, classes: CardClass[] } & Pick<CardsAccessor, 'filtered'>>;
-  private collection: Observable<Collection>;
-  private classes: Observable<CardClass[]>;
-  private cards: Observable<CardClassDictionary<JSONCard[]>>;
-  private getRarity = Rarity.short;
 
-  constructor(private cs: CollectionService, private ss: StatsService, cards: CardsService) {
+  constructor(public ss: StatsService, cs: CollectionService, cards: CardsService) {
     this._events = cs.events
       .pipe(
         withLatestFrom(cards.currentSet),

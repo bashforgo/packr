@@ -8,7 +8,7 @@ import { AnalyticsService } from '../analytics/analytics.service';
   styles
 })
 export class ToolbarComponent {
-  constructor(private analytics : AnalyticsService) {}
+  constructor(private analytics: AnalyticsService) { }
 
   github() {
     this.analytics.social('github', 'click');

@@ -1,1 +1,1 @@
-export * from './parse/search-parser.service'
+export * from './parse/search-parser.service';
