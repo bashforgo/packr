@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-  - '6'
+  - '10'
 branches:
   only:
   - master
 install:
-  - npm install
+  - npm ci
 before_install:
   - cd .travis
   - openssl enc -aes-256-cbc -d -in deploy.enc -out deploy -k $encrypted_key
