@@ -2,16 +2,16 @@ export type CardSet = 'TBP' | 'WWD' | 'KNC' | 'KFT' | 'UNGORO' | 'GANGS' | 'OG' 
 export type CardSetLabel = 'TBP' | 'WWD' | 'KNC' | 'KFT' | 'JUG' | 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
 
 export namespace CardSet {
-  export const TBP : CardSet = 'TBP';
-  export const WWD : CardSet = 'WWD';
-  export const KNC : CardSet = 'KNC';
-  export const KFT : CardSet = 'KFT';
-  export const JUG : CardSet = 'UNGORO';
-  export const MSG : CardSet = 'GANGS';
-  export const WOG : CardSet = 'OG';
+  export const TBP: CardSet = 'TBP';
+  export const WWD: CardSet = 'WWD';
+  export const KNC: CardSet = 'KNC';
+  export const KFT: CardSet = 'KFT';
+  export const JUG: CardSet = 'UNGORO';
+  export const MSG: CardSet = 'GANGS';
+  export const WOG: CardSet = 'OG';
   // export const TGT : CardSet = 'TGT';
-  export const CLASSIC : CardSet = 'EXPERT1';
-  const _long = {
+  export const CLASSIC: CardSet = 'EXPERT1';
+  const _long: { [k in CardSet]?: string } = {
     [TBP]: 'The Boomsday Projcet',
     [WWD]: 'The Witchwood',
     [KNC]: 'Kobolds and Catacombs',
@@ -34,10 +34,10 @@ export namespace CardSet {
     [CLASSIC]: <CardSetLabel>'CLASSIC'
   };
 
-  export const long = (s : CardSet) => _long[s];
-  export const list = () => _.keys(_long);
-  export const label = (s : CardSet) : CardSetLabel => _labels[s];
-  export const isKNC = (s : CardSet) => s === KNC;
-  export const isMSG = (s : CardSet) => s === MSG;
-  export const isWOG = (s : CardSet) => s === WOG;
+  export const long = (s: CardSet) => _long[s];
+  export const list = (): CardSet[] => _.keys(_long) as CardSet[];
+  export const label = (s: CardSet): CardSetLabel => _labels[s];
+  export const isKNC = (s: CardSet) => s === KNC;
+  export const isMSG = (s: CardSet) => s === MSG;
+  export const isWOG = (s: CardSet) => s === WOG;
 }

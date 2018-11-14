@@ -1,8 +1,9 @@
 import { ChangeDetectionStrategy, Component, Output } from '@angular/core';
-import { Subject } from 'rxjs';
-import { SearchTerm } from '../parse/search.grammar';
-import { SearchParserService } from '../parse/search-parser.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Subject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { SearchParserService } from '../parse/search-parser.service';
+import { SearchTerm } from '../parse/search.grammar';
 
 export type Search = { text: string, sts: SearchTerm[]};
 
@@ -22,7 +23,7 @@ export class SearchBarComponent {
     });
 
     this.form.controls.search.valueChanges
-      .map(text => ({ text, sts: sps.parse(text.toLowerCase()) }))
+      .pipe(map(text => ({ text, sts: sps.parse(text.toLowerCase()) })))
       .subscribe(this.terms);
   }
 }

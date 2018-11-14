@@ -12,16 +12,16 @@ import { ActivatedRoute } from '@angular/router';
   styles
 })
 export class PacksOpenerComponent {
-  form : FormGroup;
-  rules : boolean;
-  options : SemanticRadioGroupOption[] = _.map(_.values<CardSet>(CardSet.list()), (k, v) => ({ label: CardSet.label(k), value: k }));
-  errors : SemanticInputErrorLabel = {
+  form: FormGroup;
+  rules: boolean;
+  options: SemanticRadioGroupOption[] = _.map(CardSet.list(), (k, v) => ({ label: CardSet.label(k), value: k }));
+  errors: SemanticInputErrorLabel = {
     rangeError: 'Should be between 1 and 1000'
   };
 
-  constructor(formBuilder : FormBuilder,
-              route : ActivatedRoute,
-              private openerService : PacksOpenerService) {
+  constructor(formBuilder: FormBuilder,
+    route: ActivatedRoute,
+    private openerService: PacksOpenerService) {
     this.form = formBuilder.group({
       amount: [PacksOpenerService.initial.amount, PacksOpenerComponent.between(0, 1000)],
       type: PacksOpenerService.initial.type
@@ -33,8 +33,8 @@ export class PacksOpenerComponent {
     this.openerService.next(this.form.value);
   }
 
-  static between(min : number, max : number) {
-    return (control : FormControl) => {
+  static between(min: number, max: number) {
+    return (control: FormControl) => {
       const val = _.parseInt(control.value);
       return min < val && val <= max ? null : { rangeError: true };
     };

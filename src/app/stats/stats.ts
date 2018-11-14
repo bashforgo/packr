@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { StatsService, CardsService, CollectionService } from '../data';
-import { Rarity, CardClass, CardSet } from '../data/types';
+import { map } from 'rxjs/operators';
+import { CardsService, CollectionService, StatsService } from '../data';
+import { CardClass, CardSet, Rarity } from '../data/types';
 
 type Field = {
   name: string;
@@ -52,7 +53,7 @@ export class StatsComponent {
 
   constructor(private ss : StatsService, private cards : CardsService, private cs : CollectionService) {
     this.classes = cards.currentSet
-      .map(({ type }) => CardClass.classList(CardSet.isMSG(type)));
+      .pipe(map(({ type }) => CardClass.classList(CardSet.isMSG(type))));
     this.long = Rarity.shortBack;
   }
 

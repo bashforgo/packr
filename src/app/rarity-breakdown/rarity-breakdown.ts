@@ -1,6 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CollectionService, CardsService, Collection, StatsService } from '../data';
 import { Rarity, Cost } from '../data/types';
+import { withLatestFrom, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { CardsAccessor } from '../data/cards.service';
 
 @Component({
   selector: 'pr-rarity-breakdown',
@@ -9,7 +12,7 @@ import { Rarity, Cost } from '../data/types';
 })
 export class RarityBreakdownComponent {
   public rarities = Rarity.shortList();
-  private _events;
+  private _events: Observable<Pick<CardsAccessor, 'filtered'> & { collection: Collection }>;
   private collection;
   private getRarity;
   private cards;
@@ -17,14 +20,16 @@ export class RarityBreakdownComponent {
 
   constructor(cs : CollectionService, private ss : StatsService, cards : CardsService) {
     this._events = cs.events
-      .withLatestFrom(cards.currentSet)
-      .map(([collection, { filtered }]) => ({ collection, filtered }));
+      .pipe(
+        withLatestFrom(cards.currentSet),
+        map(([collection, { filtered }]) => ({ collection, filtered }))
+      );
 
     this.collection = this._events
-      .map(({ collection }) => collection);
+      .pipe(map(({ collection }) => collection));
 
     this.cards = this._events
-      .map(({ filtered }) => filtered.byRarity);
+      .pipe(map(({ filtered }) => filtered.byRarity));
 
     this.getRarity = Rarity.short;
     this.getName = Rarity.shortBack;

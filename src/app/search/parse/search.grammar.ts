@@ -28,7 +28,7 @@ const rangedKws = ['owned', 'mana'];
 
 export const predicate = (f, inverse?) => (d, l, r) => f(d[0]) ? (inverse ? r : d[0]) : (inverse ? d[0] : r);
 
-export const toShort = (s : string) => Rarity.short(s.toUpperCase() as Rarity);
+export const toShort = (s: string) => Rarity.short(s.toUpperCase() as Rarity);
 
 const matchesKw = w => kw => kw === w;
 export const isEtc = w => _.filter(etcKws, matchesKw(w)).length > 0;
@@ -43,14 +43,14 @@ export const isNonKeyword = w => {
 type SearchTermTypes = 'word' | 'keyword';
 
 export interface SearchTerm {
-  type : SearchTermTypes;
-  query : string | KeywordQuery;
+  type: SearchTermTypes;
+  query: string | KeywordQuery;
 }
 
 class Word implements SearchTerm {
-  readonly type : SearchTermTypes = 'word';
+  readonly type: SearchTermTypes = 'word';
 
-  constructor(public query : string) {
+  constructor(public query: string) {
   }
 }
 export const word = ([d]) => new Word(d);
@@ -60,45 +60,45 @@ export type KeywordTypes = 'binary/rarity' | 'binary/class'
   | 'ranged/owned' | 'ranged/mana';
 
 interface KeywordQuery {
-  type : KeywordTypes;
-  data? : string | Range;
+  type: KeywordTypes;
+  data?: string | Range;
 }
 
 class Keyword implements SearchTerm {
-  readonly type : SearchTermTypes = 'keyword';
+  readonly type: SearchTermTypes = 'keyword';
 
-  constructor(public query : KeywordQuery) {
+  constructor(public query: KeywordQuery) {
   }
 }
 export const keyword = ([d]) => new Keyword(d);
 
-export const classQuery = ([klass] : string[]) => ({
+export const classQuery = ([klass]: string[]) => ({
   type: 'binary/class',
   data: _.find(CardClass.classList(true), c => _.includes(c, klass.toUpperCase()))
 } as KeywordQuery);
 
-export const rarityQuery = ([rarity] : string[]) => ({
+export const rarityQuery = ([rarity]: string[]) => ({
   type: 'binary/rarity',
   data: Rarity.short(rarity.toUpperCase() as Rarity) || rarity
 } as KeywordQuery);
 
-export const etcQuery = ([query] : string[]) => ({
+export const etcQuery = ([query]: string[]) => ({
   type: `binary/${query}`
 } as KeywordQuery);
 
-export const rangedQuery = ([type, c, data] : [string, string, Range]) => ({
+export const rangedQuery = ([type, c, data]: [string, string, Range]) => ({
   type: `ranged/${type}`, data
 } as KeywordQuery);
 
 export interface Range {
-  min : number;
-  max : number;
+  min: number;
+  max: number;
 }
 
 type RangedTypes = 'single' | 'up' | 'down' | 'double';
 
-const range = (min : number, max : number) => ({ min, max } as Range);
-export const ranged = (type : RangedTypes, a, b) => (args : number[]) => {
+const range = (min: number, max: number) => ({ min, max } as Range);
+export const ranged = (type: RangedTypes, a, b) => (args: number[]) => {
   switch (type) {
     case 'single':
       return range(args[a], args[a]);

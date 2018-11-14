@@ -11,7 +11,7 @@ export class CardFilterComponent {
   props = _.map(['comn', 'rare', 'epic', 'lgnd', 'gold', 'all'], prop => {
     const isRarity = ShortRarity.isA(prop);
     const isGold = prop === 'gold';
-    const titleCase = _.flow(_.snakeCase, _.startCase);
+    const titleCase: (s: string) => string = _.flow(_.snakeCase, _.startCase);
     const name = titleCase(isRarity ? Rarity.shortBack(prop as ShortRarity) : (isGold ? 'only golden' : prop));
     const rarity = isRarity ? prop : (isGold ? 'epic' : 'lgnd');
     return {

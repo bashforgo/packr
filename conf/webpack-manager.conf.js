@@ -63,7 +63,7 @@ module.exports = function(env) {
     rules.add({
       test: ts,
       include: new RegExp(`${conf.path.src('app').replace(slashes, slashesS)}`),
-      use: 'baggage-loader?[file].html=template&[file].scss=styles',
+      use: '@nti/baggage-loader?[file].html=template&[file].scss=styles',
     });
   }
 
@@ -76,6 +76,10 @@ module.exports = function(env) {
     test: ts,
     exclude: test ? nodeModules : specs,
     loaders: ['ts-loader']
+    // use: [{
+    //   loader: 'ts-loader',
+    //   options: { configFile: require.resolve('../tsconfig.json') }
+    // }]
   }, {
     test: html,
     loaders: ['html-loader']
@@ -144,7 +148,7 @@ module.exports = function(env) {
 
   plugins.add([
     new webpack.ContextReplacementPlugin(
-      new RegExp(`angular${slashesS}core${slashesS}@angular`),
+      new RegExp(`angular${slashesS}core`),
       conf.paths.src
     ),
     new webpack.DefinePlugin({

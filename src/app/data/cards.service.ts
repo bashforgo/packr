@@ -4,65 +4,67 @@ import {
 } from './types';
 import { PacksOpenerService } from './packs-opener.service';
 import { RandomList } from '../util/random';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/multicast';
+import { ReplaySubject } from 'rxjs';
+import { map, multicast, refCount } from 'rxjs/operators';
+import { NumericDictionary } from 'lodash';
 
 type Dictionary<T> = _.Dictionary<T>;
 type Card = JSONCard;
 
 export type CardsAccessor = {
-  all : Dictionary<Card>;
-  filtered : {
-    byRarity : ShortRarityDictionary<Card[]>,
-    byClass : CardClassDictionary<Card[]>
+  all: Dictionary<Card>;
+  filtered: {
+    byRarity: ShortRarityDictionary<Card[]>,
+    byClass: CardClassDictionary<Card[]>
   };
-  sorted : Card[],
-  rand : ShortRarityDictionary<RandomList<Card>>;
-  target : {
-    byRarity : ShortRarityDictionary<number>,
-    byClass : CardClassDictionary<number>
+  sorted: Card[],
+  rand: ShortRarityDictionary<RandomList<Card>>;
+  target: {
+    byRarity: ShortRarityDictionary<number>,
+    byClass: CardClassDictionary<number>
   };
-  type : CardSet;
+  type: CardSet;
 };
 
 @Injectable()
 export class CardsService {
-  filterType : ((type : CardSet) => CardsAccessor) & _.MemoizedFunction;
+  filterType: ((type: CardSet) => CardsAccessor) & _.MemoizedFunction;
   currentSet = this.pos.events
-    .map(poe => this.filterType(poe.type))
-    .multicast(() => new ReplaySubject<CardsAccessor>(1))
-    .refCount();
-  private _cards = _.filter(require('./cards.json'), (c : Card) => _.includes(CardSet.list(), c.set));
+    .pipe(
+      map(poe => this.filterType(poe.type)),
+      multicast(() => new ReplaySubject<CardsAccessor>(1)),
+      refCount()
+    )
+  private _cards: Card[] = _.filter(require('./cards.json'), (c: Card) => _.includes(CardSet.list(), c.set));
 
-  constructor(private pos : PacksOpenerService) {
+  constructor(private pos: PacksOpenerService) {
     this.filterType = _.memoize(this._filterType);
   }
 
-  private _filterType(type : CardSet) : CardsAccessor {
+  private _filterType(type: CardSet): CardsAccessor {
     const all = _(this._cards)
       .filter({ set: type })
       .transform((res, card) => res[card.name] = card, {})
       .value() as Dictionary<Card>;
 
-    const sortByManaThenName = (obj) => {
+    const sortByManaThenName = (obj: Dictionary<Card[]> | NumericDictionary<Card[]>): Dictionary<Card[]> => {
       return _.mapValues(obj, (cards) => _.sortBy(cards, ['cost', 'name']));
     };
 
     const filtered = {
       byRarity: sortByManaThenName(_.transform(
         Rarity.list(),
-        (res : {}, r : Rarity) => res[Rarity.short(r)] = _.filter(all, { rarity: r }),
+        (res: {}, r: Rarity) => res[Rarity.short(r)] = _.filter(all, { rarity: r }),
         {}
-      )),
+      )) as ShortRarityDictionary<Card[]>,
       byClass: sortByManaThenName(_.transform(
         CardClass.classList(CardSet.isMSG(type)),
-        (res : {}, c : CardClass) => res[c] = _.filter(all, _.overSome([
+        (res: {}, c: CardClass) => res[c] = _.filter(all, _.overSome([
           _.matches({ playerClass: c }),
           _.matches({ multiClassGroup: c })
         ])),
         {}
-      ))
+      )) as CardClassDictionary<Card[]>
     };
     const sorted = sortByManaThenName({ all }).all;
 
@@ -84,14 +86,14 @@ export class CardsService {
     const target = {
       byRarity: _.transform(
         Rarity.shortList(),
-        (res : {}, rarity : ShortRarity) => res[rarity] = filtered.byRarity[rarity].length * Rarity.max(rarity),
+        (res: {}, rarity: ShortRarity) => res[rarity] = filtered.byRarity[rarity].length * Rarity.max(rarity),
         {}
       ) as ShortRarityDictionary<number>,
       byClass: _.transform(
         CardClass.classList(CardSet.isMSG(type)),
         (res, klass) => res[klass] = _.reduce(
           filtered.byClass[klass],
-          (res : number, { rarity }) => res + Rarity.max(Rarity.short(rarity)),
+          (res: number, { rarity }) => res + Rarity.max(Rarity.short(rarity)),
           0
         ),
         {}

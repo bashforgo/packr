@@ -7,9 +7,8 @@
     "moduleResolution": "node",
     "removeComments": false,
     "noImplicitAny": false,
-    "lib": ["es2015","scripthost","dom"]
+    "lib": ["es2015","dom"]
   },
   "compileOnSave": false,
-  "include": ["src/**/*.ts"],
-  "exclude": ["*.spec.ts", "typings/**"]
+  "include": ["src/**/*.ts"]
 }
