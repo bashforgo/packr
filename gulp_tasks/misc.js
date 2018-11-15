@@ -2,15 +2,13 @@ const path = require('path');
 
 const gulp = require('gulp');
 const del = require('del');
-const filter = require('gulp-filter');
 const git = require('git-last-commit');
-const githubPages = require('gulp-gh-pages');
+const githubPages = require('gh-pages');
 
 const conf = require('../conf/gulp.conf');
 
-gulp.task('clean:tmp', cleanTmp);
 gulp.task('clean:dist', cleanDist);
-gulp.task('clean', gulp.parallel('clean:tmp', 'clean:dist'));
+gulp.task('clean', gulp.parallel('clean:dist'));
 gulp.task('other', other);
 gulp.task('last-message', getLastMessage);
 gulp.task('deploy:gh-pages', ghPages);
@@ -41,10 +39,8 @@ function getLastMessage(done) {
   }, { separator: '###' });
 }
 
-function ghPages() {
-  return gulp.src('./dist/**/*')
-    .pipe(githubPages({
-      message: `[Release ${_commit.shortHash}] ${_commit.subject}`,
-      cacheDir: conf.paths.tmp
-    }));
+function ghPages(done) {
+  githubPages.publish('dist', {
+    message: `[Release ${_commit.shortHash}] ${_commit.subject}`
+  }, done);
 }
