@@ -1,9 +1,10 @@
 import { keys } from 'lodash';
 
-export type CardSet = 'TBP' | 'WWD' | 'KNC' | 'KFT' | 'UNGORO' | 'GANGS' | 'OG' | 'TGT' | 'EXPERT1';
-export type CardSetLabel = 'TBP' | 'WWD' | 'KNC' | 'KFT' | 'JUG' | 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
+export type CardSet = 'RAS' | 'TBP' | 'WWD' | 'KNC' | 'KFT' | 'UNGORO' | 'GANGS' | 'OG' | 'TGT' | 'EXPERT1';
+export type CardSetLabel = 'RAS' | 'TBP' | 'WWD' | 'KNC' | 'KFT' | 'JUG' | 'MSG' | 'WOG' | 'TGT' | 'CLASSIC';
 
 export namespace CardSet {
+  export const RAS: CardSet = 'RAS';
   export const TBP: CardSet = 'TBP';
   export const WWD: CardSet = 'WWD';
   export const KNC: CardSet = 'KNC';
@@ -14,6 +15,7 @@ export namespace CardSet {
   // export const TGT : CardSet = 'TGT';
   export const CLASSIC: CardSet = 'EXPERT1';
   const _long: { [k in CardSet]?: string } = {
+    [RAS]: 'Rastakhan\'s Rumble',
     [TBP]: 'The Boomsday Projcet',
     [WWD]: 'The Witchwood',
     [KNC]: 'Kobolds and Catacombs',
@@ -25,6 +27,7 @@ export namespace CardSet {
     [CLASSIC]: 'Classic'
   };
   const _labels = {
+    [RAS]: <CardSetLabel>'RAS',
     [TBP]: <CardSetLabel>'TBP',
     [WWD]: <CardSetLabel>'WWD',
     [KNC]: <CardSetLabel>'KNC',

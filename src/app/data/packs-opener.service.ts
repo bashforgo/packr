@@ -55,7 +55,7 @@ export class PacksOpenerService {
   }
 
   static initial: PacksOpeningEvent = {
-    type: CardSet.TBP,
-    amount: 70
+    type: CardSet.RAS,
+    amount: 130
   };
 }

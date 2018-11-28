@@ -9438,5 +9438,1085 @@
 		"set": "TBP",
 		"cost": 0,
 		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Shirvallah, the Tiger",
+		"id": "avatars/380/244/636770502929030806",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 25,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Grave Horror",
+		"id": "avatars/380/817/636783183794786065",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 12,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Zul'jin",
+		"id": "avatars/381/278/636788992288347869",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 10,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Hakkar, the Soulflayer",
+		"id": "avatars/380/844/636783326877212674",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 10,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Oondasta",
+		"id": "avatars/380/777/636782856723326185",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 9,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Demonbolt",
+		"id": "avatars/381/375/636790314589102445",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Void Contract",
+		"id": "avatars/380/252/636770508514664840",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Akali, the Rhino",
+		"id": "avatars/381/89/636786771963414044",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Captain Hooktusk",
+		"id": "avatars/381/155/636787694685370473",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Da Undatakah",
+		"id": "avatars/381/220/636788416644164226",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Hex Lord Malacrass",
+		"id": "avatars/380/258/636770512204942260",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Hir'eek, the Bat",
+		"id": "avatars/380/249/636770506864124852",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Mosh'ogg Enforcer",
+		"id": "avatars/381/389/636790321408714228",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Princess Talanji",
+		"id": "avatars/380/960/636784856597121078",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 8,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "A New Challenger...",
+		"id": "avatars/380/784/636782870364862303",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Amani War Bear",
+		"id": "avatars/380/904/636784111858789661",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Blood Troll Sapper",
+		"id": "avatars/381/378/636790315903865560",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Bwonsamdi, the Dead",
+		"id": "avatars/380/654/636779396108452794",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Crowd Roaster",
+		"id": "avatars/381/57/636786361952797991",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Gonk, the Raptor",
+		"id": "avatars/381/182/636788127427628850",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Gurubashi Hypemon",
+		"id": "avatars/380/877/636783701845876832",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Ironhide Direhorn",
+		"id": "avatars/380/775/636782849316535314",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Jan'alai, the Dragonhawk",
+		"id": "avatars/380/776/636782854614019707",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Linecracker",
+		"id": "avatars/381/240/636788481019051082",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Rabble Bouncer",
+		"id": "avatars/380/946/636784559170690250",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 7,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Sul'thraze",
+		"id": "avatars/380/245/636770504060373782",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Cannon Barrage",
+		"id": "avatars/380/259/636770512583202385",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Heavy Metal!",
+		"id": "avatars/380/527/636776812411584510",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Rain of Toads",
+		"id": "avatars/380/256/636770511151872491",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Stampeding Roar",
+		"id": "avatars/381/90/636786774693466240",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Arcanosaur",
+		"id": "avatars/381/24/636785789185068194",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Krag'wa, the Frog",
+		"id": "avatars/381/337/636789626784262009",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Mojomaster Zihi",
+		"id": "avatars/381/308/636789318202580703",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Soulwarden",
+		"id": "avatars/380/759/636782566182714474",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 6,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Farraki Battleaxe",
+		"id": "avatars/381/28/636785823967314359",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Baited Arrow",
+		"id": "avatars/380/255/636770510331602300",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Blast Wave",
+		"id": "avatars/380/932/636784268039673968",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Mass Hysteria",
+		"id": "avatars/381/313/636789386382642038",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Arena Patron",
+		"id": "avatars/381/402/636790328298205145",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Dragonmaw Scorcher",
+		"id": "avatars/381/393/636790324954927438",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Emberscale Drake",
+		"id": "avatars/381/121/636787275283730833",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Former Champ",
+		"id": "avatars/381/373/636790311256938102",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Gral, the Shark",
+		"id": "avatars/380/825/636783231735187654",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Halazzi, the Lynx",
+		"id": "avatars/381/399/636790327283260548",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Mosh'Ogg Announcer",
+		"id": "avatars/381/267/636788898169617917",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Sightless Ranger",
+		"id": "avatars/381/146/636787635718924136",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Snapjaw Shellfighter",
+		"id": "avatars/381/268/636788899458950969",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Treespeaker",
+		"id": "avatars/381/338/636789674595150062",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 5,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Mark of the Loa",
+		"id": "avatars/381/269/636788900841718685",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Predatory Instincts",
+		"id": "avatars/381/0/636785441897237928",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Scorch",
+		"id": "avatars/381/371/636790250344271995",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Walk the Plank",
+		"id": "avatars/380/927/636784245593138346",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Arena Fanatic",
+		"id": "avatars/381/398/636790326643107228",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Arena Treasure Chest",
+		"id": "avatars/381/400/636790327330132983",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Griftah",
+		"id": "avatars/381/17/636785715740137615",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Half-Time Scavenger",
+		"id": "avatars/381/388/636790320646099660",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "High Priestess Jeklik",
+		"id": "avatars/380/781/636782864894835499",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Ice Cream Peddler",
+		"id": "avatars/381/384/636790319364607180",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Murloc Tastyfin",
+		"id": "avatars/381/4/636785447175682951",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Regeneratin' Thug",
+		"id": "avatars/381/381/636790318029054980",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Rumbletusk Shaker",
+		"id": "avatars/381/380/636790316811466400",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Spirit of the Shark",
+		"id": "avatars/380/247/636770505283742767",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Spirit of the Tiger",
+		"id": "avatars/380/843/636783324317921759",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Ticket Scalper",
+		"id": "avatars/380/526/636776811586611979",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "War Master Voone",
+		"id": "avatars/380/855/636783379868207171",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Zandalari Templar",
+		"id": "avatars/380/840/636783312169571688",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 4,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Overlord's Whip",
+		"id": "avatars/381/3/636785445643266872",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Haunting Visions",
+		"id": "avatars/381/1/636785443568698071",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Master's Call",
+		"id": "avatars/381/88/636786765833147203",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Raiding Party",
+		"id": "avatars/380/847/636783329486355783",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Splitting Image",
+		"id": "avatars/381/273/636788918645415009",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Surrender to Madness",
+		"id": "avatars/380/250/636770507464250142",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Time Out!",
+		"id": "avatars/380/290/636771254741699900",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Banana Buffoon",
+		"id": "avatars/381/382/636790318296696878",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Bloodscalp Strategist",
+		"id": "avatars/381/134/636787463268933108",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Bog Slosher",
+		"id": "avatars/381/242/636788483763958246",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Drakkari Trickster",
+		"id": "avatars/381/391/636790323002689710",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "High Priest Thekal",
+		"id": "avatars/380/928/636784249072480324",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Masked Contender",
+		"id": "avatars/380/945/636784557713578834",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Ornery Tortoise",
+		"id": "avatars/381/374/636790313979136801",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Pyromaniac",
+		"id": "avatars/380/257/636770511661221168",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Reckless Diretroll",
+		"id": "avatars/380/760/636782566791587422",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Sand Drudge",
+		"id": "avatars/381/230/636788463702141704",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Smolderthorn Lancer",
+		"id": "avatars/380/786/636782874525894638",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Spirit of the Frog",
+		"id": "avatars/381/64/636786388501817059",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Spirit of the Lynx",
+		"id": "avatars/381/396/636790326164258396",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Untamed Beastmaster",
+		"id": "avatars/380/841/636783315535082630",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Wardruid Loti",
+		"id": "avatars/381/93/636786831452897238",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Zentimo",
+		"id": "avatars/380/782/636782866840354289",
+		"rarity": "LEGENDARY",
+		"set": "RAS",
+		"cost": 3,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Headhunter's Hatchet",
+		"id": "avatars/381/395/636790325553023710",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Likkim",
+		"id": "avatars/380/925/636784243693554281",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Big Bad Voodoo",
+		"id": "avatars/381/148/636787641784198404",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Dragon Roar",
+		"id": "avatars/381/401/636790328021345636",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Flash of Light",
+		"id": "avatars/381/376/636790315281716347",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Revenge of the Wild",
+		"id": "avatars/380/903/636784109465951489",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Seance",
+		"id": "avatars/381/239/636788479348481365",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Stolen Steel",
+		"id": "avatars/381/409/636790332652501448",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Auchenai Phantasm",
+		"id": "avatars/381/397/636790326280346490",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Belligerent Gnome",
+		"id": "avatars/380/571/636777664605898484",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Bloodsail Howler",
+		"id": "avatars/381/309/636789325745920333",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Booty Bay Bookie",
+		"id": "avatars/381/394/636790325366782560",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Cheaty Anklebiter",
+		"id": "avatars/381/383/636790318919475393",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Dozing Marksman",
+		"id": "avatars/381/392/636790324194132185",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Firetree Witchdoctor",
+		"id": "avatars/380/881/636783717612246832",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Immortal Prelate",
+		"id": "avatars/380/251/636770508049845034",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Savage Striker",
+		"id": "avatars/380/253/636770509033700390",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Scarab Egg",
+		"id": "avatars/381/377/636790315538106809",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Serpent Ward",
+		"id": "avatars/381/403/636790329447674684",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Sharkfin Fan",
+		"id": "avatars/380/246/636770504691119822",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Shieldbreaker",
+		"id": "avatars/381/405/636790330403716889",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Soup Vendor",
+		"id": "avatars/380/944/636784555745873011",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Spellzerker",
+		"id": "avatars/381/407/636790331283356774",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Spirit of the Bat",
+		"id": "avatars/380/248/636770506276343612",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Spirit of the Dragonhawk",
+		"id": "avatars/380/778/636782859435106841",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Waterboy",
+		"id": "avatars/380/780/636782862901506785",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 2,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Bloodclaw",
+		"id": "avatars/381/379/636790316452894698",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "PALADIN"
+	},
+	{
+		"name": "Serrated Tooth",
+		"id": "avatars/381/385/636790319528973271",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "ROGUE"
+	},
+	{
+		"name": "Devastate",
+		"id": "avatars/381/406/636790330871972706",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Grim Rally",
+		"id": "avatars/381/62/636786385763528823",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "Shriek",
+		"id": "avatars/380/783/636782868666348358",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "WARLOCK"
+	},
+	{
+		"name": "The Beast Within",
+		"id": "avatars/381/317/636789424852329962",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Totemic Smash",
+		"id": "avatars/381/60/636786379865413714",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Daring Fire-Eater",
+		"id": "avatars/380/779/636782861448933835",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Gurubashi Chicken",
+		"id": "avatars/380/785/636782871798063026",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Gurubashi Offering",
+		"id": "avatars/381/390/636790321589798121",
+		"rarity": "EPIC",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Helpless Hatchling",
+		"id": "avatars/381/387/636790320527824894",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Saronite Taskmaster",
+		"id": "avatars/380/938/636784490090644995",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "NEUTRAL"
+	},
+	{
+		"name": "Spirit of the Dead",
+		"id": "avatars/380/653/636779395355825770",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "PRIEST"
+	},
+	{
+		"name": "Spirit of the Raptor",
+		"id": "avatars/381/61/636786383620677167",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Spirit of the Rhino",
+		"id": "avatars/381/291/636789169503978057",
+		"rarity": "RARE",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "WARRIOR"
+	},
+	{
+		"name": "Springpaw",
+		"id": "avatars/380/254/636770509621638973",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "HUNTER"
+	},
+	{
+		"name": "Wartbringer",
+		"id": "avatars/381/408/636790331701459209",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 1,
+		"playerClass": "SHAMAN"
+	},
+	{
+		"name": "Elemental Evocation",
+		"id": "avatars/381/147/636787639033036151",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 0,
+		"playerClass": "MAGE"
+	},
+	{
+		"name": "Pounce",
+		"id": "avatars/381/386/636790320001447529",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 0,
+		"playerClass": "DRUID"
+	},
+	{
+		"name": "Regenerate",
+		"id": "avatars/381/231/636788465517088601",
+		"rarity": "COMMON",
+		"set": "RAS",
+		"cost": 0,
+		"playerClass": "PRIEST"
 	}
 ]
